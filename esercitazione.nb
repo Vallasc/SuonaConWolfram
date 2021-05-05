@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     34206,        818]
-NotebookOptionsPosition[     33132,        794]
-NotebookOutlinePosition[     33656,        812]
-CellTagsIndexPosition[     33613,        809]
+NotebookDataLength[     35413,        822]
+NotebookOptionsPosition[     34430,        799]
+NotebookOutlinePosition[     34954,        817]
+CellTagsIndexPosition[     34911,        814]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,9 +22,8 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"Quit", "[", "]"}], ";"}]], "Input",
  CellChangeTimes->{{3.8290201672709923`*^9, 3.82902017375327*^9}, {
-  3.829021066237901*^9, 
-  3.829021070131528*^9}},ExpressionUUID->"c72aff80-f4fe-4efc-a55b-\
-fbc5c74effcd"],
+  3.829021066237901*^9, 3.829021070131528*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"c72aff80-f4fe-4efc-a55b-fbc5c74effcd"],
 
 Cell[BoxData[
  RowBox[{
@@ -32,6 +31,9 @@ Cell[BoxData[
    RowBox[{"Load", " ", "MIDI", " ", "synth"}], " ", "*)"}], 
   "\[IndentingNewLine]", 
   RowBox[{
+   RowBox[{
+    RowBox[{"Needs", "[", "\"\<JLink`\>\"", "]"}], ";"}], 
+   "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
     "LoadJavaClass", "[", "\"\<javax.sound.midi.MidiSystem\>\"", "]"}], ";"}],
@@ -52,14 +54,8 @@ Cell[BoxData[
   3.8290177886257534`*^9, 3.8290177889172516`*^9}, {3.829017825472681*^9, 
   3.8290178318116426`*^9}, {3.8290179085961337`*^9, 3.8290179087340956`*^9}, {
   3.8290179477755456`*^9, 3.8290179485602007`*^9}, {3.829020671605415*^9, 
-  3.8290206722211995`*^9}},
- CellLabel->"In[37]:=",ExpressionUUID->"a90f37b3-f7f7-4cc6-a790-37dea597ad9e"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"$Channel", "@", 
-   RowBox[{"allNotesOff", "[", "]"}]}], ";"}]], "Input",
- CellLabel->"In[75]:=",ExpressionUUID->"de7c05bc-5521-4a51-9aa7-60a33f173a89"],
+  3.8290206722211995`*^9}, {3.829189543917426*^9, 3.8291895515617156`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"a90f37b3-f7f7-4cc6-a790-37dea597ad9e"],
 
 Cell[BoxData[
  RowBox[{
@@ -68,15 +64,16 @@ Cell[BoxData[
  CellChangeTimes->{
   3.8290179526269865`*^9, {3.8290217675114665`*^9, 3.8290217703124857`*^9}, {
    3.8290218885543737`*^9, 3.829021890073333*^9}, {3.8290228597892847`*^9, 
-   3.829022876454204*^9}},
- CellLabel->"In[79]:=",ExpressionUUID->"52caf788-dc38-401b-a815-5373dc0a4702"],
+   3.829022876454204*^9}, {3.8291894486766596`*^9, 
+   3.8291894578920493`*^9}},ExpressionUUID->"52caf788-dc38-401b-a815-\
+5373dc0a4702"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"synth", "@", 
    RowBox[{"close", "[", "]"}]}], ";"}]], "Input",
  CellChangeTimes->{{3.829020283913557*^9, 3.829020294255699*^9}},
- CellLabel->"In[34]:=",ExpressionUUID->"84ff5693-cacf-4e44-b295-547e94c103c4"],
+ CellLabel->"In[1]:=",ExpressionUUID->"84ff5693-cacf-4e44-b295-547e94c103c4"],
 
 Cell[CellGroupData[{
 
@@ -593,175 +590,182 @@ Cell[BoxData[
    3.8290225683815174`*^9}, {3.829022602631977*^9, 3.829022622746606*^9}, {
    3.829022730207048*^9, 3.8290228416481*^9}, {3.8290245238222613`*^9, 
    3.829024616218278*^9}},
- CellLabel->"In[94]:=",ExpressionUUID->"c8a0d00a-9f55-45c1-a4d9-cbd3989803fb"],
+ CellLabel->"In[6]:=",ExpressionUUID->"c8a0d00a-9f55-45c1-a4d9-cbd3989803fb"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{foo`lights$$ = True, foo`shownotes$$ = True, 
-    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+   DynamicModuleBox[{$CellContext`lights$$ = True, $CellContext`shownotes$$ = 
+    True, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[foo`lights$$], False, "light keys"}, {True, False}}, {{
-       Hold[foo`shownotes$$], False, "show notes"}, {True, False}}}, 
+       Hold[$CellContext`lights$$], False, "light keys"}, {True, False}}, {{
+       Hold[$CellContext`shownotes$$], False, "show notes"}, {True, False}}}, 
     Typeset`size$$ = {616., {97.35000000000001, 103.35000000000001`}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
-      "Variables" :> {foo`lights$$ = False, foo`shownotes$$ = False}, 
-      "ControllerVariables" :> {}, 
+      "Variables" :> {$CellContext`lights$$ = False, $CellContext`shownotes$$ = 
+        False}, "ControllerVariables" :> {}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, 
-      "Body" :> (foo`scale = 2; 
-       foo`notes = {
-         "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"}; 
-       foo`toPitch[
-          Pattern[foo`note, 
+      "Body" :> ($CellContext`scale = 
+        2; $CellContext`notes = {
+         "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", 
+          "B"}; $CellContext`toPitch[
+          Pattern[$CellContext`note, 
            Blank[]], 
-          Pattern[foo`oct, 
+          Pattern[$CellContext`oct, 
            Blank[]]] := (First[
             First[
-             Position[foo`notes, foo`note]]] - 1) + foo`oct 12; foo`whitekey[
-          Pattern[foo`note$, 
+             Position[$CellContext`notes, $CellContext`note]]] - 
+          1) + $CellContext`oct 12; $CellContext`whitekey[
+          Pattern[$CellContext`note$, 
            Blank[]], 
-          Pattern[foo`oct$, 
+          Pattern[$CellContext`oct$, 
            Blank[]]] := Mouseover[
           Graphics[{{
              EdgeForm[], White, 
              Rectangle[{0, 0}, {1, 2}]}, {
              Line[{{0, 2}, {0, 0}, {1, 0}, {1, 2}}]}, 
-            If[foo`shownotes$$, 
+            If[$CellContext`shownotes$$, 
              Text[
               Style[
-               StringJoin[foo`note$, 
-                ToString[foo`oct$]], 10, "Label"], {0.5, 1}], {}]}, 
-           ImageSize -> {22 foo`scale, 41 foo`scale}, 
+               StringJoin[$CellContext`note$, 
+                ToString[$CellContext`oct$]], 10, "Label"], {0.5, 1}], {}]}, 
+           ImageSize -> {22 $CellContext`scale, 41 $CellContext`scale}, 
            PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 0], 
           EventHandler[
            Dynamic[
             Graphics[{{
                EdgeForm[], 
-               If[foo`lights$$, 
+               If[$CellContext`lights$$, 
                 Lighter[
-                 Switch[
-                 foo`note$, "C", Red, "D", Orange, "E", Yellow, "F", Green, 
-                  "G", Cyan, "A", Blue, "B", Purple], foo`oct$/10], White], 
+                 
+                 Switch[$CellContext`note$, "C", Red, "D", Orange, "E", 
+                  Yellow, "F", Green, "G", Cyan, "A", Blue, "B", 
+                  Purple], $CellContext`oct$/10], White], 
                Rectangle[{0, 
-                 If[foo`dwn, 0.15, 0]}, {1, 2}]}, 
+                 If[$CellContext`dwn, 0.15, 0]}, {1, 2}]}, 
               Line[{{0, 2}, {0, 
-                 If[foo`dwn, 0.15, 0]}, {1, 
-                 If[foo`dwn, 0.15, 0]}, {1, 2}}], 
-              If[foo`shownotes$$, 
+                 If[$CellContext`dwn, 0.15, 0]}, {1, 
+                 If[$CellContext`dwn, 0.15, 0]}, {1, 2}}], 
+              If[$CellContext`shownotes$$, 
                Text[
                 Style[
-                 StringJoin[foo`note$, 
-                  ToString[foo`oct$]], 
-                 If[foo`dwn, 9, 10], "Label"], {0.5, 
-                 If[foo`dwn, 1.1, 1]}], {}]}, 
-             ImageSize -> {22 foo`scale, 41 foo`scale}, 
+                 StringJoin[$CellContext`note$, 
+                  ToString[$CellContext`oct$]], 
+                 If[$CellContext`dwn, 9, 10], "Label"], {0.5, 
+                 If[$CellContext`dwn, 1.1, 1]}], {}]}, 
+             ImageSize -> {22 $CellContext`scale, 41 $CellContext`scale}, 
              PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 0]], {
-           "MouseDown" :> (foo`dwn = True; foo`$Channel[
-               foo`noteOn[
-                foo`toPitch[foo`note$, foo`oct$], 80]]), 
-            "MouseUp" :> (foo`dwn = False; foo`$Channel[
-               foo`allNotesOff[]])}]]; foo`space[
-          Pattern[foo`wd, 
+           "MouseDown" :> ($CellContext`dwn = True; $CellContext`$Channel[
+               $CellContext`noteOn[
+                $CellContext`toPitch[$CellContext`note$, $CellContext`oct$], 
+                80]]), "MouseUp" :> ($CellContext`dwn = 
+              False; $CellContext`$Channel[
+               $CellContext`allNotesOff[]])}]]; $CellContext`space[
+          Pattern[$CellContext`wd, 
            Blank[]]] := Graphics[{White, 
-           Rectangle[{0, 0}, {foo`wd, 1}]}, 
-          ImageSize -> {foo`wd foo`scale, Automatic}, 
-          PlotRange -> {{0, 0}, {2.5, 5}}, ImageMargins -> 0]; 
-       foo`vert := Graphics[
+           Rectangle[{0, 0}, {$CellContext`wd, 1}]}, 
+          ImageSize -> {$CellContext`wd $CellContext`scale, Automatic}, 
+          PlotRange -> {{0, 0}, {2.5, 5}}, ImageMargins -> 
+          0]; $CellContext`vert := Graphics[
           Line[{{0, 0}, {0, 1}}], PlotRange -> {{-0.001, 0.001}, {0, 1}}, 
-          ImageSize -> {2 foo`scale, 60 foo`scale}, ImageMargins -> 0]; 
-       foo`blackkey[
-          Pattern[foo`note$, 
+          ImageSize -> {2 $CellContext`scale, 60 $CellContext`scale}, 
+          ImageMargins -> 0]; $CellContext`blackkey[
+          Pattern[$CellContext`note$, 
            Blank[]], 
-          Pattern[foo`oct$, 
+          Pattern[$CellContext`oct$, 
            Blank[]]] := Mouseover[
           Graphics[{{
              EdgeForm[Black], Black, 
              Rectangle[{0, 2.5}, {0.5, 5}]}, 
-            If[foo`shownotes$$, 
+            If[$CellContext`shownotes$$, 
              Text[
               Style[
-               StringJoin[foo`note$, " ", 
-                ToString[foo`oct$]], 10, White, "Label"], {0.25, 3.5}, {0, 
-              0}, {0, 1}], {}]}, ImageSize -> {12 foo`scale, 60 foo`scale}, 
+               StringJoin[$CellContext`note$, " ", 
+                ToString[$CellContext`oct$]], 10, White, "Label"], {0.25, 
+              3.5}, {0, 0}, {0, 1}], {}]}, 
+           ImageSize -> {12 $CellContext`scale, 60 $CellContext`scale}, 
            PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0], 
           EventHandler[
            Dynamic[
             Graphics[{{
                EdgeForm[Black], 
-               If[foo`lights$$, 
+               If[$CellContext`lights$$, 
                 Darker[
-                 Switch[
-                 foo`note$, "C#", Red, "D#", Orange, "F#", Green, "G#", Blue, 
-                  "A#", Purple], 0.5], Black], 
+                 
+                 Switch[$CellContext`note$, "C#", Red, "D#", Orange, "F#", 
+                  Green, "G#", Blue, "A#", Purple], 0.5], Black], 
                Rectangle[{
-                 If[foo`dwn, 0.05, 0], 2.5}, {
-                 If[foo`dwn, 0.4, 0.5], 5}], 
-               If[foo`shownotes$$, 
+                 If[$CellContext`dwn, 0.05, 0], 2.5}, {
+                 If[$CellContext`dwn, 0.4, 0.5], 5}], 
+               If[$CellContext`shownotes$$, 
                 Text[
                  Style[
-                  StringJoin[foo`note$, " ", 
-                   ToString[foo`oct$]], 
-                  If[foo`dwn, 9, 10], White, "Label"], {0.25, 3.5}, {0, 0}, {
-                 0, 1}], {}]}}, ImageSize -> {12 foo`scale, 60 foo`scale}, 
+                  StringJoin[$CellContext`note$, " ", 
+                   ToString[$CellContext`oct$]], 
+                  If[$CellContext`dwn, 9, 10], White, "Label"], {0.25, 3.5}, {
+                 0, 0}, {0, 1}], {}]}}, 
+             ImageSize -> {12 $CellContext`scale, 60 $CellContext`scale}, 
              PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0]], {
-           "MouseDown" :> (foo`dwn = True; foo`$Channel[
-               foo`noteOn[
-                foo`toPitch[foo`note$, foo`oct$], 80]]), 
-            "MouseUp" :> (foo`dwn = False; foo`$Channel[
-               foo`allNotesOff[]])}]]; foo`whiteset[
-          Pattern[foo`oct, 
+           "MouseDown" :> ($CellContext`dwn = True; $CellContext`$Channel[
+               $CellContext`noteOn[
+                $CellContext`toPitch[$CellContext`note$, $CellContext`oct$], 
+                80]]), "MouseUp" :> ($CellContext`dwn = 
+              False; $CellContext`$Channel[
+               $CellContext`allNotesOff[]])}]]; $CellContext`whiteset[
+          Pattern[$CellContext`oct, 
            Blank[]]] := Grid[{
            Flatten[
-            Map[
-            foo`whitekey[#, foo`oct]& , {
-             "C", "D", "E", "F", "G", "A", "B"}]]}, Spacings -> 0]; 
-       foo`blackset[
-          Pattern[foo`oct, 
-           Blank[]]] := Grid[{{foo`vert, 
-            foo`space[15], 
-            foo`blackkey["C#", foo`oct], 
-            foo`space[10], 
-            foo`blackkey["D#", foo`oct], 
-            foo`space[14.01], foo`vert, 
-            foo`space[0.01], foo`vert, 
-            foo`space[14.5], 
-            foo`blackkey["F#", foo`oct], 
-            foo`space[11], 
-            foo`blackkey["G#", foo`oct], 
-            foo`space[10.5], 
-            foo`blackkey["A#", foo`oct], 
-            foo`space[14], foo`vert}}, Spacings -> -0.04, Alignment -> Left]; 
-       foo`keyboardsplit[
-          Pattern[foo`octinit, 
+            
+            Map[$CellContext`whitekey[#, $CellContext`oct]& , {
+             "C", "D", "E", "F", "G", "A", "B"}]]}, Spacings -> 
+          0]; $CellContext`blackset[
+          Pattern[$CellContext`oct, 
+           Blank[]]] := Grid[{{$CellContext`vert, 
+            $CellContext`space[15], 
+            $CellContext`blackkey["C#", $CellContext`oct], 
+            $CellContext`space[10], 
+            $CellContext`blackkey["D#", $CellContext`oct], 
+            $CellContext`space[14.01], $CellContext`vert, 
+            $CellContext`space[0.01], $CellContext`vert, 
+            $CellContext`space[14.5], 
+            $CellContext`blackkey["F#", $CellContext`oct], 
+            $CellContext`space[11], 
+            $CellContext`blackkey["G#", $CellContext`oct], 
+            $CellContext`space[10.5], 
+            $CellContext`blackkey["A#", $CellContext`oct], 
+            $CellContext`space[14], $CellContext`vert}}, Spacings -> -0.04, 
+          Alignment -> Left]; $CellContext`keyboardsplit[
+          Pattern[$CellContext`octinit, 
            Blank[]]] := Grid[{
            Flatten[
             Table[
-             foo`blackset[foo`i], {foo`i, foo`octinit, foo`octinit + 1}]], 
+             $CellContext`blackset[$CellContext`i], {$CellContext`i, \
+$CellContext`octinit, $CellContext`octinit + 1}]], 
            Flatten[
             Table[
-             foo`whiteset[foo`i], {foo`i, foo`octinit, foo`octinit + 1}]]}, 
+             $CellContext`whiteset[$CellContext`i], {$CellContext`i, \
+$CellContext`octinit, $CellContext`octinit + 1}]]}, 
           Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
           Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]; Deploy[
-         foo`keyboardsplit[4]]), 
-      "Specifications" :> {{{foo`lights$$, False, "light keys"}, {
-         True, False}}, {{foo`shownotes$$, False, "show notes"}, {
+         $CellContext`keyboardsplit[4]]), 
+      "Specifications" :> {{{$CellContext`lights$$, False, "light keys"}, {
+         True, False}}, {{$CellContext`shownotes$$, False, "show notes"}, {
          True, False}}}, 
       "Options" :> {
-       TrackedSymbols :> {
-         foo`begoct, foo`endoct, foo`lights$$, foo`shownotes$$}}, 
-      "DefaultOptions" :> {}],
+       TrackedSymbols :> {$CellContext`begoct, $CellContext`endoct, \
+$CellContext`lights$$, $CellContext`shownotes$$}}, "DefaultOptions" :> {}],
      ImageSizeCache->{662., {144., 150.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
-    Initialization:>({foo`dwn = False}; Typeset`initDone$$ = True),
+    Initialization:>({$CellContext`dwn = False}; Typeset`initDone$$ = True),
     SynchronousInitialization->True,
     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
     UnsavedVariables:>{Typeset`initDone$$},
@@ -788,8 +792,9 @@ Cell[BoxData[
    3.8290224959452105`*^9, {3.829022558013509*^9, 3.8290225703235292`*^9}, {
    3.829022607457073*^9, 3.829022631662648*^9}, {3.8290227386292324`*^9, 
    3.8290228422171006`*^9}, {3.829022902880274*^9, 3.8290229034223022`*^9}, {
-   3.8290250319091434`*^9, 3.8290250393902445`*^9}},
- CellLabel->"Out[94]=",ExpressionUUID->"6a7b7ddf-fe8f-4756-b51d-d2df8a5fa2ea"]
+   3.8290250319091434`*^9, 3.8290250393902445`*^9}, {3.8291893372934875`*^9, 
+   3.82918934391755*^9}},
+ CellLabel->"Out[6]=",ExpressionUUID->"2aeae3eb-dcde-4064-a37a-77260bdf3c4d"]
 }, Open  ]]
 },
 WindowSize->{1057.3333333333333`, 536.3333333333334},
@@ -811,14 +816,13 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 246, 6, 28, "Input",ExpressionUUID->"c72aff80-f4fe-4efc-a55b-fbc5c74effcd"],
-Cell[807, 28, 1091, 27, 106, "Input",ExpressionUUID->"a90f37b3-f7f7-4cc6-a790-37dea597ad9e"],
-Cell[1901, 57, 187, 4, 28, "Input",ExpressionUUID->"de7c05bc-5521-4a51-9aa7-60a33f173a89"],
-Cell[2091, 63, 396, 8, 28, "Input",ExpressionUUID->"52caf788-dc38-401b-a815-5373dc0a4702"],
-Cell[2490, 73, 244, 5, 28, "Input",ExpressionUUID->"84ff5693-cacf-4e44-b295-547e94c103c4"],
+Cell[558, 20, 264, 5, 28, "Input",ExpressionUUID->"c72aff80-f4fe-4efc-a55b-fbc5c74effcd"],
+Cell[825, 27, 1237, 30, 125, "Input",ExpressionUUID->"a90f37b3-f7f7-4cc6-a790-37dea597ad9e"],
+Cell[2065, 59, 428, 9, 28, "Input",ExpressionUUID->"52caf788-dc38-401b-a815-5373dc0a4702"],
+Cell[2496, 70, 243, 5, 28, "Input",ExpressionUUID->"84ff5693-cacf-4e44-b295-547e94c103c4"],
 Cell[CellGroupData[{
-Cell[2759, 82, 21505, 513, 1064, "Input",ExpressionUUID->"c8a0d00a-9f55-45c1-a4d9-cbd3989803fb"],
-Cell[24267, 597, 8849, 194, 313, "Output",ExpressionUUID->"6a7b7ddf-fe8f-4756-b51d-d2df8a5fa2ea"]
+Cell[2764, 79, 21504, 513, 1064, "Input",ExpressionUUID->"c8a0d00a-9f55-45c1-a4d9-cbd3989803fb"],
+Cell[24271, 594, 10143, 202, 313, "Output",ExpressionUUID->"2aeae3eb-dcde-4064-a37a-77260bdf3c4d"]
 }, Open  ]]
 }
 ]
