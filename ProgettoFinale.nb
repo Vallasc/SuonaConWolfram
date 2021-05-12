@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    331474,       5701]
-NotebookOptionsPosition[    329994,       5668]
-NotebookOutlinePosition[    330357,       5684]
-CellTagsIndexPosition[    330314,       5681]
+NotebookDataLength[    327242,       5564]
+NotebookOptionsPosition[    325573,       5526]
+NotebookOutlinePosition[    325935,       5542]
+CellTagsIndexPosition[    325892,       5539]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,15 +21,78 @@ Notebook[{
 
 Cell[CellGroupData[{
 Cell[TextData[{
- StyleBox["SUONA CON WOLFRAM\n\n", "Title"],
- StyleBox["FOTO 1 , FOTO 2 , FOTO 3 , FOTO 4", "Text"],
+ StyleBox["SUONA CON WOLFRAM", "Title",
+  FontSize->72],
+ StyleBox["\n\n", "Title"],
+ StyleBox["FOTO 1 , FOTO 2 , FOTO 3 , FOTO 4\n", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["Francesca Raffo, Angelopriya Rosica, Giacomo Vallorani, Riccardo \
+Baratin\n   (anno 1, curriculum B) (anno 1, curriculum B) (anno 1, curriculum \
+A) (anno 1, curriculum A)",
+  FontColor->GrayLevel[0]],
  StyleBox["\n", "Title"],
- "Francesca Raffo, Angelopriya Rosica, Giacomo Vallorani, Riccardo Baratin\n\
-(anno 1, curriculum B) (anno 1, curriculum B) (anno 1, curriculum A) (anno 1, \
-curriculum A)",
- StyleBox["\n", "Title"],
- StyleBox["MC 2020/ 2021", "Subsection"],
- StyleBox["\n", "Title"],
+ StyleBox[" ", "Title",
+  FontColor->GrayLevel[0]],
+ StyleBox["MC 2020/ 2021", "Subsection",
+  FontColor->GrayLevel[0]],
+ StyleBox["\n ", "Subsection"]
+}], "Subtitle",
+ InitializationCell->True,
+ CellChangeTimes->{{3.829190356456286*^9, 3.8291903578381567`*^9}, {
+   3.8291905448476734`*^9, 3.829190569955675*^9}, {3.8291906796812024`*^9, 
+   3.8291907229532413`*^9}, 3.829190763479784*^9, {3.829190796998742*^9, 
+   3.8291908661939363`*^9}, {3.829190901903012*^9, 3.829191099527988*^9}, {
+   3.8291911393755026`*^9, 3.8291911698223963`*^9}, {3.829191201791951*^9, 
+   3.829191271759014*^9}, {3.8291913182310333`*^9, 3.829191332169982*^9}, {
+   3.8291913879459887`*^9, 3.829191533063882*^9}, {3.8291916090377665`*^9, 
+   3.8291916210767365`*^9}, 3.8291917782892637`*^9, {3.829191812212474*^9, 
+   3.829191815041984*^9}, {3.829191886650277*^9, 3.8291919126501193`*^9}, {
+   3.8291919866589885`*^9, 3.8291920254872847`*^9}, {3.8291922855460997`*^9, 
+   3.8291923145790544`*^9}, 3.829192451748885*^9, {3.829192590586929*^9, 
+   3.829192734425394*^9}, 3.8291928342686925`*^9, {3.8291928659956903`*^9, 
+   3.8291929048819866`*^9}, {3.829193268450527*^9, 3.8291933224114304`*^9}, {
+   3.829193380764604*^9, 3.8291934748853416`*^9}, {3.829193543250107*^9, 
+   3.829193544547143*^9}, {3.8291935924968596`*^9, 3.829193598828166*^9}, 
+   3.829193723559558*^9, {3.8291938833166428`*^9, 3.8291938845471425`*^9}, {
+   3.829194019710082*^9, 3.8291940456201973`*^9}, {3.8291943708189354`*^9, 
+   3.829194417108671*^9}, {3.8291944820001802`*^9, 3.829194515583145*^9}, {
+   3.8291945949100227`*^9, 3.8291946776070323`*^9}, {3.8291947817596073`*^9, 
+   3.8291948391273665`*^9}, {3.8291957578977375`*^9, 3.829195935411495*^9}, {
+   3.8291961828320293`*^9, 3.829196183937214*^9}, {3.8291962576711135`*^9, 
+   3.8291962576731124`*^9}, {3.8291962999721184`*^9, 3.829196411982339*^9}, {
+   3.829196462050992*^9, 3.8291965240503063`*^9}, {3.8291968405300775`*^9, 
+   3.829196846732527*^9}, {3.8291968816653056`*^9, 3.8291969069532285`*^9}, 
+   3.829197016441157*^9, {3.8291971818109436`*^9, 3.829197186402748*^9}, {
+   3.829197444434742*^9, 3.8291974580228343`*^9}, {3.829620106165867*^9, 
+   3.829620204237957*^9}, {3.8296203995565567`*^9, 3.829620401510304*^9}, 
+   3.829620628759529*^9, {3.829620760006586*^9, 3.8296207628864546`*^9}, 
+   3.829621941856305*^9, {3.8296259582906322`*^9, 3.8296259826730385`*^9}, {
+   3.829626060345101*^9, 3.8296261733903685`*^9}, {3.8296262232687626`*^9, 
+   3.829626497402444*^9}, {3.8296265339236755`*^9, 3.829626790309347*^9}, {
+   3.829626821603837*^9, 3.8296268667965965`*^9}, {3.8296269023924336`*^9, 
+   3.8296269887876577`*^9}, {3.829627158124605*^9, 3.8296274488381634`*^9}, {
+   3.829627484780017*^9, 3.8296276008431683`*^9}, {3.829627675585598*^9, 
+   3.8296276798554*^9}, {3.829627769041623*^9, 3.8296277783585434`*^9}, {
+   3.8296278198237524`*^9, 3.829627825907797*^9}, {3.829627906544492*^9, 
+   3.829627999922123*^9}, {3.8296284763378716`*^9, 3.8296285152118855`*^9}, {
+   3.829629079441677*^9, 3.8296292221275396`*^9}, {3.829629266404993*^9, 
+   3.8296293035187364`*^9}, {3.8296293503015637`*^9, 
+   3.8296293847893643`*^9}, {3.8296294563914785`*^9, 
+   3.8296295265028543`*^9}, {3.8296295714603977`*^9, 
+   3.8296297063820906`*^9}, {3.829794887925768*^9, 3.82979490729436*^9}, {
+   3.829795702587922*^9, 3.829795706084727*^9}, 3.829797234135888*^9, {
+   3.8297974102795067`*^9, 3.8297974145457277`*^9}, {3.8297974504616747`*^9, 
+   3.82979747614507*^9}, {3.829801903873741*^9, 3.8298019047047434`*^9}, {
+   3.8298053607699976`*^9, 3.8298053782515526`*^9}, 3.829806886666275*^9, {
+   3.829807014942298*^9, 3.8298072005023155`*^9}, {3.8298073791416016`*^9, 
+   3.829807387990775*^9}},
+ TextAlignment->Center,ExpressionUUID->"18690890-25b2-4038-963d-bd95f41df185"],
+
+Cell[TextData[{
+ StyleBox["\n", "Text"],
+ StyleBox["(*Settiamo il Path e carichiamo il pacchetto *)\nSetDirectory \
+[NotebookDirectory []];\n<< pacchettoLOG.m", "Text",
+  FontColor->GrayLevel[0]],
  StyleBox["\n", "Text"]
 }], "Subtitle",
  InitializationCell->True,
@@ -78,25 +141,36 @@ curriculum A)",
    3.829795702587922*^9, 3.829795706084727*^9}, 3.829797234135888*^9, {
    3.8297974102795067`*^9, 3.8297974145457277`*^9}, {3.8297974504616747`*^9, 
    3.82979747614507*^9}, {3.829801903873741*^9, 3.8298019047047434`*^9}, {
-   3.8298053607699976`*^9, 
-   3.8298053782515526`*^9}},ExpressionUUID->"18690890-25b2-4038-963d-\
-bd95f41df185"],
+   3.8298053607699976`*^9, 3.8298053782515526`*^9}, 3.829806886666275*^9, {
+   3.829807014942298*^9, 
+   3.829807202111151*^9}},ExpressionUUID->"1ba52b7d-4cd7-4e90-8537-\
+eb288605617f"],
 
 Cell[BoxData[
- RowBox[{"SetDirectory", "[", 
-  RowBox[{
-  "NotebookDirectory", "[", "\"\<C:]];\n<<\[IndentingNewLine]\>"}]}]], "Input",\
-
+ RowBox[{"Import", " ", "[", 
+  "\"\<C:\\\\Users\\\\Angelo\\\\Desktop\\\\Matematica \
+Computazionale\\\\SuonaConWolfram-master\\\\SuonaConWolfram.wl\>\"", 
+  "]"}]], "Input",
  CellChangeTimes->{{3.82980538685995*^9, 3.8298053907893157`*^9}, {
   3.829805483900635*^9, 3.829805512729639*^9}, {3.829805610940241*^9, 
-  3.829805632007228*^9}, {3.8298056751312284`*^9, 3.829805685871358*^9}},
- EmphasizeSyntaxErrors->
-  True,ExpressionUUID->"723e4d76-2c84-4eda-a2e8-65d7aaba9896"]
+  3.829805632007228*^9}, {3.8298056751312284`*^9, 3.829805685871358*^9}, {
+  3.829806017506466*^9, 3.8298060462552843`*^9}, {3.829806107078579*^9, 
+  3.829806187016755*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"723e4d76-2c84-4eda-a2e8-65d7aaba9896"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell[TextData[StyleBox["", "Text"]], "Subtitle",
+Cell[TextData[{
+ StyleBox["\n", "Title"],
+ StyleBox["Prima di tutto, dal men\[UGrave] orizzontale in alto, eseguire:", 
+  "Section"],
+ "\n",
+ StyleBox["Evaluation > Evaluate Notebook", "Subsection"],
+ StyleBox["\n", "Title"],
+ StyleBox["(Mettere screen dell'evaluation)", "Text"],
+ StyleBox["\n\n", "Title"]
+}], "Subtitle",
  InitializationCell->True,
  CellChangeTimes->{{3.829190356456286*^9, 3.8291903578381567`*^9}, {
    3.8291905448476734`*^9, 3.829190569955675*^9}, {3.8291906796812024`*^9, 
@@ -143,19 +217,11 @@ Cell[TextData[StyleBox["", "Text"]], "Subtitle",
    3.829795702587922*^9, 3.829795706084727*^9}, 3.829797234135888*^9, {
    3.8297974102795067`*^9, 3.8297974145457277`*^9}, {3.8297974504616747`*^9, 
    3.82979747614507*^9}, {3.829801903873741*^9, 3.8298019047047434`*^9}, 
-   3.8298053607699976`*^9},ExpressionUUID->"39060bb3-dc19-4361-b8e6-\
-d312a5f18ad4"],
+   3.8298053722629194`*^9, {3.8298072383495884`*^9, 
+   3.829807277410873*^9}},ExpressionUUID->"e9f3eabe-e1d6-4d00-b1ec-\
+a3eb9141a860"],
 
 Cell[TextData[{
- StyleBox["\n", "Text"],
- StyleBox["\n\n", "Title"],
- StyleBox["Prima di tutto, dal men\[UGrave] orizzontale in alto, eseguire:", 
-  "Section"],
- "\n",
- StyleBox["Evaluation > Evaluate Notebook", "Subsection"],
- StyleBox["\n", "Title"],
- StyleBox["(Mettere screen dell'evaluation)", "Text"],
- StyleBox["\n\n", "Title"],
  StyleBox["INDICE",
   FontSize->36,
   FontColor->RGBColor[1, 0, 0]],
@@ -183,7 +249,60 @@ suona la traccia MIDI autonomamente.\n", "Subsubsection"],
  StyleBox["4.0 Bibliografia e Sitografia.\n", "Subsubsection"],
  StyleBox["Sezione 5: ", "Subsubsection",
   FontSize->24],
- StyleBox["\n5.0 Lavoro futuro.\n \n \n \n \n", "Subsubsection"],
+ StyleBox["\n5.0 Lavoro futuro.\n ", "Subsubsection"]
+}], "Subtitle",
+ InitializationCell->True,
+ CellChangeTimes->{{3.829190356456286*^9, 3.8291903578381567`*^9}, {
+   3.8291905448476734`*^9, 3.829190569955675*^9}, {3.8291906796812024`*^9, 
+   3.8291907229532413`*^9}, 3.829190763479784*^9, {3.829190796998742*^9, 
+   3.8291908661939363`*^9}, {3.829190901903012*^9, 3.829191099527988*^9}, {
+   3.8291911393755026`*^9, 3.8291911698223963`*^9}, {3.829191201791951*^9, 
+   3.829191271759014*^9}, {3.8291913182310333`*^9, 3.829191332169982*^9}, {
+   3.8291913879459887`*^9, 3.829191533063882*^9}, {3.8291916090377665`*^9, 
+   3.8291916210767365`*^9}, 3.8291917782892637`*^9, {3.829191812212474*^9, 
+   3.829191815041984*^9}, {3.829191886650277*^9, 3.8291919126501193`*^9}, {
+   3.8291919866589885`*^9, 3.8291920254872847`*^9}, {3.8291922855460997`*^9, 
+   3.8291923145790544`*^9}, 3.829192451748885*^9, {3.829192590586929*^9, 
+   3.829192734425394*^9}, 3.8291928342686925`*^9, {3.8291928659956903`*^9, 
+   3.8291929048819866`*^9}, {3.829193268450527*^9, 3.8291933224114304`*^9}, {
+   3.829193380764604*^9, 3.8291934748853416`*^9}, {3.829193543250107*^9, 
+   3.829193544547143*^9}, {3.8291935924968596`*^9, 3.829193598828166*^9}, 
+   3.829193723559558*^9, {3.8291938833166428`*^9, 3.8291938845471425`*^9}, {
+   3.829194019710082*^9, 3.8291940456201973`*^9}, {3.8291943708189354`*^9, 
+   3.829194417108671*^9}, {3.8291944820001802`*^9, 3.829194515583145*^9}, {
+   3.8291945949100227`*^9, 3.8291946776070323`*^9}, {3.8291947817596073`*^9, 
+   3.8291948391273665`*^9}, {3.8291957578977375`*^9, 3.829195935411495*^9}, {
+   3.8291961828320293`*^9, 3.829196183937214*^9}, {3.8291962576711135`*^9, 
+   3.8291962576731124`*^9}, {3.8291962999721184`*^9, 3.829196411982339*^9}, {
+   3.829196462050992*^9, 3.8291965240503063`*^9}, {3.8291968405300775`*^9, 
+   3.829196846732527*^9}, {3.8291968816653056`*^9, 3.8291969069532285`*^9}, 
+   3.829197016441157*^9, {3.8291971818109436`*^9, 3.829197186402748*^9}, {
+   3.829197444434742*^9, 3.8291974580228343`*^9}, {3.829620106165867*^9, 
+   3.829620204237957*^9}, {3.8296203995565567`*^9, 3.829620401510304*^9}, 
+   3.829620628759529*^9, {3.829620760006586*^9, 3.8296207628864546`*^9}, 
+   3.829621941856305*^9, {3.8296259582906322`*^9, 3.8296259826730385`*^9}, {
+   3.829626060345101*^9, 3.8296261733903685`*^9}, {3.8296262232687626`*^9, 
+   3.829626497402444*^9}, {3.8296265339236755`*^9, 3.829626790309347*^9}, {
+   3.829626821603837*^9, 3.8296268667965965`*^9}, {3.8296269023924336`*^9, 
+   3.8296269887876577`*^9}, {3.829627158124605*^9, 3.8296274488381634`*^9}, {
+   3.829627484780017*^9, 3.8296276008431683`*^9}, {3.829627675585598*^9, 
+   3.8296276798554*^9}, {3.829627769041623*^9, 3.8296277783585434`*^9}, {
+   3.8296278198237524`*^9, 3.829627825907797*^9}, {3.829627906544492*^9, 
+   3.829627999922123*^9}, {3.8296284763378716`*^9, 3.8296285152118855`*^9}, {
+   3.829629079441677*^9, 3.8296292221275396`*^9}, {3.829629266404993*^9, 
+   3.8296293035187364`*^9}, {3.8296293503015637`*^9, 
+   3.8296293847893643`*^9}, {3.8296294563914785`*^9, 
+   3.8296295265028543`*^9}, {3.8296295714603977`*^9, 
+   3.8296297063820906`*^9}, {3.829794887925768*^9, 3.82979490729436*^9}, {
+   3.829795702587922*^9, 3.829795706084727*^9}, 3.829797234135888*^9, {
+   3.8297974102795067`*^9, 3.8297974145457277`*^9}, {3.8297974504616747`*^9, 
+   3.82979747614507*^9}, {3.829801903873741*^9, 3.8298019047047434`*^9}, 
+   3.8298053722629194`*^9, {3.8298072383495884`*^9, 
+   3.829807239226574*^9}},ExpressionUUID->"98238ea6-dd90-4ec0-a81d-\
+018cecef54ae"],
+
+Cell[TextData[{
+ StyleBox["\n \n \n \n", "Subsubsection"],
  StyleBox["Sezione 1:", "Subsubsection",
   FontSize->24],
  "\n",
@@ -203,12 +322,24 @@ essere suonato o tramite input da tastiera o attraverso il mouse. Si compone \
 di due ottave ed \[EGrave] possibile mostrare su di esso le note \
 corrispondenti ai vari tasti tramite la checkbox \"show notes\".\nIl target \
 del nostro notebook \[EGrave] un \"pubblico novizio\" il quale si sta \
-affacciando per la prima volta nel mondo della musica. \n", "Text"],
- "Ma per capire meglio, suona con noi, ",
- StyleBox["suona con", "Section"],
+affacciando per la prima volta nel mondo della musica. \n", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["Ma per capire meglio, suona con noi,",
+  FontColor->GrayLevel[0]],
  " ",
- StyleBox["Wolfram", "Section"],
- "!\n\n",
+ StyleBox["suona con", "Section",
+  FontSize->36,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" ",
+  FontSize->36,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["Wolfram", "Section",
+  FontSize->36,
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox["!",
+  FontSize->36,
+  FontColor->RGBColor[1, 0, 0]],
+ "\n\n",
  StyleBox["1.2 Introduzione alla musica: Le note musicali e le ottave\n", 
   "Subsubsection"],
  StyleBox["La musica (dal sostantivo greco \[Mu]\[Omicron]\[Upsilon]\[Sigma]\
@@ -247,10 +378,18 @@ dagli altri. La stessa cosa accade nella musica che \[EGrave] composta da \
 diversi suoni, dove ognuno ha un suo preciso nome per distinguerlo dagli \
 altri. Il nome a questi suoni non \[EGrave] dato a caso ma \[EGrave] \
 costruito in base a precise regole.\nPer cominciare questi suoni si chiamano \
-NOTE (oppure altezze), sono sette e pi\[UGrave] precisamente:  ", "Text"],
+", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["NOTE", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" (oppure altezze), sono sette e pi\[UGrave] precisamente:", "Text",
+  
+  FontColor->GrayLevel[0]],
+ StyleBox["  ", "Text"],
  StyleBox["DO RE MI FA SOL LA SI", "Subsection",
   FontColor->RGBColor[0, 0, 1]],
- StyleBox["\nQueste sette note in successione formano una famiglia chiamata \
+ StyleBox["\n", "Text"],
+ StyleBox["Queste sette note in successione formano una famiglia chiamata \
 ottava, nella musica di queste famiglie ce ne sono sette e sono una di \
 seguito all'altra. Se volete vedere tutte queste famiglie insieme, guardate \
 la tastiera di un pianoforte. Partendo da sinistra abbiamo la prima ottava, \
@@ -264,14 +403,35 @@ l'organo sono gli strumenti per eccellenza che possono vantare di intonare \
 tutti e tre i tipi di registri. \nCome abbiamo gi\[AGrave] specificato nella \
 descrizione del notebook il nostro lavoro \[EGrave] incentrato sul pianoforte \
 , vediamo ora pi\[UGrave] nello specifico cos'\[EGrave] un'ottava in \
-relazione a questo strumento.\n", "Text"],
+relazione a questo strumento.", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["\n", "Text"],
  StyleBox["\n1.3 La tastiera del pianoforte: I tasti bianchi e neri\n", 
   "Subsubsection"],
- StyleBox["La tastiera del pianoforte \[EGrave] formata da tasti bianchi e \
-tasti neri. Osserviamo che i tasti neri si trovano a gruppi di 2 e a gruppi \
-di 3, alternati.\nIl tasto bianco che si trova prima di ogni gruppo di 2 si \
-chiama Do; il tasto bianco che si trova prima del gruppo di 3, si chiama Fa.\n\
-", "Text"],
+ StyleBox["La tastiera del pianoforte \[EGrave] formata da ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["tasti bianchi", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" e ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["tasti neri", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[". Osserviamo che i ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["tasti neri", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" si trovano a gruppi di 2 e a gruppi di 3, alternati.\nIl ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["tasto bianco", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" che si trova prima di ogni gruppo di 2 si chiama Do; il tasto \
+bianco che si trova prima del gruppo di 3, si chiama Fa.", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["\n", "Text"],
  StyleBox["\n", "Subsubsection"],
  Cell[BoxData[
   GraphicsBox[
@@ -382,20 +542,44 @@ iIiIiOg2738A9Jf1uQ==
    ImageSizeRaw->{545, 129},
    PlotRange->{{0., 545.}, {0., 129.}},
    PlotRangePadding->Automatic]], "Input",ExpressionUUID->
-  "def139ce-6267-4606-a527-6ee91b506dc8"],
+  "78ed5644-0b68-4bf4-b23f-428248bb402c"],
  "\n\n",
- StyleBox["Osserviamo che, dal Do al Si ci sono 7 tasti bianchi e 5 tasti \
-neri; in tutto 12 tasti che formano una ottava. Tutta la tastiera del \
-pianoforte  \[EGrave] formata da 7 ottave. L'intervallo di ottava invece \
-\[EGrave] la distanza fra due note vicine dello stesso nome: es. dal  DO al \
-DO successivo; dal RE all'altro RE. \nDi seguito, nell'illustrazione, sono \
-indicate le note ottenibili su di una \"normale\" tastiera moderna partendo \
-dal primo tasto (quello che \[EGrave] stato indicato con la nota DO e che si \
-trova nell'ottava che abbiamo contrassegnato con il numero zero equivalente \
-all'ottava numero uno della tastiera del pianoforte) fino all'ultimo tasto \
-corrispondente alla nota DO dell'ottava numero quattro (la numero cinque \
-della tastiera del pianoforte).\n", "Text"],
- StyleBox["\n", "Subsubsection"],
+ StyleBox["Osserviamo che, dal ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["DO", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" al Si ci sono 7 tasti bianchi e 5 tasti neri; in tutto 12 tasti \
+che formano una ottava. Tutta la tastiera del pianoforte  \[EGrave]  formata \
+da 7 ottave. L'intervallo di ottava invece \[EGrave] la distanza fra due note \
+vicine dello stesso nome: es. dal  ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["DO", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" al ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["DO", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" successivo; dal RE all'altro ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["RE", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[". \nDi seguito, nell'illustrazione, sono indicate le note \
+ottenibili su di una \"normale\" tastiera moderna partendo dal primo tasto \
+(quello che \[EGrave] stato indicato con la ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["nota DO", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" e che si trova nell'ottava che abbiamo contrassegnato con il \
+numero zero equivalente all'ottava numero uno della tastiera del pianoforte) \
+fino all'ultimo tasto corrispondente alla ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["nota DO", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" dell'ottava numero quattro (la numero cinque della tastiera del \
+pianoforte).", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["\n", "Text"],
+ StyleBox["\n            ", "Subsubsection"],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -1752,16 +1936,33 @@ EKMoiqIoiqIoiqIKXv0/OnacXQ==
     BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
     Selectable->False],
    DefaultBaseStyle->"ImageGraphics",
-   ImageMargins->{{42., 0.}, {0., 0.}},
+   ImageMargins->0.,
    ImageSizeRaw->{1627, 551},
    PlotRange->{{0, 1627}, {0, 551}}]], "Input",ExpressionUUID->
-  "e566751c-5d79-4b14-919d-019651328ec5"],
+  "4ad94548-58a5-46fb-a912-88472112ab4d"],
  StyleBox["\n\n", "Subsubsection"],
- StyleBox["Per parlare e capire i tasti neri dobbiamo conoscere le \
-alterazioni musicali. Le alterazioni  sono 5, a noi interessa solo una ovvero \
-il diesis ma a fini didattici le elenchiamo tutte :\n1 - Diesis (#);\n2 - \
-Doppio diesis (##);\n3 - Bemolle (\[Flat]);\n4 - Doppio bemolle (\[Flat]);\n5 \
-- Bequadro (\[Natural]).", "Text"],
+ StyleBox["Per parlare e capire i ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["tasti neri", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" dobbiamo conoscere le ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["alterazioni musicali", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[". Le ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["alterazioni", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox["  sono 5, a noi interessa solo una ovvero il diesis ma a fini \
+didattici le elenchiamo tutte :\n\n", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["1 - Diesis (#);\n2 - Doppio diesis (##);\n3 - Bemolle (\[Flat]);\n\
+4 - Doppio bemolle (\[Flat]);\n5 - Bequadro (\[Natural]).", "Text",
+  FontSize->18,
+  FontColor->GrayLevel[0]],
  StyleBox["\n", "Subsubsection"],
  Cell[BoxData[
   GraphicsBox[
@@ -2091,17 +2292,85 @@ BoPBYDAYDAaDwVAg/D+FgBHT
    ImageSize->{Automatic, 258.31111111111113`},
    ImageSizeRaw->{450, 239},
    PlotRange->{{0, 450}, {0, 239}}]], "Input",ExpressionUUID->
-  "cb63ae9a-1c77-4663-929c-bd1853ef22b8"],
+  "5db3fd34-7576-4ece-9353-6f39d6e5c759"],
  "\n\n",
- StyleBox["In alcune nazioni del mondo le note vengono nominate con le \
-lettere dell'alfabeto latino:\nA B C D E F G  (La Si Do Re Mi Fa Sol).\nPer \
-ricordarle pi\[UGrave] facilmente: la lettera A corrisponde al La e la \
-lettera F al Fa.\nA = LA\nB = SI\nC = DO\nD = RE\nE = MI\nF = FA\nG = SOL\nAi \
-tasti neri corrispondono le note precedute dalle alterazioni.", "Text"],
+ StyleBox["In alcune nazioni del mondo le ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["note", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" vengono nominate con le lettere dell'alfabeto latino:\n", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["A B C D E F G  (La Si Do Re Mi Fa Sol).", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\nPer ricordarle pi\[UGrave] facilmente: la lettera A corrisponde \
+al ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["LA", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" e la lettera F al ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["FA", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[".\n\n", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["A", "Text",
+  FontSize->18,
+  FontColor->GrayLevel[0]],
+ StyleBox[" = LA\n", "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["B", "Text",
+  FontSize->18,
+  FontColor->GrayLevel[0]],
+ StyleBox[" = SI\n", "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["C", "Text",
+  FontSize->18,
+  FontColor->GrayLevel[0]],
+ StyleBox[" = DO\n", "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["D", "Text",
+  FontSize->18,
+  FontColor->GrayLevel[0]],
+ StyleBox[" = RE\n", "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["E", "Text",
+  FontSize->18,
+  FontColor->GrayLevel[0]],
+ StyleBox[" = MI\n", "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["F", "Text",
+  FontSize->18,
+  FontColor->GrayLevel[0]],
+ StyleBox[" = FA\n", "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["G", "Text",
+  FontSize->18,
+  FontColor->GrayLevel[0]],
+ StyleBox[" = SOL\n", "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\nAi", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox[" tasti neri", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" corrispondono le note precedute dalle ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["alterazioni", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[".", "Text",
+  FontColor->GrayLevel[0]],
  "\n",
  StyleBox["\n\n                                                               \
-                                                                     ", 
-  "Text"],
+                                                                              \
+      ", "Text"],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -4730,10 +4999,13 @@ yr8O7pINDVUrHCEbYUgBCU3pjQnB1mnNp2boF9uL7cX2YnuxvdhebC/g9v8B
    ImageSize->Automatic,
    ImageSizeRaw->{670, 249},
    PlotRange->{{0, 670}, {0, 249}}]], "Input",ExpressionUUID->
-  "34cc0f04-48c0-4882-b2a7-a074b4ba83d8"],
- "\n",
- StyleBox["\n1.4 Come si suona un pianoforte: Introduzione guidata ", 
-  "Subsubsection"]
+  "0e97b92f-a02a-420d-8500-b8ded7a6775a"],
+ "\n                                                                          \
+                                                                         \n",
+ StyleBox["\n1.4 Come si suona un pianoforte: Introduzione guidata \n", 
+  "Subsubsection"],
+ StyleBox["(Va messo uno slider con un manipulate per scegliere quali ottave \
+suonare)", "Text"]
 }], "Subtitle",
  InitializationCell->True,
  CellChangeTimes->{{3.829190356456286*^9, 3.8291903578381567`*^9}, {
@@ -4781,741 +5053,288 @@ yr8O7pINDVUrHCEbYUgBCU3pjQnB1mnNp2boF9uL7cX2YnuxvdhebC/g9v8B
    3.829795702587922*^9, 3.829795706084727*^9}, 3.829797234135888*^9, {
    3.8297974102795067`*^9, 3.8297974145457277`*^9}, {3.8297974504616747`*^9, 
    3.82979747614507*^9}, {3.829801903873741*^9, 3.8298019047047434`*^9}, 
-   3.8298053722629194`*^9},ExpressionUUID->"e9f3eabe-e1d6-4d00-b1ec-\
-a3eb9141a860"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"Needs", "[", "\"\<JLink`\>\"", "]"}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"LoadJavaClass", "[", "\"\<javax.sound.midi.MidiSystem\>\"", "]"}], 
-  ";"}], "\n", 
- RowBox[{
-  RowBox[{"synth", "=", 
-   RowBox[{"MidiSystem`getSynthesizer", "[", "]"}]}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"synth", "@", 
-   RowBox[{"open", "[", "]"}]}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"$Channel", "=", 
-   RowBox[{"First", "[", 
-    RowBox[{"synth", "@", 
-     RowBox[{"getChannels", "[", "]"}]}], "]"}]}], ";"}], "\n", 
- RowBox[{
-  RowBox[{"$Channel", "@", 
-   RowBox[{"programChange", "[", "25", "]"}]}], ";"}]}], "Code",
- CellChangeTimes->{{3.8296215252391253`*^9, 3.8296215412832837`*^9}, {
-  3.8296227429015965`*^9, 3.829622743653366*^9}, {3.8296228036091924`*^9, 
-  3.8296228057572055`*^9}, {3.8296228385946026`*^9, 3.82962285958044*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"59a68b7b-7ffd-4f6e-be0e-117ee0892e84"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{"synth", "@", 
-    RowBox[{"close", "[", "]"}]}], ";"}], "\[IndentingNewLine]"}]], "Input",
- CellChangeTimes->{{3.829621477454239*^9, 3.8296215230954647`*^9}, {
-   3.8296215603969226`*^9, 3.829621576387698*^9}, 3.829622417390408*^9, {
-   3.829622723930688*^9, 
-   3.829622763291417*^9}},ExpressionUUID->"3cb9370c-1a51-47f7-9c9c-\
-1c84c950b329"],
+   3.8298053722629194`*^9, {3.8298072383495884`*^9, 3.829807239226574*^9}, 
+   3.8298080274083767`*^9, {3.8298082019744387`*^9, 3.8298082070128946`*^9}, 
+   3.8298094929486656`*^9, 3.8298095394991646`*^9, {3.829809766865132*^9, 
+   3.8298097694737124`*^9}, {3.8298098053737717`*^9, 3.8298099156614265`*^9}},
+ 
+ TextJustification->1.,ExpressionUUID->"415d64ee-c915-4f5f-bc65-9e2f3eeeedbc"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"scale", " ", "=", "2"}], ";", "\[IndentingNewLine]", 
-    RowBox[{"notes", "=", " ", 
-     RowBox[{"List", "[", 
-      RowBox[{
-      "\"\<C\>\"", ",", " ", "\"\<C#\>\"", ",", "\"\<D\>\"", ",", " ", 
-       "\"\<D#\>\"", ",", "\"\<E\>\"", ",", "\"\<F\>\"", ",", "\"\<F#\>\"", 
-       ",", "\"\<G\>\"", ",", "\"\<G#\>\"", ",", " ", "\"\<A\>\"", ",", " ", 
-       "\"\<A#\>\"", ",", "\"\<B\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
-    "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"toPitch", "[", 
-      RowBox[{"note_", ",", "oct_"}], "]"}], ":=", " ", 
-     RowBox[{
-      RowBox[{"(", 
-       RowBox[{
-        RowBox[{"First", "[", 
-         RowBox[{"First", "[", 
-          RowBox[{"Position", "[", 
-           RowBox[{"notes", ",", " ", "note"}], "]"}], "]"}], "]"}], "-", 
-        "1"}], ")"}], "+", " ", 
-      RowBox[{"(", 
-       RowBox[{"oct", "*", "12"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
-    "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"whitekey", "[", 
-      RowBox[{"note_", ",", "oct_"}], "]"}], ":=", 
-     RowBox[{"Mouseover", "[", 
-      RowBox[{
-       RowBox[{"Graphics", "[", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"EdgeForm", "[", "]"}], ",", "White", ",", 
-             "\[IndentingNewLine]", 
-             RowBox[{"Rectangle", "[", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{"0", ",", "0"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"1", ",", "2"}], "}"}]}], "]"}]}], "}"}], ",", 
-           "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"Line", "[", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{"0", ",", "2"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"0", ",", "0"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"1", ",", "0"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"1", ",", "2"}], "}"}]}], "}"}], "]"}], "}"}], ",", 
-           "\[IndentingNewLine]", 
-           RowBox[{"If", "[", 
-            RowBox[{"shownotes", ",", 
-             RowBox[{"Text", "[", 
-              RowBox[{
-               RowBox[{"Style", "[", 
-                RowBox[{
-                 RowBox[{"note", "<>", 
-                  RowBox[{"ToString", "[", "oct", "]"}]}], ",", "10", ",", 
-                 "\"\<Label\>\""}], "]"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"0.5", ",", "1"}], "}"}]}], "]"}], ",", 
-             RowBox[{"{", "}"}]}], "]"}]}], "}"}], ",", 
-         RowBox[{"ImageSize", "\[Rule]", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"22", "*", "scale"}], ",", 
-            RowBox[{"41", "*", "scale"}]}], "}"}]}], ",", 
-         RowBox[{"PlotRange", "\[Rule]", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"-", "0.01"}], ",", "1.01"}], "}"}], ",", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"-", "0.05"}], ",", "2"}], "}"}]}], "}"}]}], ",", 
-         RowBox[{"ImageMargins", "\[Rule]", "0"}]}], "]"}], ",", 
-       RowBox[{"EventHandler", "[", 
-        RowBox[{
-         RowBox[{"Dynamic", "[", 
-          RowBox[{"Graphics", "[", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"EdgeForm", "[", "]"}], ",", 
-                RowBox[{"If", "[", 
-                 RowBox[{"lights", ",", 
-                  RowBox[{"Lighter", "[", 
-                   RowBox[{
-                    RowBox[{"Switch", "[", 
-                    RowBox[{
-                    "note", ",", "\"\<C\>\"", ",", "Red", ",", "\"\<D\>\"", 
-                    ",", "Orange", ",", "\"\<E\>\"", ",", "Yellow", ",", 
-                    "\"\<F\>\"", ",", "Green", ",", "\"\<G\>\"", ",", "Cyan", 
-                    ",", "\"\<A\>\"", ",", "Blue", ",", "\"\<B\>\"", ",", 
-                    "Purple"}], "]"}], ",", 
-                    RowBox[{"oct", "/", "10"}]}], "]"}], ",", "White"}], 
-                 "]"}], ",", 
-                RowBox[{"Rectangle", "[", 
-                 RowBox[{
-                  RowBox[{"{", 
-                   RowBox[{"0", ",", 
-                    RowBox[{"If", "[", 
-                    RowBox[{"dwn", ",", "0.15", ",", "0"}], "]"}]}], "}"}], 
-                  ",", 
-                  RowBox[{"{", 
-                   RowBox[{"1", ",", "2"}], "}"}]}], "]"}]}], "}"}], ",", 
-              RowBox[{"Line", "[", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"{", 
-                  RowBox[{"0", ",", "2"}], "}"}], ",", 
-                 RowBox[{"{", 
-                  RowBox[{"0", ",", 
-                   RowBox[{"If", "[", 
-                    RowBox[{"dwn", ",", "0.15", ",", "0"}], "]"}]}], "}"}], 
-                 ",", 
-                 RowBox[{"{", 
-                  RowBox[{"1", ",", 
-                   RowBox[{"If", "[", 
-                    RowBox[{"dwn", ",", "0.15", ",", "0"}], "]"}]}], "}"}], 
-                 ",", 
-                 RowBox[{"{", 
-                  RowBox[{"1", ",", "2"}], "}"}]}], "}"}], "]"}], ",", 
-              RowBox[{"If", "[", 
-               RowBox[{"shownotes", ",", 
-                RowBox[{"Text", "[", 
-                 RowBox[{
-                  RowBox[{"Style", "[", 
-                   RowBox[{
-                    RowBox[{"note", "<>", 
-                    RowBox[{"ToString", "[", "oct", "]"}]}], ",", 
-                    RowBox[{"If", "[", 
-                    RowBox[{"dwn", ",", "9", ",", "10"}], "]"}], ",", 
-                    "\"\<Label\>\""}], "]"}], ",", 
-                  RowBox[{"{", 
-                   RowBox[{"0.5", ",", 
-                    RowBox[{"If", "[", 
-                    RowBox[{"dwn", ",", "1.1", ",", "1"}], "]"}]}], "}"}]}], 
-                 "]"}], ",", 
-                RowBox[{"{", "}"}]}], "]"}]}], "}"}], ",", 
-            RowBox[{"ImageSize", "\[Rule]", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"22", "*", "scale"}], ",", 
-               RowBox[{"41", "*", "scale"}]}], "}"}]}], ",", 
-            RowBox[{"PlotRange", "\[Rule]", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"-", "0.01"}], ",", "1.01"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"-", "0.05"}], ",", "2"}], "}"}]}], "}"}]}], ",", 
-            RowBox[{"ImageMargins", "\[Rule]", "0"}]}], "]"}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"\"\<MouseDown\>\"", "\[RuleDelayed]", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"dwn", "=", "True"}], ";", 
-              RowBox[{"$Channel", "@", 
-               RowBox[{"noteOn", "[", 
-                RowBox[{
-                 RowBox[{"toPitch", "[", 
-                  RowBox[{"note", ",", "oct"}], "]"}], ",", "80"}], "]"}]}]}],
-              ")"}]}], ",", "\[IndentingNewLine]", 
-           RowBox[{"\"\<MouseUp\>\"", "\[RuleDelayed]", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"dwn", "=", "False"}], ";", " ", 
-              RowBox[{"$Channel", "@", 
-               RowBox[{"allNotesOff", "[", "]"}]}]}], ")"}]}]}], "}"}]}], 
-        "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"space", "[", "wd_", "]"}], ":=", 
-     RowBox[{"Graphics", "[", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"White", ",", 
-         RowBox[{"Rectangle", "[", 
-          RowBox[{
-           RowBox[{"{", 
-            RowBox[{"0", ",", "0"}], "}"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"wd", ",", "1"}], "}"}]}], "]"}]}], "}"}], ",", 
-       RowBox[{"ImageSize", "\[Rule]", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"wd", "*", "scale"}], ",", "Automatic"}], "}"}]}], ",", 
-       RowBox[{"PlotRange", "\[Rule]", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{"0", ",", "0"}], "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"2.5", ",", "5"}], "}"}]}], "}"}]}], ",", 
-       RowBox[{"ImageMargins", "\[Rule]", "0"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"vert", ":=", 
-     RowBox[{"Graphics", "[", 
-      RowBox[{
-       RowBox[{"Line", "[", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{"0", ",", "0"}], "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"0", ",", "1"}], "}"}]}], "}"}], "]"}], ",", 
-       RowBox[{"PlotRange", "\[Rule]", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"-", "0.001"}], ",", "0.001"}], "}"}], ",", 
-          RowBox[{"{", 
-           RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ",", 
-       RowBox[{"ImageSize", "\[Rule]", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"2", "*", "scale"}], ",", 
-          RowBox[{"60", "*", "scale"}]}], "}"}]}], ",", 
-       RowBox[{"ImageMargins", "\[Rule]", "0"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", "\n", 
-    RowBox[{
-     RowBox[{"blackkey", "[", 
-      RowBox[{"note_", ",", "oct_"}], "]"}], ":=", 
-     RowBox[{"Mouseover", "[", 
-      RowBox[{
-       RowBox[{"Graphics", "[", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"EdgeForm", "[", "Black", "]"}], ",", "Black", ",", 
-             RowBox[{"Rectangle", "[", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{"0", ",", "2.5"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"0.5", ",", "5"}], "}"}]}], "]"}]}], "}"}], ",", 
-           RowBox[{"If", "[", 
-            RowBox[{"shownotes", ",", 
-             RowBox[{"Text", "[", 
-              RowBox[{
-               RowBox[{"Style", "[", 
-                RowBox[{
-                 RowBox[{"note", "<>", "\"\< \>\"", "<>", 
-                  RowBox[{"ToString", "[", "oct", "]"}]}], ",", "10", ",", 
-                 "White", ",", "\"\<Label\>\""}], "]"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"0.25", ",", "3.5"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"0", ",", "0"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
-             RowBox[{"{", "}"}]}], "]"}]}], "}"}], ",", 
-         RowBox[{"ImageSize", "\[Rule]", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"12", "*", "scale"}], ",", 
-            RowBox[{"60", "*", "scale"}]}], "}"}]}], ",", 
-         RowBox[{"PlotRange", "\[Rule]", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{"0", ",", "0.5"}], "}"}], ",", 
-            RowBox[{"{", 
-             RowBox[{"2.5", ",", "5"}], "}"}]}], "}"}]}], ",", 
-         RowBox[{"ImageMargins", "\[Rule]", "0"}]}], "]"}], ",", 
-       RowBox[{"EventHandler", "[", 
-        RowBox[{
-         RowBox[{"Dynamic", "[", 
-          RowBox[{"Graphics", "[", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"EdgeForm", "[", "Black", "]"}], ",", 
-               RowBox[{"If", "[", 
-                RowBox[{"lights", ",", 
-                 RowBox[{"Darker", "[", 
-                  RowBox[{
-                   RowBox[{"Switch", "[", 
-                    RowBox[{
-                    "note", ",", "\"\<C#\>\"", ",", "Red", ",", "\"\<D#\>\"", 
-                    ",", "Orange", ",", "\"\<F#\>\"", ",", "Green", ",", 
-                    "\"\<G#\>\"", ",", "Blue", ",", "\"\<A#\>\"", ",", 
-                    "Purple"}], "]"}], ",", "0.5"}], "]"}], ",", "Black"}], 
-                "]"}], ",", 
-               RowBox[{"Rectangle", "[", 
-                RowBox[{
-                 RowBox[{"{", 
-                  RowBox[{
-                   RowBox[{"If", "[", 
-                    RowBox[{"dwn", ",", "0.05", ",", "0"}], "]"}], ",", 
-                   "2.5"}], "}"}], ",", 
-                 RowBox[{"{", 
-                  RowBox[{
-                   RowBox[{"If", "[", 
-                    RowBox[{"dwn", ",", "0.4", ",", "0.5"}], "]"}], ",", 
-                   "5"}], "}"}]}], "]"}], ",", 
-               RowBox[{"If", "[", 
-                RowBox[{"shownotes", ",", 
-                 RowBox[{"Text", "[", 
-                  RowBox[{
-                   RowBox[{"Style", "[", 
-                    RowBox[{
-                    RowBox[{"note", "<>", "\"\< \>\"", "<>", 
-                    RowBox[{"ToString", "[", "oct", "]"}]}], ",", 
-                    RowBox[{"If", "[", 
-                    RowBox[{"dwn", ",", "9", ",", "10"}], "]"}], ",", "White",
-                     ",", "\"\<Label\>\""}], "]"}], ",", 
-                   RowBox[{"{", 
-                    RowBox[{"0.25", ",", "3.5"}], "}"}], ",", 
-                   RowBox[{"{", 
-                    RowBox[{"0", ",", "0"}], "}"}], ",", 
-                   RowBox[{"{", 
-                    RowBox[{"0", ",", "1"}], "}"}]}], "]"}], ",", 
-                 RowBox[{"{", "}"}]}], "]"}]}], "}"}], "}"}], ",", 
-            RowBox[{"ImageSize", "\[Rule]", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"12", "*", "scale"}], ",", 
-               RowBox[{"60", "*", "scale"}]}], "}"}]}], ",", 
-            RowBox[{"PlotRange", "\[Rule]", 
-             RowBox[{"{", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{"0", ",", "0.5"}], "}"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"2.5", ",", "5"}], "}"}]}], "}"}]}], ",", 
-            RowBox[{"ImageMargins", "\[Rule]", "0"}]}], "]"}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"\"\<MouseDown\>\"", "\[RuleDelayed]", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"dwn", "=", "True"}], ";", 
-              RowBox[{"$Channel", "@", 
-               RowBox[{"noteOn", "[", 
-                RowBox[{
-                 RowBox[{"toPitch", "[", 
-                  RowBox[{"note", ",", "oct"}], "]"}], ",", "80"}], "]"}]}]}],
-              ")"}]}], ",", "\[IndentingNewLine]", 
-           RowBox[{"\"\<MouseUp\>\"", "\[RuleDelayed]", 
-            RowBox[{"(", 
-             RowBox[{
-              RowBox[{"dwn", "=", "False"}], ";", " ", 
-              RowBox[{"$Channel", "@", 
-               RowBox[{"allNotesOff", "[", "]"}]}]}], ")"}]}]}], "}"}]}], 
-        "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"whiteset", "[", "oct_", "]"}], ":=", 
-     RowBox[{"Grid", "[", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"Flatten", "[", 
-         RowBox[{"Map", "[", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"(", 
-             RowBox[{"whitekey", "[", 
-              RowBox[{"#", ",", "oct"}], "]"}], ")"}], "&"}], ",", 
-           RowBox[{"{", 
-            RowBox[{
-            "\"\<C\>\"", ",", "\"\<D\>\"", ",", "\"\<E\>\"", ",", "\"\<F\>\"",
-              ",", "\"\<G\>\"", ",", "\"\<A\>\"", ",", "\"\<B\>\""}], "}"}]}],
-           "]"}], "]"}], "}"}], ",", 
-       RowBox[{"Spacings", "\[Rule]", "0"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"blackset", "[", "oct_", "]"}], ":=", 
-     RowBox[{"Grid", "[", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"{", "\[IndentingNewLine]", 
-         RowBox[{"vert", ",", 
-          RowBox[{"space", "[", "15", "]"}], ",", 
-          RowBox[{"blackkey", "[", 
-           RowBox[{"\"\<C#\>\"", ",", "oct"}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"space", "[", "10", "]"}], ",", 
-          RowBox[{"blackkey", "[", 
-           RowBox[{"\"\<D#\>\"", ",", "oct"}], "]"}], ",", 
-          "\[IndentingNewLine]", 
-          RowBox[{"space", "[", "14.01", "]"}], ",", "vert", ",", 
-          RowBox[{"space", "[", "0.01", "]"}], ",", "vert", ",", 
-          RowBox[{"space", "[", "14.5", "]"}], ",", 
-          RowBox[{"blackkey", "[", 
-           RowBox[{"\"\<F#\>\"", ",", "oct"}], "]"}], ",", 
-          RowBox[{"space", "[", "11", "]"}], ",", 
-          RowBox[{"blackkey", "[", 
-           RowBox[{"\"\<G#\>\"", ",", "oct"}], "]"}], ",", 
-          RowBox[{"space", "[", "10.5", "]"}], ",", 
-          RowBox[{"blackkey", "[", 
-           RowBox[{"\"\<A#\>\"", ",", "oct"}], "]"}], ",", 
-          RowBox[{"space", "[", "14", "]"}], ",", "vert"}], "}"}], "}"}], ",", 
-       RowBox[{"Spacings", "\[Rule]", 
-        RowBox[{"-", "0.04"}]}], ",", 
-       RowBox[{"Alignment", "\[Rule]", "Left"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"keyboardsplit", "[", "octinit_", "]"}], ":=", 
-     "\[IndentingNewLine]", 
-     RowBox[{"Grid", "[", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"Flatten", "[", 
-          RowBox[{"Table", "[", 
-           RowBox[{
-            RowBox[{"blackset", "[", "i", "]"}], ",", 
-            RowBox[{"{", 
-             RowBox[{"i", ",", "octinit", ",", 
-              RowBox[{"octinit", "+", "1"}]}], "}"}]}], "]"}], "]"}], ",", 
-         RowBox[{"Flatten", "[", 
-          RowBox[{"Table", "[", 
-           RowBox[{
-            RowBox[{"whiteset", "[", "i", "]"}], ",", 
-            RowBox[{"{", 
-             RowBox[{"i", ",", "octinit", ",", 
-              RowBox[{"octinit", "+", "1"}]}], "}"}]}], "]"}], "]"}]}], "}"}],
-        ",", 
-       RowBox[{"Spacings", "\[Rule]", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"\"\<Columns\>\"", "\[Rule]", 
-           RowBox[{"{", 
-            RowBox[{"{", "0", "}"}], "}"}]}], ",", 
-          RowBox[{"\"\<Rows\>\"", "\[Rule]", 
-           RowBox[{"{", 
-            RowBox[{"{", 
-             RowBox[{"-", "0.1"}], "}"}], "}"}]}]}], "}"}]}], ",", 
-       RowBox[{"Alignment", "\[Rule]", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"\"\<Columns\>\"", "\[Rule]", 
-           RowBox[{"{", 
-            RowBox[{"{", "Left", "}"}], "}"}]}], ",", 
-          RowBox[{"\"\<Rows\>\"", "\[Rule]", 
-           RowBox[{"{", 
-            RowBox[{"{", "Top", "}"}], "}"}]}]}], "}"}]}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{"Deploy", "[", 
-     RowBox[{"keyboardsplit", "[", "4", "]"}], "]"}]}], ",", 
-   "\[IndentingNewLine]", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"lights", ",", "False", ",", "\"\<light keys\>\""}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"True", ",", "False"}], "}"}]}], "}"}], ",", 
-   "\[IndentingNewLine]", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"shownotes", ",", "False", ",", "\"\<show notes\>\""}], "}"}], 
-     ",", 
-     RowBox[{"{", 
-      RowBox[{"True", ",", "False"}], "}"}]}], "}"}], ",", 
-   "\[IndentingNewLine]", 
-   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
-    RowBox[{"{", 
-     RowBox[{"begoct", ",", "endoct", ",", "lights", ",", "shownotes"}], 
-     "}"}]}], ",", "\[IndentingNewLine]", 
-   RowBox[{"Initialization", "\[RuleDelayed]", 
-    RowBox[{"{", 
-     RowBox[{"dwn", "=", "False"}], "}"}]}]}], "]"}]], "Input",
- CellLabel->"In[12]:=",ExpressionUUID->"99d1afce-f717-4562-a97c-d1d44d4c59ed"],
+ RowBox[{
+  RowBox[{"Piano", "[", "4", "]"}], "\n"}]], "Code",
+ CellChangeTimes->{{3.8296215252391253`*^9, 3.8296215412832837`*^9}, {
+  3.8296227429015965`*^9, 3.829622743653366*^9}, {3.8296228036091924`*^9, 
+  3.8296228057572055`*^9}, {3.8296228385946026`*^9, 3.82962285958044*^9}, {
+  3.829806278142468*^9, 3.8298062976881247`*^9}, {3.8298063587754717`*^9, 
+  3.829806410169097*^9}, {3.8298065615653076`*^9, 3.8298065739144382`*^9}, {
+  3.829806745114702*^9, 3.8298068323400307`*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"59a68b7b-7ffd-4f6e-be0e-117ee0892e84"],
 
 Cell[BoxData[
- TagBox[
-  StyleBox[
-   DynamicModuleBox[{$CellContext`lights$$ = False, $CellContext`shownotes$$ =
-     False, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
-    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
-    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
-       Hold[$CellContext`lights$$], False, "light keys"}, {True, False}}, {{
-       Hold[$CellContext`shownotes$$], False, "show notes"}, {True, False}}}, 
-    Typeset`size$$ = {616., {97.5, 103.5}}, Typeset`update$$ = 0, 
-    Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    False, $CellContext`lights$2762$$ = False, $CellContext`shownotes$2763$$ =
-     False}, 
-    DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, 
-      "Variables" :> {$CellContext`lights$$ = False, $CellContext`shownotes$$ = 
-        False}, "ControllerVariables" :> {
-        Hold[$CellContext`lights$$, $CellContext`lights$2762$$, False], 
-        Hold[$CellContext`shownotes$$, $CellContext`shownotes$2763$$, False]},
+ DynamicModuleBox[{SuonaConWolfram`Private`scale$$ = 2, 
+  SuonaConWolfram`Private`shownotes$$ = False, 
+  SuonaConWolfram`Private`pianoInitOctave$$ = 4, 
+  SuonaConWolfram`Private`selectedNote$$ = -1, 
+  SuonaConWolfram`Private`playedNote$$ = -1}, 
+  TagBox[
+   StyleBox[
+    DynamicModuleBox[{Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+        Hold[SuonaConWolfram`Private`shownotes$$], False, "show notes"}, {
+       True, False}}}, Typeset`size$$ = {616., {97.5, 103.5}}, 
+     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False,
+      SuonaConWolfram`Private`shownotes$$$5972$$ = False}, 
+     DynamicBox[Manipulate`ManipulateBoxes[
+      1, StandardForm, 
+       "Variables" :> {SuonaConWolfram`Private`shownotes$$ = False}, 
+       "ControllerVariables" :> {
+         Hold[
+         SuonaConWolfram`Private`shownotes$$, 
+          SuonaConWolfram`Private`shownotes$$$5972$$, False]}, 
        "OtherVariables" :> {
-       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
-        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
-        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
-         Typeset`skipInitDone$$}, 
-      "Body" :> ($CellContext`scale = 
-        2; $CellContext`notes = {
-         "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", 
-          "B"}; $CellContext`toPitch[
-          Pattern[$CellContext`note, 
-           Blank[]], 
-          Pattern[$CellContext`oct, 
-           Blank[]]] := (First[
-            First[
-             Position[$CellContext`notes, $CellContext`note]]] - 
-          1) + $CellContext`oct 12; $CellContext`whitekey[
-          Pattern[$CellContext`note$, 
-           Blank[]], 
-          Pattern[$CellContext`oct$, 
-           Blank[]]] := Mouseover[
-          Graphics[{{
-             EdgeForm[], White, 
-             Rectangle[{0, 0}, {1, 2}]}, {
-             Line[{{0, 2}, {0, 0}, {1, 0}, {1, 2}}]}, 
-            If[$CellContext`shownotes$$, 
-             Text[
-              Style[
-               StringJoin[$CellContext`note$, 
-                ToString[$CellContext`oct$]], 10, "Label"], {0.5, 1}], {}]}, 
-           ImageSize -> {22 $CellContext`scale, 41 $CellContext`scale}, 
-           PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 0], 
-          EventHandler[
-           Dynamic[
-            Graphics[{{
-               EdgeForm[], 
-               If[$CellContext`lights$$, 
-                Lighter[
-                 
-                 Switch[$CellContext`note$, "C", Red, "D", Orange, "E", 
-                  Yellow, "F", Green, "G", Cyan, "A", Blue, "B", 
-                  Purple], $CellContext`oct$/10], White], 
-               Rectangle[{0, 
-                 If[$CellContext`dwn, 0.15, 0]}, {1, 2}]}, 
-              Line[{{0, 2}, {0, 
-                 If[$CellContext`dwn, 0.15, 0]}, {1, 
-                 If[$CellContext`dwn, 0.15, 0]}, {1, 2}}], 
-              If[$CellContext`shownotes$$, 
-               Text[
-                Style[
-                 StringJoin[$CellContext`note$, 
-                  ToString[$CellContext`oct$]], 
-                 If[$CellContext`dwn, 9, 10], "Label"], {0.5, 
-                 If[$CellContext`dwn, 1.1, 1]}], {}]}, 
-             ImageSize -> {22 $CellContext`scale, 41 $CellContext`scale}, 
-             PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 0]], {
-           "MouseDown" :> ($CellContext`dwn = True; $CellContext`$Channel[
-               $CellContext`noteOn[
-                $CellContext`toPitch[$CellContext`note$, $CellContext`oct$], 
-                80]]), "MouseUp" :> ($CellContext`dwn = 
-              False; $CellContext`$Channel[
-               $CellContext`allNotesOff[]])}]]; $CellContext`space[
-          Pattern[$CellContext`wd, 
-           Blank[]]] := Graphics[{White, 
-           Rectangle[{0, 0}, {$CellContext`wd, 1}]}, 
-          ImageSize -> {$CellContext`wd $CellContext`scale, Automatic}, 
-          PlotRange -> {{0, 0}, {2.5, 5}}, ImageMargins -> 
-          0]; $CellContext`vert := Graphics[
-          Line[{{0, 0}, {0, 1}}], PlotRange -> {{-0.001, 0.001}, {0, 1}}, 
-          ImageSize -> {2 $CellContext`scale, 60 $CellContext`scale}, 
-          ImageMargins -> 0]; $CellContext`blackkey[
-          Pattern[$CellContext`note$, 
-           Blank[]], 
-          Pattern[$CellContext`oct$, 
-           Blank[]]] := Mouseover[
-          Graphics[{{
-             EdgeForm[Black], Black, 
-             Rectangle[{0, 2.5}, {0.5, 5}]}, 
-            If[$CellContext`shownotes$$, 
-             Text[
-              Style[
-               StringJoin[$CellContext`note$, " ", 
-                ToString[$CellContext`oct$]], 10, White, "Label"], {0.25, 
-              3.5}, {0, 0}, {0, 1}], {}]}, 
-           ImageSize -> {12 $CellContext`scale, 60 $CellContext`scale}, 
-           PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0], 
-          EventHandler[
-           Dynamic[
-            Graphics[{{
-               EdgeForm[Black], 
-               If[$CellContext`lights$$, 
-                Darker[
-                 
-                 Switch[$CellContext`note$, "C#", Red, "D#", Orange, "F#", 
-                  Green, "G#", Blue, "A#", Purple], 0.5], Black], 
-               Rectangle[{
-                 If[$CellContext`dwn, 0.05, 0], 2.5}, {
-                 If[$CellContext`dwn, 0.4, 0.5], 5}], 
-               If[$CellContext`shownotes$$, 
+        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+         Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+         Typeset`initDone$$, Typeset`skipInitDone$$}, 
+       "Body" :> (SuonaConWolfram`Private`scale$$ = 2; 
+        SuonaConWolfram`Private`whitekey[
+           Pattern[SuonaConWolfram`Private`note$, 
+            Blank[]], 
+           Pattern[SuonaConWolfram`Private`oct$, 
+            Blank[]]] := Mouseover[
+           Graphics[{{
+              EdgeForm[], 
+              If[
+              SuonaConWolfram`Private`selectedNote$$ == 
+               SuonaConWolfram`Private`toPitch[
+                SuonaConWolfram`Private`note$, SuonaConWolfram`Private`oct$], 
+               
+               Lighter[Green], White], 
+              Rectangle[{0, 0}, {1, 2}]}, {
+              Line[{{0, 2}, {0, 0}, {1, 0}, {1, 2}}]}, 
+             If[SuonaConWolfram`Private`shownotes$$, 
+              Text[
+               Style[
+                StringJoin[SuonaConWolfram`Private`note$, 
+                 ToString[SuonaConWolfram`Private`oct$]], 10, "Label"], {
+               0.5, 1}], {}]}, 
+            ImageSize -> {
+             22 SuonaConWolfram`Private`scale$$, 41 
+              SuonaConWolfram`Private`scale$$}, 
+            PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 0], 
+           EventHandler[
+            Dynamic[
+             Graphics[{{
+                EdgeForm[], 
+                If[
+                SuonaConWolfram`Private`selectedNote$$ == 
+                 SuonaConWolfram`Private`toPitch[
+                  SuonaConWolfram`Private`note$, 
+                   SuonaConWolfram`Private`oct$], 
+                 Lighter[Green], 
+                 If[
+                  And[
+                  SuonaConWolfram`Private`dwn, 
+                   SuonaConWolfram`Private`selectedNote$$ != -1], 
+                  Lighter[Red], White]], 
+                Rectangle[{0, 
+                  If[SuonaConWolfram`Private`dwn, 0.15, 0]}, {1, 2}]}, 
+               Line[{{0, 2}, {0, 
+                  If[SuonaConWolfram`Private`dwn, 0.15, 0]}, {1, 
+                  If[SuonaConWolfram`Private`dwn, 0.15, 0]}, {1, 2}}], 
+               If[SuonaConWolfram`Private`shownotes$$, 
                 Text[
                  Style[
-                  StringJoin[$CellContext`note$, " ", 
-                   ToString[$CellContext`oct$]], 
-                  If[$CellContext`dwn, 9, 10], White, "Label"], {0.25, 3.5}, {
-                 0, 0}, {0, 1}], {}]}}, 
-             ImageSize -> {12 $CellContext`scale, 60 $CellContext`scale}, 
-             PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0]], {
-           "MouseDown" :> ($CellContext`dwn = True; $CellContext`$Channel[
-               $CellContext`noteOn[
-                $CellContext`toPitch[$CellContext`note$, $CellContext`oct$], 
-                80]]), "MouseUp" :> ($CellContext`dwn = 
-              False; $CellContext`$Channel[
-               $CellContext`allNotesOff[]])}]]; $CellContext`whiteset[
-          Pattern[$CellContext`oct, 
-           Blank[]]] := Grid[{
-           Flatten[
-            
-            Map[$CellContext`whitekey[#, $CellContext`oct]& , {
-             "C", "D", "E", "F", "G", "A", "B"}]]}, Spacings -> 
-          0]; $CellContext`blackset[
-          Pattern[$CellContext`oct, 
-           Blank[]]] := Grid[{{$CellContext`vert, 
-            $CellContext`space[15], 
-            $CellContext`blackkey["C#", $CellContext`oct], 
-            $CellContext`space[10], 
-            $CellContext`blackkey["D#", $CellContext`oct], 
-            $CellContext`space[14.01], $CellContext`vert, 
-            $CellContext`space[0.01], $CellContext`vert, 
-            $CellContext`space[14.5], 
-            $CellContext`blackkey["F#", $CellContext`oct], 
-            $CellContext`space[11], 
-            $CellContext`blackkey["G#", $CellContext`oct], 
-            $CellContext`space[10.5], 
-            $CellContext`blackkey["A#", $CellContext`oct], 
-            $CellContext`space[14], $CellContext`vert}}, Spacings -> -0.04, 
-          Alignment -> Left]; $CellContext`keyboardsplit[
-          Pattern[$CellContext`octinit, 
-           Blank[]]] := Grid[{
-           Flatten[
-            Table[
-             $CellContext`blackset[$CellContext`i], {$CellContext`i, \
-$CellContext`octinit, $CellContext`octinit + 1}]], 
-           Flatten[
-            Table[
-             $CellContext`whiteset[$CellContext`i], {$CellContext`i, \
-$CellContext`octinit, $CellContext`octinit + 1}]]}, 
-          Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
-          Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]; Deploy[
-         $CellContext`keyboardsplit[4]]), 
-      "Specifications" :> {{{$CellContext`lights$$, False, "light keys"}, {
-         True, False}}, {{$CellContext`shownotes$$, False, "show notes"}, {
-         True, False}}}, 
-      "Options" :> {
-       TrackedSymbols :> {$CellContext`begoct, $CellContext`endoct, \
-$CellContext`lights$$, $CellContext`shownotes$$}}, "DefaultOptions" :> {}],
-     ImageSizeCache->{667., {149., 155.}},
-     SingleEvaluation->True],
-    Deinitialization:>None,
-    DynamicModuleValues:>{},
-    Initialization:>({$CellContext`dwn = False}; Typeset`initDone$$ = True),
-    SynchronousInitialization->True,
-    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
-    UnsavedVariables:>{Typeset`initDone$$},
-    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
-   Deployed->True,
-   StripOnInput->False],
-  Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{
-  3.8296228712255964`*^9, {3.829623189143888*^9, 3.829623190638669*^9}},
- CellLabel->"Out[12]=",ExpressionUUID->"7c6d542e-22b3-434b-b303-d886056e78bd"]
+                  StringJoin[SuonaConWolfram`Private`note$, 
+                   ToString[SuonaConWolfram`Private`oct$]], 
+                  If[SuonaConWolfram`Private`dwn, 9, 10], "Label"], {0.5, 
+                  If[SuonaConWolfram`Private`dwn, 1.1, 1]}], {}]}, 
+              ImageSize -> {
+               22 SuonaConWolfram`Private`scale$$, 41 
+                SuonaConWolfram`Private`scale$$}, 
+              PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 0]], {
+            "MouseDown" :> (SuonaConWolfram`Private`dwn = True; 
+              SuonaConWolfram`Private`onKeyDown[
+               SuonaConWolfram`Private`note$, SuonaConWolfram`Private`oct$]), 
+             "MouseUp" :> (SuonaConWolfram`Private`dwn = False; 
+              SuonaConWolfram`Private`onKeyUp[
+               SuonaConWolfram`Private`note$, 
+                SuonaConWolfram`Private`oct$])}]]; 
+        SuonaConWolfram`Private`space[
+           Pattern[SuonaConWolfram`Private`wd$, 
+            Blank[]]] := Graphics[{White, 
+            Rectangle[{0, 0}, {SuonaConWolfram`Private`wd$, 1}]}, 
+           ImageSize -> {
+            SuonaConWolfram`Private`wd$ SuonaConWolfram`Private`scale$$, 
+             Automatic}, PlotRange -> {{0, 0}, {2.5, 5}}, ImageMargins -> 0]; 
+        SuonaConWolfram`Private`vert := Graphics[
+           Line[{{0, 0}, {0, 1}}], PlotRange -> {{-0.001, 0.001}, {0, 1}}, 
+           ImageSize -> {
+            2 SuonaConWolfram`Private`scale$$, 60 
+             SuonaConWolfram`Private`scale$$}, ImageMargins -> 0]; 
+        SuonaConWolfram`Private`blackkey[
+           Pattern[SuonaConWolfram`Private`note$, 
+            Blank[]], 
+           Pattern[SuonaConWolfram`Private`oct$, 
+            Blank[]]] := Mouseover[
+           Graphics[{{
+              EdgeForm[Black], 
+              If[
+              SuonaConWolfram`Private`selectedNote$$ == 
+               SuonaConWolfram`Private`toPitch[
+                SuonaConWolfram`Private`note$, SuonaConWolfram`Private`oct$], 
+               
+               Darker[Green], Black], 
+              Rectangle[{0, 2.5}, {0.5, 5}]}, 
+             If[SuonaConWolfram`Private`shownotes$$, 
+              Text[
+               Style[
+                StringJoin[SuonaConWolfram`Private`note$, " ", 
+                 ToString[SuonaConWolfram`Private`oct$]], 10, White, 
+                "Label"], {0.25, 3.5}, {0, 0}, {0, 1}], {}]}, 
+            ImageSize -> {
+             12 SuonaConWolfram`Private`scale$$, 60 
+              SuonaConWolfram`Private`scale$$}, 
+            PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0], 
+           EventHandler[
+            Dynamic[
+             Graphics[{{
+                EdgeForm[Black], 
+                If[
+                SuonaConWolfram`Private`selectedNote$$ == 
+                 SuonaConWolfram`Private`toPitch[
+                  SuonaConWolfram`Private`note$, 
+                   SuonaConWolfram`Private`oct$], 
+                 Darker[Green], 
+                 If[
+                  And[
+                  SuonaConWolfram`Private`dwn, 
+                   SuonaConWolfram`Private`selectedNote$$ != -1], 
+                  Darker[Red], Black]], 
+                Rectangle[{
+                  If[SuonaConWolfram`Private`dwn, 0.05, 0], 2.5}, {
+                  If[SuonaConWolfram`Private`dwn, 0.4, 0.5], 5}], 
+                If[SuonaConWolfram`Private`shownotes$$, 
+                 Text[
+                  Style[
+                   StringJoin[SuonaConWolfram`Private`note$, " ", 
+                    ToString[SuonaConWolfram`Private`oct$]], 
+                   If[SuonaConWolfram`Private`dwn, 9, 10], White, "Label"], {
+                  0.25, 3.5}, {0, 0}, {0, 1}], {}]}}, 
+              ImageSize -> {
+               12 SuonaConWolfram`Private`scale$$, 60 
+                SuonaConWolfram`Private`scale$$}, 
+              PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0]], {
+            "MouseDown" :> (SuonaConWolfram`Private`dwn = True; 
+              SuonaConWolfram`Private`onKeyDown[
+               SuonaConWolfram`Private`note$, SuonaConWolfram`Private`oct$]), 
+             "MouseUp" :> (SuonaConWolfram`Private`dwn = False; 
+              SuonaConWolfram`Private`onKeyUp[
+               SuonaConWolfram`Private`note$, 
+                SuonaConWolfram`Private`oct$])}]]; 
+        SuonaConWolfram`Private`whiteset[
+           Pattern[SuonaConWolfram`Private`oct, 
+            Blank[]]] := Grid[{
+            Flatten[
+             Map[
+             SuonaConWolfram`Private`whitekey[#, 
+               SuonaConWolfram`Private`oct]& , {
+              "C", "D", "E", "F", "G", "A", "B"}]]}, Spacings -> 0]; 
+        SuonaConWolfram`Private`blackset[
+           Pattern[SuonaConWolfram`Private`oct, 
+            Blank[]]] := Grid[{{SuonaConWolfram`Private`vert, 
+             SuonaConWolfram`Private`space[15], 
+             SuonaConWolfram`Private`blackkey[
+             "C#", SuonaConWolfram`Private`oct], 
+             SuonaConWolfram`Private`space[10], 
+             SuonaConWolfram`Private`blackkey[
+             "D#", SuonaConWolfram`Private`oct], 
+             SuonaConWolfram`Private`space[14.01], 
+             SuonaConWolfram`Private`vert, 
+             SuonaConWolfram`Private`space[0.01], 
+             SuonaConWolfram`Private`vert, 
+             SuonaConWolfram`Private`space[14.5], 
+             SuonaConWolfram`Private`blackkey[
+             "F#", SuonaConWolfram`Private`oct], 
+             SuonaConWolfram`Private`space[11], 
+             SuonaConWolfram`Private`blackkey[
+             "G#", SuonaConWolfram`Private`oct], 
+             SuonaConWolfram`Private`space[10.5], 
+             SuonaConWolfram`Private`blackkey[
+             "A#", SuonaConWolfram`Private`oct], 
+             SuonaConWolfram`Private`space[14], 
+             SuonaConWolfram`Private`vert}}, Spacings -> -0.04, Alignment -> 
+           Left]; SuonaConWolfram`Private`keyboardsplit[
+           Pattern[SuonaConWolfram`Private`octinit, 
+            Blank[]]] := Grid[{
+            Flatten[
+             Table[
+              SuonaConWolfram`Private`blackset[SuonaConWolfram`Private`i], {
+              SuonaConWolfram`Private`i, SuonaConWolfram`Private`octinit, 
+               SuonaConWolfram`Private`octinit + 1}]], 
+            Flatten[
+             Table[
+              SuonaConWolfram`Private`whiteset[SuonaConWolfram`Private`i], {
+              SuonaConWolfram`Private`i, SuonaConWolfram`Private`octinit, 
+               SuonaConWolfram`Private`octinit + 1}]]}, 
+           Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
+           Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]; Deploy[
+          SuonaConWolfram`Private`keyboardsplit[
+          SuonaConWolfram`Private`pianoInitOctave$$]]), 
+       "Specifications" :> {{{
+          SuonaConWolfram`Private`shownotes$$, False, "show notes"}, {
+          True, False}}}, 
+       "Options" :> {
+        TrackedSymbols :> {
+          SuonaConWolfram`Private`shownotes$$, 
+           SuonaConWolfram`Private`selectedNote$$}, LocalizeVariables -> 
+         False, ContinuousAction -> False}, "DefaultOptions" :> {}],
+      ImageSizeCache->{667., {140., 146.}},
+      SingleEvaluation->True],
+     Deinitialization:>None,
+     DynamicModuleValues:>{},
+     Initialization:>({SuonaConWolfram`Private`dwn = False}; 
+      Typeset`initDone$$ = True),
+     SynchronousInitialization->True,
+     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+     UnsavedVariables:>{Typeset`initDone$$},
+     UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+    Deployed->True,
+    StripOnInput->False],
+   Manipulate`InterpretManipulate[1]],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{{3.829806764199752*^9, 3.829806833359304*^9}, {
+  3.8298098646320667`*^9, 3.829809877560814*^9}},
+ CellLabel->"Out[35]=",ExpressionUUID->"f69103b7-bd87-4c0d-86a4-4ccd268c88a2"]
 }, Open  ]],
 
 Cell[TextData[{
- Cell[BoxData[""], "Input",
-  CellChangeTimes->{{3.829621147424247*^9, 3.829621159461645*^9}},
-  ExpressionUUID->"2dda28d6-fe98-4f1c-9426-76de01c7a495"],
- StyleBox["\n\n\n", "Text"],
+ StyleBox["\n\n", "Text"],
  StyleBox["1.4.1 Come suonare un pianoforte: Le scale\n", "Subsubsection"],
- StyleBox["Nella teoria musicale, una scala \[EGrave] una successione di \
-suoni nell\[CloseCurlyQuote]ambito di un\[CloseCurlyQuote]ottava, di cui l\
-\[CloseCurlyQuote]ultimo \[EGrave] una ripetizione del primo esattamente un\
-\[CloseCurlyQuote]ottava sopra. Si chiama scala ascendente una scala in cui l\
-\[CloseCurlyQuote]altezza delle note cresce, e scala discendente una in cui l\
-\[CloseCurlyQuote]ordine \[EGrave] decrescente. Una stessa scala pu\[OGrave] \
-presentare alterazioni differenti se considerata nel tratto ascendente o in \
-quello discendente (Gli facciamo suonare una scala).", "Text"],
- StyleBox["\n", "Subsubsection"],
+ StyleBox["Nella teoria musicale, una ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["scala", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" \[EGrave] una successione di suoni nell\[CloseCurlyQuote]ambito \
+di un\[CloseCurlyQuote]ottava, di cui l\[CloseCurlyQuote]ultimo \[EGrave] una \
+ripetizione del primo esattamente un\[CloseCurlyQuote]ottava sopra. Si chiama \
+scala ascendente una scala in cui l\[CloseCurlyQuote]altezza delle note \
+cresce, e scala discendente una in cui l\[CloseCurlyQuote]ordine \[EGrave] \
+decrescente. Una stessa scala pu\[OGrave] presentare alterazioni differenti \
+se considerata nel tratto ascendente o in quello discendente (Gli facciamo \
+suonare una scala).", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["\n", "Subsubsection",
+  FontColor->GrayLevel[0]],
  StyleBox["Lo stesso vale con il tuo strumento,  gli accordatori moderni \
-hanno le seguenti note:\n\n", "Text"],
+hanno le seguenti note:", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["\n\n", "Text"],
  "                                                                            \
                                                                               \
                                                                               \
@@ -5524,41 +5343,66 @@ hanno le seguenti note:\n\n", "Text"],
        ",
  StyleBox["\n", "Text"],
  StyleBox["1.5 I file MIDI\n", "Subsubsection"],
- "I file MIDI (*.mid) non sono altro che un particolare tipo di file \
-musicale.\n\nQuali sono le differenze principali tra i midi e i file con \
-estensione, ad esempio, wav e mp3?\nI wav, e cos\[IGrave] pure il formato \
-compresso mp3, possono riprodurre qualsiasi suono registrato; quindi non solo \
-strumenti musicali, ma anche la voce umana. Questo permette di ascoltare la \
-nostra musica preferita e le canzoni cantate, direttamente sul computer.\nAl \
-contrario, i MIDI possono riprodurre unicamente i suoni di strumenti con \
+ StyleBox["I ",
+  FontColor->GrayLevel[0]],
+ StyleBox["file MIDI",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" (*.mid) non sono altro che un particolare tipo di file musicale.\n\
+\nQuali sono le differenze principali tra i ",
+  FontColor->GrayLevel[0]],
+ StyleBox["MIDI",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" e i file con estensione, ad esempio, wav e mp3?\nI wav, e cos\
+\[IGrave] pure il formato compresso mp3, possono riprodurre qualsiasi suono \
+registrato; quindi non solo strumenti musicali, ma anche la voce umana. \
+Questo permette di ascoltare la nostra musica preferita e le canzoni cantate, \
+direttamente sul computer.\nAl contrario, i ",
+  FontColor->GrayLevel[0]],
+ StyleBox["MIDI",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" possono riprodurre unicamente i suoni di strumenti con \
 particolari effetti, ma non la voce umana. Ed \[EGrave] proprio da questa \
 semplice osservazione che possiamo comprendere le differenze sostanziali tra \
-i midi e i formati wav ed mp3.\n\nI MIDI nascono da una filosofia \
-completamente diversa.\nL\[CloseCurlyQuote]informazione costituita dai dati \
-presenti nel file .mid non \[EGrave] relativa alla forma \
-d\[CloseCurlyQuote]onda campionata del segnale (audio), ma ad alcuni \
-\[OpenCurlyDoubleQuote]parametri sonori\[CloseCurlyDoubleQuote] che vanno \
-letti ed interpretati dai cosiddetti \[OpenCurlyDoubleQuote]Midi-player\
-\[CloseCurlyDoubleQuote] (programmi per riprodurre appunto i file midi). Tali \
-parametri sono, ad esempio :\n\nLa nota da riprodurre (es. il DO dell\
-\[CloseCurlyQuote]ottava centrale);\nLa durata (es. 1/4 della battuta);\nIl \
-volume (un valore intero da 0 a 127, ossia 7 bit);\nLa dinamica;\nIl numero \
-dello strumento (es. 1 corrisponde ad un pianoforte);\nEventuali effetti \
-digitali.\n\nDal tipo di informazione che deve essere immagazzinata, risulta \
-chiaro come sia possibile che la dimensione dei file compressi mp3 sia \
-tipicamente 5 MB, mentre quella dei file midi si aggiri intorno ai 50 k.\nPer\
-\[OGrave], per poter riprodurre i suoni dei midi, occorre un Midi-player, \
-installato sul computer o presente nelle tastiere musicali (per le quali \
-\[EGrave] nato questo formato). La funzione del Midi-player non \[EGrave] \
-altro che quella di leggere i dati e usare i propri suoni per riprodurre ci\
-\[OGrave] che \[EGrave] descritto nei parametri suddetti. Questo spiega anche \
-perch\[EAcute] uno stesso midi suoni diversamente su 2 differenti tastiere \
-(che dispongono di suoni leggermente diversi, pur essendo ad esempio per \
-entrambi il nr 1 = Grand Piano).\n\nPer concludere, lo scopo dei midi \
-\[EGrave] quindi quello di poter disporre esclusivamente di pezzi musicali da \
-usare come basi musicali, ma data la loro piccola dimensione in termini di \
-kbyte risultano adattissimi anche come sottofondi musicali delle pagine web.\n\
-",
+i midi e i formati wav ed mp3.\n\nI ",
+  FontColor->GrayLevel[0]],
+ StyleBox["MIDI",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" nascono da una filosofia completamente diversa.\nL\
+\[CloseCurlyQuote]informazione costituita dai dati presenti nel file .mid non \
+\[EGrave] relativa alla forma d\[CloseCurlyQuote]onda campionata del segnale \
+(audio), ma ad alcuni \[OpenCurlyDoubleQuote]parametri sonori\
+\[CloseCurlyDoubleQuote] che vanno letti ed interpretati dai cosiddetti \
+\[OpenCurlyDoubleQuote]Midi-player\[CloseCurlyDoubleQuote] (programmi per \
+riprodurre appunto i file midi). Tali parametri sono, ad esempio :\n\nLa nota \
+da riprodurre (es. il DO dell\[CloseCurlyQuote]ottava centrale);\nLa durata \
+(es. 1/4 della battuta);\nIl volume (un valore intero da 0 a 127, ossia 7 \
+bit);\nLa dinamica;\nIl numero dello strumento (es. 1 corrisponde ad un \
+pianoforte);\nEventuali effetti digitali.\n\nDal tipo di informazione che \
+deve essere immagazzinata, risulta chiaro come sia possibile che la \
+dimensione dei file compressi mp3 sia tipicamente 5 MB, mentre quella dei \
+file midi si aggiri intorno ai 50 k.\nPer\[OGrave], per poter riprodurre i \
+suoni dei midi, occorre un Midi-player, installato sul computer o presente \
+nelle tastiere musicali (per le quali \[EGrave] nato questo formato). La \
+funzione del Midi-player non \[EGrave] altro che quella di leggere i dati e \
+usare i propri suoni per riprodurre ci\[OGrave] che \[EGrave] descritto nei \
+parametri suddetti. Questo spiega anche perch\[EAcute] uno stesso midi suoni \
+diversamente su 2 differenti tastiere (che dispongono di suoni leggermente \
+diversi, pur essendo ad esempio per entrambi il nr 1 = Grand Piano).\n\nPer \
+concludere, lo scopo dei ",
+  FontColor->GrayLevel[0]],
+ StyleBox["MIDI",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" \[EGrave] quindi quello di poter disporre esclusivamente di pezzi \
+musicali da usare come basi musicali, ma data la loro piccola dimensione in \
+termini di kbyte risultano adattissimi anche come sottofondi musicali delle \
+pagine web.",
+  FontColor->GrayLevel[0]],
+ "\n",
  StyleBox["\n1.6 Carica o genera un file MIDI\n", "Subsubsection"],
  Cell[BoxData[""], "Input",
   CellChangeTimes->{{3.8298018810839853`*^9, 3.8298018825249147`*^9}, 
@@ -5585,8 +5429,11 @@ kbyte risultano adattissimi anche come sottofondi musicali delle pagine web.\n\
    3.829802038695699*^9}, {3.829802078711465*^9, 3.829802130760006*^9}, {
    3.829802176262039*^9, 3.829802184441774*^9}, 3.829802495615637*^9, {
    3.829802556840209*^9, 3.8298025590153155`*^9}, {3.829803673143975*^9, 
-   3.829803691941292*^9}},ExpressionUUID->"aad1e666-6660-4722-a197-\
-684c8e4f7856"],
+   3.829803691941292*^9}, {3.8298069414898643`*^9, 3.8298069418423786`*^9}, {
+   3.8298081401366916`*^9, 3.8298081582479343`*^9}},
+ TextJustification->1.,ExpressionUUID->"aad1e666-6660-4722-a197-684c8e4f7856"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{"fileName", "=", 
@@ -5597,7 +5444,8 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"FileNameSetter", "[", 
       RowBox[{"Dynamic", "[", "selectedFile", "]"}], "]"}], ",", " ", 
-     RowBox[{"Alignment", " ", "->", " ", "Center"}]}], "]"}]}]}]}], "Code",
+     RowBox[{"Alignment", " ", "->", " ", "Center"}]}], "]"}], "}"}], 
+  "]"}]}], "Code",
  CellChangeTimes->{{3.8296211762578754`*^9, 3.8296212082605724`*^9}, {
    3.8296222007692614`*^9, 3.8296222094884644`*^9}, 3.829622717588594*^9, 
    3.829626628938427*^9, {3.829626997882193*^9, 3.8296270057116113`*^9}, {
@@ -5615,9 +5463,19 @@ Cell[BoxData[{
    3.8298019248468313`*^9, 3.829801925052746*^9}, {3.8298020203023777`*^9, 
    3.829802038695699*^9}, {3.829802078711465*^9, 3.829802130760006*^9}, {
    3.829802176262039*^9, 3.829802184441774*^9}, {3.829802500553668*^9, 
-   3.8298025229576335`*^9}, {3.829802561453414*^9, 
-   3.829802574864087*^9}},ExpressionUUID->"ebe20f45-4a38-4dac-8f19-\
-b5afba9cb8df"],
+   3.8298025229576335`*^9}, {3.829802561453414*^9, 3.829802574864087*^9}, {
+   3.8298069648485413`*^9, 3.829806977162261*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"ebe20f45-4a38-4dac-8f19-b5afba9cb8df"],
+
+Cell[BoxData[
+ TemplateBox[{ItemBox[
+    TemplateBox[{
+      Dynamic[$CellContext`selectedFile], "Open", All}, 
+     "FileNameSetterBoxes"], Alignment -> Center, StripOnInput -> False]},
+  "RowDefault"]], "Output",
+ CellChangeTimes->{3.8298060687622185`*^9, 3.8298069880070677`*^9},
+ CellLabel->"Out[38]=",ExpressionUUID->"3ac490b8-c218-45c9-ab94-0128e3f10604"]
+}, Open  ]],
 
 Cell[TextData[{
  StyleBox["\n", "Subsection"],
@@ -5666,8 +5524,8 @@ https://pianofortelezioni.it/note-musicali/?s2-ssl=yes\n", "Text"],
 41b0b5868d05"]
 }, Open  ]]
 },
-WindowSize->{1536, 781},
-WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+WindowSize->{1520, 781},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
 ShowCellTags->True,
 FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
 StyleDefinitions->"Default.nb"
@@ -5684,24 +5542,29 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 3930, 60, 294, "Subtitle",ExpressionUUID->"18690890-25b2-4038-963d-bd95f41df185",
+Cell[580, 22, 4217, 66, 345, "Subtitle",ExpressionUUID->"18690890-25b2-4038-963d-bd95f41df185",
  InitializationCell->True],
-Cell[4513, 84, 438, 9, 67, "Input",ExpressionUUID->"723e4d76-2c84-4eda-a2e8-65d7aaba9896"]
+Cell[4800, 90, 3788, 56, 129, "Subtitle",ExpressionUUID->"1ba52b7d-4cd7-4e90-8537-eb288605617f",
+ InitializationCell->True],
+Cell[8591, 148, 580, 10, 28, "Input",ExpressionUUID->"723e4d76-2c84-4eda-a2e8-65d7aaba9896"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4988, 98, 3498, 48, 41, "Subtitle",ExpressionUUID->"39060bb3-dc19-4361-b8e6-d312a5f18ad4",
+Cell[9208, 163, 3825, 58, 284, "Subtitle",ExpressionUUID->"e9f3eabe-e1d6-4d00-b1ec-a3eb9141a860",
  InitializationCell->True],
-Cell[8489, 148, 281679, 4636, 3621, "Subtitle",ExpressionUUID->"e9f3eabe-e1d6-4d00-b1ec-a3eb9141a860",
+Cell[13036, 223, 4660, 78, 552, "Subtitle",ExpressionUUID->"98238ea6-dd90-4ec0-a81d-018cecef54ae",
  InitializationCell->True],
-Cell[290171, 4786, 935, 23, 141, "Code",ExpressionUUID->"59a68b7b-7ffd-4f6e-be0e-117ee0892e84"],
-Cell[291109, 4811, 390, 9, 48, "Input",ExpressionUUID->"3cb9370c-1a51-47f7-9c9c-1c84c950b329"],
+Cell[17699, 303, 284707, 4757, 3002, "Subtitle",ExpressionUUID->"415d64ee-c915-4f5f-bc65-9e2f3eeeedbc",
+ InitializationCell->True],
 Cell[CellGroupData[{
-Cell[291524, 4824, 19472, 485, 903, "Input",ExpressionUUID->"99d1afce-f717-4562-a97c-d1d44d4c59ed"],
-Cell[310999, 5311, 8963, 187, 323, "Output",ExpressionUUID->"7c6d542e-22b3-434b-b303-d886056e78bd"]
+Cell[302431, 5064, 579, 9, 69, "Code",ExpressionUUID->"59a68b7b-7ffd-4f6e-be0e-117ee0892e84"],
+Cell[303013, 5075, 11283, 236, 305, "Output",ExpressionUUID->"f69103b7-bd87-4c0d-86a4-4ccd268c88a2"]
 }, Open  ]],
-Cell[319977, 5501, 5894, 87, 908, "Text",ExpressionUUID->"aad1e666-6660-4722-a197-684c8e4f7856"],
-Cell[325874, 5590, 1785, 29, 69, "Code",ExpressionUUID->"ebe20f45-4a38-4dac-8f19-b5afba9cb8df"],
-Cell[327662, 5621, 2316, 44, 687, "Text",ExpressionUUID->"bee2ecd5-914b-4954-a474-41b0b5868d05"]
+Cell[314311, 5314, 6658, 119, 890, "Text",ExpressionUUID->"aad1e666-6660-4722-a197-684c8e4f7856"],
+Cell[CellGroupData[{
+Cell[320994, 5437, 1868, 30, 69, "Code",ExpressionUUID->"ebe20f45-4a38-4dac-8f19-b5afba9cb8df"],
+Cell[322865, 5469, 361, 7, 44, "Output",ExpressionUUID->"3ac490b8-c218-45c9-ab94-0128e3f10604"]
+}, Open  ]],
+Cell[323241, 5479, 2316, 44, 687, "Text",ExpressionUUID->"bee2ecd5-914b-4954-a474-41b0b5868d05"]
 }, Open  ]]
 }
 ]
