@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     63385,       1431]
-NotebookOptionsPosition[     60996,       1392]
-NotebookOutlinePosition[     61590,       1412]
-CellTagsIndexPosition[     61547,       1409]
+NotebookDataLength[     96429,       2117]
+NotebookOptionsPosition[     93963,       2077]
+NotebookOutlinePosition[     94532,       2097]
+CellTagsIndexPosition[     94489,       2094]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -89,9 +89,8 @@ Cell[BoxData[
       RowBox[{"synth", "@", 
        RowBox[{"getChannels", "[", "]"}]}], "]"}]}], ";"}]}]}]], "Input",
  CellChangeTimes->{{3.829301769166106*^9, 3.829301769785489*^9}, {
-  3.8293642237856493`*^9, 
-  3.829364234383581*^9}},ExpressionUUID->"0209d083-10f9-4e84-852c-\
-22e7081398c4"],
+   3.8293642237856493`*^9, 3.829364234383581*^9}, 3.8297945421892705`*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"0209d083-10f9-4e84-852c-22e7081398c4"],
 
 Cell[BoxData[
  RowBox[{"(*", " ", 
@@ -103,108 +102,104 @@ Cell[BoxData[
   3.829301193578545*^9}},ExpressionUUID->"87fe3367-2b4e-460f-b85e-\
 b91bfbe84476"],
 
-Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{"selectedNote", " ", "=", " ", 
-    RowBox[{"-", "1"}]}], ";"}], " ", 
-  RowBox[{"(*", " ", 
-   RowBox[{"Tasto", " ", "selezionata", " ", "nel", " ", "piano"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"playedNote", " ", "=", " ", 
-    RowBox[{"-", "1"}]}], ";"}], " ", 
-  RowBox[{"(*", " ", 
-   RowBox[{"Tasto", " ", "premuto", " ", "nel", " ", "piano"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"state", " ", "=", " ", 
-    RowBox[{"-", "1"}]}], ";"}], " ", 
-  RowBox[{"(*", " ", 
-   RowBox[{
-    RowBox[{"0", " ", "=", " ", 
-     RowBox[{"tutorial", " ", "mode"}]}], ",", " ", 
-    RowBox[{"1", " ", "=", " ", 
-     RowBox[{"play", " ", "mode"}]}]}], " ", "*)"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"allNotes", "=", " ", 
-   RowBox[{"List", "[", 
-    RowBox[{
-    "\"\<C\>\"", ",", " ", "\"\<C#\>\"", ",", "\"\<D\>\"", ",", " ", 
-     "\"\<D#\>\"", ",", "\"\<E\>\"", ",", "\"\<F\>\"", ",", "\"\<F#\>\"", 
-     ",", "\"\<G\>\"", ",", "\"\<G#\>\"", ",", " ", "\"\<A\>\"", ",", " ", 
-     "\"\<A#\>\"", ",", "\"\<B\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"toPitch", "[", 
-     RowBox[{"note_", ",", "oct_"}], "]"}], ":=", " ", 
+    RowBox[{"selectedNote", " ", "=", " ", 
+     RowBox[{"-", "1"}]}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Tasto", " ", "selezionata", " ", "nel", " ", "piano"}], " ", 
+     "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"playedNote", " ", "=", " ", 
+     RowBox[{"-", "1"}]}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Tasto", " ", "premuto", " ", "nel", " ", "piano"}], " ", "*)"}],
+     "\[IndentingNewLine]", 
+    RowBox[{"state", " ", "=", " ", 
+     RowBox[{"-", "1"}]}], ";", " ", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{"0", " ", "=", " ", 
+       RowBox[{"tutorial", " ", "mode"}]}], ",", " ", 
+      RowBox[{"1", " ", "=", " ", 
+       RowBox[{"play", " ", "mode"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+    "\[IndentingNewLine]", 
+    RowBox[{"allNotes", "=", " ", 
+     RowBox[{"List", "[", 
+      RowBox[{
+      "\"\<C\>\"", ",", " ", "\"\<C#\>\"", ",", "\"\<D\>\"", ",", " ", 
+       "\"\<D#\>\"", ",", "\"\<E\>\"", ",", "\"\<F\>\"", ",", "\"\<F#\>\"", 
+       ",", "\"\<G\>\"", ",", "\"\<G#\>\"", ",", " ", "\"\<A\>\"", ",", " ", 
+       "\"\<A#\>\"", ",", "\"\<B\>\""}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
     RowBox[{
+     RowBox[{"toPitch", "[", 
+      RowBox[{"note_", ",", "oct_"}], "]"}], ":=", " ", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"First", "[", 
+         RowBox[{"First", "[", 
+          RowBox[{"Position", "[", 
+           RowBox[{"allNotes", ",", " ", "note"}], "]"}], "]"}], "]"}], "-", 
+        "1"}], ")"}], "+", " ", 
+      RowBox[{"(", 
+       RowBox[{"oct", "*", "12"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"onKeyDown", "[", 
+      RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
      RowBox[{"(", 
       RowBox[{
-       RowBox[{"First", "[", 
-        RowBox[{"First", "[", 
-         RowBox[{"Position", "[", 
-          RowBox[{"allNotes", ",", " ", "note"}], "]"}], "]"}], "]"}], "-", 
-       "1"}], ")"}], "+", " ", 
+       RowBox[{"playedNote", " ", "=", " ", 
+        RowBox[{"toPitch", "[", 
+         RowBox[{"note", ",", "oct"}], "]"}]}], ";", 
+       RowBox[{"$Channel", "@", 
+        RowBox[{"noteOn", "[", 
+         RowBox[{
+          RowBox[{"toPitch", "[", 
+           RowBox[{"note", ",", "oct"}], "]"}], ",", "80"}], "]"}]}]}], 
+      ")"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"onKeyUp", "[", 
+      RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
      RowBox[{"(", 
-      RowBox[{"oct", "*", "12"}], ")"}]}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"onKeyDown", "[", 
-    RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
-   RowBox[{"(", 
+      RowBox[{
+       RowBox[{"playedNote", " ", "=", " ", 
+        RowBox[{"-", "1"}]}], ";", 
+       RowBox[{"$Channel", "@", 
+        RowBox[{"allNotesOff", "[", "]"}]}]}], ")"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
     RowBox[{
-     RowBox[{"playedNote", " ", "=", " ", 
-      RowBox[{"toPitch", "[", 
-       RowBox[{"note", ",", "oct"}], "]"}]}], ";", 
-     RowBox[{"$Channel", "@", 
-      RowBox[{"noteOn", "[", 
-       RowBox[{
+     RowBox[{"keyDown", "[", 
+      RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"selectedNote", " ", "=", " ", 
         RowBox[{"toPitch", "[", 
-         RowBox[{"note", ",", "oct"}], "]"}], ",", "80"}], "]"}]}]}], ")"}]}],
-   ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"onKeyUp", "[", 
-    RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
-   RowBox[{"(", 
+         RowBox[{"note", ",", "oct"}], "]"}]}], ";", " ", 
+       RowBox[{"$Channel", "@", 
+        RowBox[{"noteOn", "[", 
+         RowBox[{
+          RowBox[{"toPitch", "[", 
+           RowBox[{"note", ",", "oct"}], "]"}], ",", "80"}], "]"}]}]}], 
+      ")"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
     RowBox[{
-     RowBox[{"playedNote", " ", "=", " ", 
-      RowBox[{"-", "1"}]}], ";", 
-     RowBox[{"$Channel", "@", 
-      RowBox[{"allNotesOff", "[", "]"}]}]}], ")"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"keyDown", "[", 
-    RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
-   RowBox[{"(", 
-    RowBox[{
-     RowBox[{"selectedNote", " ", "=", " ", 
-      RowBox[{"toPitch", "[", 
-       RowBox[{"note", ",", "oct"}], "]"}]}], ";", " ", 
-     RowBox[{"$Channel", "@", 
-      RowBox[{"noteOn", "[", 
-       RowBox[{
-        RowBox[{"toPitch", "[", 
-         RowBox[{"note", ",", "oct"}], "]"}], ",", "80"}], "]"}]}]}], ")"}]}],
-   ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"keyUp", "[", 
-    RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
-   RowBox[{"(", 
-    RowBox[{
-     RowBox[{"selectedNote", " ", "=", " ", 
-      RowBox[{"-", "1"}]}], ";", " ", 
-     RowBox[{"$Channel", "@", 
-      RowBox[{"allNotesOff", "[", "]"}]}]}], ")"}]}], 
-  ";"}], "\[IndentingNewLine]"}], "Input",
+     RowBox[{"keyUp", "[", 
+      RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"selectedNote", " ", "=", " ", 
+        RowBox[{"-", "1"}]}], ";", " ", 
+       RowBox[{"$Channel", "@", 
+        RowBox[{"allNotesOff", "[", "]"}]}]}], ")"}]}], ";"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
  CellChangeTimes->{{3.829301014189714*^9, 3.829301015192959*^9}, {
    3.829301141096543*^9, 3.8293011439726915`*^9}, {3.8293012012398233`*^9, 
    3.829301267381922*^9}, {3.8293013919258323`*^9, 3.8293014214247236`*^9}, {
@@ -212,8 +207,10 @@ Cell[BoxData[{
    3.829310932647566*^9, 3.8293111002606335`*^9, {3.8293111349281034`*^9, 
    3.8293111588040476`*^9}, {3.829316860390332*^9, 3.829316871914674*^9}, {
    3.8293177117731886`*^9, 3.8293177378496523`*^9}, {3.829324510296812*^9, 
-   3.8293245564175396`*^9}, {3.829359987243493*^9, 
-   3.829359989200493*^9}},ExpressionUUID->"75d85cf6-f3ce-40c8-af59-\
+   3.8293245564175396`*^9}, {3.829359987243493*^9, 3.829359989200493*^9}, 
+   3.8297946217488823`*^9, {3.82979481189963*^9, 3.8297948217256174`*^9}, {
+   3.8297949003807325`*^9, 3.8297949120456343`*^9}, {3.829797889124687*^9, 
+   3.8297979027398496`*^9}},ExpressionUUID->"75d85cf6-f3ce-40c8-af59-\
 8e19f361afc7"],
 
 Cell[BoxData[
@@ -456,7 +453,7 @@ Cell[BoxData[
    3.8293253241009398`*^9}, {3.8293602263030405`*^9, 
    3.8293602447090397`*^9}, {3.8293602812672176`*^9, 
    3.8293602834392185`*^9}, {3.8293603322342215`*^9, 3.8293603463192186`*^9}},
- CellLabel->"In[38]:=",ExpressionUUID->"133f0636-f5ba-47f3-ba9f-4043dc14c5b4"],
+ CellLabel->"In[15]:=",ExpressionUUID->"133f0636-f5ba-47f3-ba9f-4043dc14c5b4"],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.829362012633336*^9, 3.829362012634336*^9}, 
@@ -1059,9 +1056,9 @@ Cell[BoxData[{
    3.8293622713980656`*^9}, {3.8293624009091883`*^9, 
    3.8293624012171955`*^9}, {3.829362478679328*^9, 3.82936247919033*^9}, {
    3.829362564194186*^9, 3.8293625648700724`*^9}, {3.829364091970105*^9, 
-   3.8293640930085897`*^9}, {3.829364123760113*^9, 3.8293641242611623`*^9}},
- CellLabel->
-  "In[147]:=",ExpressionUUID->"c8a0d00a-9f55-45c1-a4d9-cbd3989803fb"],
+   3.8293640930085897`*^9}, {3.829364123760113*^9, 3.8293641242611623`*^9}, {
+   3.829795088938791*^9, 3.8297950950025992`*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"c8a0d00a-9f55-45c1-a4d9-cbd3989803fb"],
 
 Cell[BoxData[
  TagBox[
@@ -1070,8 +1067,8 @@ Cell[BoxData[
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
        Hold[$CellContext`shownotes], False, "show notes"}, {True, False}}}, 
-    Typeset`size$$ = {616., {97.35000000000001, 103.35000000000001`}}, 
-    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+    Typeset`size$$ = {672., {108., 115.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, "Variables" :> {$CellContext`shownotes = False}, 
       "ControllerVariables" :> {}, 
@@ -1230,7 +1227,7 @@ $CellContext`octinit, $CellContext`octinit + 1}]]},
        TrackedSymbols :> {$CellContext`shownotes, $CellContext`selectedNote}, 
         LocalizeVariables -> False, ContinuousAction -> False}, 
       "DefaultOptions" :> {}],
-     ImageSizeCache->{662., {137., 143.}},
+     ImageSizeCache->{727., {155., 162.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -1257,9 +1254,9 @@ $CellContext`octinit, $CellContext`octinit + 1}]]},
    3.8293254959927893`*^9, 3.8293255151247263`*^9}, 3.8293596016911764`*^9, {
    3.8293607285784273`*^9, 3.829360739241994*^9}, 3.8293609071373696`*^9, {
    3.8293610716290503`*^9, 3.829361073376051*^9}, 3.8293612221202126`*^9, 
-   3.8293620847641897`*^9, 3.8293624801013274`*^9, 3.8293641268837147`*^9},
- CellLabel->
-  "Out[148]=",ExpressionUUID->"70245d8f-d929-4407-9fda-4dffa5fc01f4"]
+   3.8293620847641897`*^9, 3.8293624801013274`*^9, 3.8293641268837147`*^9, 
+   3.8297945651730785`*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"0a2b925a-bfae-4646-ba36-0fae3598457b"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1273,7 +1270,7 @@ Cell[BoxData[
     RowBox[{"mynotes", " ", "=", " ", 
      RowBox[{"{", 
       RowBox[{
-      "\"\<C4\>\"", ",", "\"\<C#5\>\"", ",", " ", "\"\<D4\>\"", ",", 
+      "\"\<C4\>\"", ",", "\"\<C#4\>\"", ",", " ", "\"\<D4\>\"", ",", 
        "\"\<D#4\>\"", ",", " ", "\"\<E4\>\"", ",", " ", "\"\<F4\>\"", ",", 
        "\"\<G4\>\"", ",", "\"\<A4\>\""}], "}"}]}], ";"}], 
    "\[IndentingNewLine]", 
@@ -1289,9 +1286,9 @@ Cell[BoxData[
    3.8293208850670166`*^9}, {3.829321394066168*^9, 3.8293213947724266`*^9}, {
    3.8293231841649256`*^9, 3.8293232183333*^9}, {3.829323581610941*^9, 
    3.829323585119051*^9}, {3.8293236971556225`*^9, 3.8293237123738313`*^9}, 
-   3.829324162847782*^9, {3.8293642722595315`*^9, 
-   3.8293642842839317`*^9}},ExpressionUUID->"45528dca-ebfe-4434-9f5d-\
-05a98112e3c3"],
+   3.829324162847782*^9, {3.8293642722595315`*^9, 3.8293642842839317`*^9}, {
+   3.829794594684718*^9, 3.829794594924867*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"45528dca-ebfe-4434-9f5d-05a98112e3c3"],
 
 Cell[BoxData[
  RowBox[{
@@ -1375,27 +1372,715 @@ Cell[BoxData[
     RowBox[{"keyUp", "[", 
      RowBox[{"\"\<C\>\"", ",", "4"}], "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"keyDown", "[", 
-     RowBox[{"\"\<D\>\"", ",", "4"}], "]"}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
     RowBox[{"Pause", "[", "1", "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"keyDown", "[", 
-     RowBox[{"\"\<E\>\"", ",", "4"}], "]"}], ";"}], "\[IndentingNewLine]", 
+     RowBox[{"\"\<F\>\"", ",", "4"}], "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"Pause", "[", "1", "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"keyDown", "[", 
+    RowBox[{"keyUp", "[", 
      RowBox[{"\"\<F\>\"", ",", "4"}], "]"}], ";"}]}]}]], "Input",
- CellChangeTimes->{{3.8293180566097383`*^9, 3.829318057549164*^9}},
- CellLabel->"In[50]:=",ExpressionUUID->"4c379e23-3d1d-4e7f-a857-0f5ea3880b5b"]
+ CellChangeTimes->{{3.8293180566097383`*^9, 3.829318057549164*^9}, {
+  3.829794641692709*^9, 3.8297946460365214`*^9}, {3.829794869556224*^9, 
+  3.8297948751169524`*^9}},
+ CellLabel->"In[67]:=",ExpressionUUID->"4c379e23-3d1d-4e7f-a857-0f5ea3880b5b"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"piano", "[", "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"$pianoInitOctave", " ", "=", " ", "3"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"selectedNote", " ", "=", " ", 
+        RowBox[{"-", "1"}]}], ";", " ", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Tasto", " ", "selezionata", " ", "nel", " ", "piano"}], " ", 
+        "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"playedNote", " ", "=", " ", 
+        RowBox[{"-", "1"}]}], ";", " ", 
+       RowBox[{"(*", " ", 
+        RowBox[{"Tasto", " ", "premuto", " ", "nel", " ", "piano"}], " ", 
+        "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"allNotes", "=", " ", 
+        RowBox[{"List", "[", 
+         RowBox[{
+         "\"\<C\>\"", ",", " ", "\"\<C#\>\"", ",", "\"\<D\>\"", ",", " ", 
+          "\"\<D#\>\"", ",", "\"\<E\>\"", ",", "\"\<F\>\"", ",", "\"\<F#\>\"",
+           ",", "\"\<G\>\"", ",", "\"\<G#\>\"", ",", " ", "\"\<A\>\"", ",", 
+          " ", "\"\<A#\>\"", ",", "\"\<B\>\""}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"toPitch", "[", 
+         RowBox[{"note_", ",", "oct_"}], "]"}], ":=", " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"First", "[", 
+            RowBox[{"First", "[", 
+             RowBox[{"Position", "[", 
+              RowBox[{"allNotes", ",", " ", "note"}], "]"}], "]"}], "]"}], 
+           "-", "1"}], ")"}], "+", " ", 
+         RowBox[{"(", 
+          RowBox[{"oct", "*", "12"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"onKeyDown", "[", 
+         RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"playedNote", " ", "=", " ", 
+           RowBox[{"toPitch", "[", 
+            RowBox[{"note", ",", "oct"}], "]"}]}], ";", 
+          RowBox[{"$Channel", "@", 
+           RowBox[{"noteOn", "[", 
+            RowBox[{
+             RowBox[{"toPitch", "[", 
+              RowBox[{"note", ",", "oct"}], "]"}], ",", "80"}], "]"}]}]}], 
+         ")"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"onKeyUp", "[", 
+         RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"playedNote", " ", "=", " ", 
+           RowBox[{"-", "1"}]}], ";", 
+          RowBox[{"$Channel", "@", 
+           RowBox[{"allNotesOff", "[", "]"}]}]}], ")"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"keyDown", "[", 
+         RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"selectedNote", " ", "=", " ", 
+           RowBox[{"toPitch", "[", 
+            RowBox[{"note", ",", "oct"}], "]"}]}], ";", " ", 
+          RowBox[{"$Channel", "@", 
+           RowBox[{"noteOn", "[", 
+            RowBox[{
+             RowBox[{"toPitch", "[", 
+              RowBox[{"note", ",", "oct"}], "]"}], ",", "80"}], "]"}]}]}], 
+         ")"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"keyUp", "[", 
+         RowBox[{"note_", ",", "oct_"}], "]"}], " ", ":=", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"selectedNote", " ", "=", " ", 
+           RowBox[{"-", "1"}]}], ";", " ", 
+          RowBox[{"$Channel", "@", 
+           RowBox[{"allNotesOff", "[", "]"}]}]}], ")"}]}], ";", 
+       "\[IndentingNewLine]", "\n", 
+       RowBox[{"Manipulate", "[", "\n", "    ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"scale", " ", "=", " ", "2"}], ";", "\n", "    ", 
+          RowBox[{
+           RowBox[{"whitekey", "[", 
+            RowBox[{"note_", ",", " ", "oct_"}], "]"}], " ", ":=", "\n", 
+           "        ", 
+           RowBox[{"Mouseover", "[", 
+            RowBox[{"(*", " ", 
+             RowBox[{"Normal", " ", "not", " ", "pressed"}], " ", "*)"}], 
+            "\n", "            ", 
+            RowBox[{
+             RowBox[{"Graphics", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"EdgeForm", "[", "]"}], ",", "\n", "            ", 
+                   RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"selectedNote", " ", "\[Equal]", " ", 
+                    RowBox[{"toPitch", "[", 
+                    RowBox[{"note", ",", " ", "oct"}], "]"}]}], ",", "\n", 
+                    "                ", 
+                    RowBox[{"Lighter", "[", "Green", "]"}], "\n", 
+                    "                ", ",", "\n", "                ", 
+                    "White"}], "\n", "            ", "]"}], ",", "\n", 
+                   "            ", 
+                   RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", " ", "2"}], "}"}]}], "]"}]}], "}"}], 
+                 ",", " ", 
+                 RowBox[{"{", 
+                  RowBox[{"Line", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", "2"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", " ", "0"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", " ", "2"}], "}"}]}], "}"}], "]"}], 
+                  "}"}], ",", "\n", "            ", 
+                 RowBox[{"If", "[", 
+                  RowBox[{"shownotes", ",", "\n", "                ", 
+                   RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"note", " ", "<>", " ", 
+                    RowBox[{"ToString", "[", "oct", "]"}]}], ",", " ", "10", 
+                    ",", " ", "\"\<Label\>\""}], "]"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0.5", ",", " ", "1"}], "}"}]}], "]"}], "\n", 
+                   "                ", ",", "\n", "                ", 
+                   RowBox[{"{", "}"}]}], "\n", "            ", "]"}]}], "}"}],
+                ",", "\n", "            ", 
+               RowBox[{"ImageSize", " ", "\[Rule]", " ", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"22", " ", "*", " ", "scale"}], ",", " ", 
+                  RowBox[{"41", " ", "*", " ", "scale"}]}], "}"}]}], ",", 
+               "\n", "            ", 
+               RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"-", "0.01"}], ",", " ", "1.01"}], "}"}], ",", 
+                  " ", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"-", "0.05"}], ",", " ", "2"}], "}"}]}], "}"}]}], 
+               ",", "\n", "            ", 
+               RowBox[{"ImageMargins", " ", "\[Rule]", " ", "0"}]}], "]"}], 
+             ",", "\n", "            ", 
+             RowBox[{"(*", " ", 
+              RowBox[{"On", " ", "mouse", " ", "over"}], "*)"}], "\n", 
+             "            ", 
+             RowBox[{"EventHandler", "[", 
+              RowBox[{
+               RowBox[{"Dynamic", "[", "\n", "                ", 
+                RowBox[{"Graphics", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"EdgeForm", "[", "]"}], ",", "\n", 
+                    "                ", 
+                    RowBox[{"(*", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "Se", " ", "il", " ", "tasto", " ", "\[EGrave]", " ", 
+                    "selezionato", " ", "allora", " ", "verde"}], ",", " ", 
+                    RowBox[{"altrimenti", " ", "se", " ", "premuto", " ", 
+                    RowBox[{"rosso", "."}]}]}], "*)"}], "\n", 
+                    "                ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"selectedNote", " ", "\[Equal]", " ", 
+                    RowBox[{"toPitch", "[", 
+                    RowBox[{"note", ",", " ", "oct"}], "]"}]}], ",", "\n", 
+                    "                    ", 
+                    RowBox[{"Lighter", "[", "Green", "]"}], "\n", 
+                    "                    ", ",", "\n", "                    ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"dwn", " ", "&&", " ", 
+                    RowBox[{"selectedNote", " ", "\[NotEqual]", " ", 
+                    RowBox[{"-", "1"}]}]}], ",", "\n", 
+                    "                        ", 
+                    RowBox[{"Lighter", "[", "Red", "]"}], "\n", 
+                    "                        ", ",", "\n", 
+                    "                        ", "White"}], "\n", 
+                    "                    ", "]"}]}], "\n", "                ",
+                     "]"}], ",", "\n", "                ", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    "dwn", ",", "\n", "                        ", "0.15", 
+                    "\n", "                        ", ",", "\n", 
+                    "                        ", "0"}], "\n", 
+                    "                    ", "]"}]}], "\n", "                ",
+                     "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", " ", "2"}], "}"}]}], "]"}]}], "}"}], 
+                    ",", " ", 
+                    RowBox[{"Line", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", "2"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    "dwn", ",", "\n", "                        ", "0.15", 
+                    "\n", "                        ", ",", "\n", 
+                    "                        ", "0"}], "\n", 
+                    "                    ", "]"}]}], "\n", "                ",
+                     "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", " ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    "dwn", ",", "\n", "                        ", "0.15", 
+                    "\n", "                        ", ",", "\n", 
+                    "                        ", "0"}], "\n", 
+                    "                    ", "]"}]}], "\n", "                ",
+                     "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"1", ",", " ", "2"}], "}"}]}], "}"}], "]"}], ",", 
+                    " ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{"shownotes", ",", "\n", "                    ", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{"note", " ", "<>", " ", 
+                    RowBox[{"ToString", "[", "oct", "]"}]}], ",", " ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    "dwn", ",", "\n", "                            ", "9", 
+                    "\n", "                            ", ",", "\n", 
+                    "                            ", "10"}], "\n", 
+                    "                        ", "]"}], ",", " ", 
+                    "\"\<Label\>\""}], "\n", "                    ", "]"}], 
+                    ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0.5", ",", " ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    "dwn", ",", "\n", "                            ", "1.1", 
+                    "\n", "                            ", ",", "\n", 
+                    "                            ", "1"}], "\n", 
+                    "                        ", "]"}]}], "\n", 
+                    "                    ", "}"}]}], "]"}], "\n", 
+                    "                    ", ",", "\n", "                    ", 
+                    RowBox[{"{", "}"}]}], "\n", "                ", "]"}]}], 
+                   "}"}], ",", "\n", "                ", 
+                  RowBox[{"ImageSize", " ", "\[Rule]", " ", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"22", " ", "*", " ", "scale"}], ",", " ", 
+                    RowBox[{"41", " ", "*", " ", "scale"}]}], "}"}]}], ",", 
+                  "\n", "                ", 
+                  RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "0.01"}], ",", " ", "1.01"}], "}"}], ",", 
+                    " ", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"-", "0.05"}], ",", " ", "2"}], "}"}]}], "}"}]}], 
+                  ",", "\n", "                ", 
+                  RowBox[{"ImageMargins", " ", "\[Rule]", " ", "0"}]}], "]"}],
+                 "\n", "            ", "]"}], ",", "\n", "            ", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"\"\<MouseDown\>\"", " ", "\[RuleDelayed]", " ", 
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"dwn", " ", "=", " ", "True"}], ";", " ", 
+                    RowBox[{"onKeyDown", "[", 
+                    RowBox[{"note", ",", " ", "oct"}], "]"}]}], ")"}]}], ",", 
+                 "\n", "                ", 
+                 RowBox[{"\"\<MouseUp\>\"", " ", "\[RuleDelayed]", " ", 
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"dwn", " ", "=", " ", "False"}], ";", " ", 
+                    RowBox[{"onKeyUp", "[", 
+                    RowBox[{"note", ",", " ", "oct"}], "]"}]}], ")"}]}]}], 
+                "\n", "            ", "}"}]}], "]"}]}], "\n", "        ", 
+            "]"}]}], ";", "\n", "    ", 
+          RowBox[{
+           RowBox[{"space", "[", "wd_", "]"}], " ", ":=", "\n", "        ", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"White", ",", " ", 
+               RowBox[{"Rectangle", "[", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", 
+                 RowBox[{"{", 
+                  RowBox[{"wd", ",", " ", "1"}], "}"}]}], "]"}]}], "}"}], ",",
+              " ", 
+             RowBox[{"ImageSize", " ", "\[Rule]", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"wd", " ", "*", " ", "scale"}], ",", " ", 
+                "Automatic"}], "}"}]}], ",", " ", 
+             RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", 
+                RowBox[{"{", 
+                 RowBox[{"2.5", ",", " ", "5"}], "}"}]}], "}"}]}], ",", " ", 
+             RowBox[{"ImageMargins", " ", "\[Rule]", " ", "0"}]}], "]"}]}], 
+          ";", "\n", "    ", 
+          RowBox[{"vert", " ", ":=", "\n", "        ", 
+           RowBox[{"Graphics", "[", 
+            RowBox[{
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", " ", "1"}], "}"}]}], "}"}], "]"}], ",", 
+             " ", 
+             RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"-", "0.001"}], ",", " ", "0.001"}], "}"}], ",", 
+                " ", 
+                RowBox[{"{", 
+                 RowBox[{"0", ",", " ", "1"}], "}"}]}], "}"}]}], ",", " ", 
+             RowBox[{"ImageSize", " ", "\[Rule]", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"2", " ", "*", " ", "scale"}], ",", " ", 
+                RowBox[{"60", " ", "*", " ", "scale"}]}], "}"}]}], ",", " ", 
+             RowBox[{"ImageMargins", " ", "\[Rule]", " ", "0"}]}], "]"}]}], 
+          ";", "\n", "    ", 
+          RowBox[{
+           RowBox[{"blackkey", "[", 
+            RowBox[{"note_", ",", " ", "oct_"}], "]"}], " ", ":=", "\n", 
+           "        ", 
+           RowBox[{"Mouseover", "[", 
+            RowBox[{"(*", " ", 
+             RowBox[{"Normal", " ", "not", " ", "pressed"}], " ", "*)"}], 
+            "\n", "            ", 
+            RowBox[{
+             RowBox[{"Graphics", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"EdgeForm", "[", "Black", "]"}], ",", "\n", 
+                   "            ", 
+                   RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"selectedNote", " ", "\[Equal]", " ", 
+                    RowBox[{"toPitch", "[", 
+                    RowBox[{"note", ",", " ", "oct"}], "]"}]}], ",", "\n", 
+                    "                ", 
+                    RowBox[{"Darker", "[", "Green", "]"}], "\n", 
+                    "                ", ",", "\n", "                ", 
+                    "Black"}], "\n", "            ", "]"}], ",", "\n", 
+                   "            ", 
+                   RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", "2.5"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0.5", ",", " ", "5"}], "}"}]}], "]"}]}], "}"}], 
+                 ",", " ", 
+                 RowBox[{"If", "[", 
+                  RowBox[{"shownotes", ",", "\n", "                ", 
+                   RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "note", " ", "<>", " ", "\"\< \>\"", " ", "<>", " ", 
+                    RowBox[{"ToString", "[", "oct", "]"}]}], ",", " ", "10", 
+                    ",", " ", "White", ",", " ", "\"\<Label\>\""}], "]"}], 
+                    ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0.25", ",", " ", "3.5"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", "1"}], "}"}]}], "]"}], "\n", 
+                   "                ", ",", "\n", "                ", 
+                   RowBox[{"{", "}"}]}], "\n", "            ", "]"}]}], "}"}],
+                ",", " ", 
+               RowBox[{"ImageSize", " ", "\[Rule]", " ", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"12", " ", "*", " ", "scale"}], ",", " ", 
+                  RowBox[{"60", " ", "*", " ", "scale"}]}], "}"}]}], ",", 
+               "\n", "            ", 
+               RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"0", ",", " ", "0.5"}], "}"}], ",", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"2.5", ",", " ", "5"}], "}"}]}], "}"}]}], ",", 
+               "\n", "            ", 
+               RowBox[{"ImageMargins", " ", "\[Rule]", " ", "0"}]}], "]"}], 
+             ",", "\n", "            ", 
+             RowBox[{"EventHandler", "[", 
+              RowBox[{
+               RowBox[{"Dynamic", "[", "\n", "                ", 
+                RowBox[{"Graphics", "[", 
+                 RowBox[{
+                  RowBox[{"{", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"EdgeForm", "[", "Black", "]"}], ",", "\n", 
+                    "                ", 
+                    RowBox[{"(*", " ", 
+                    RowBox[{
+                    RowBox[{
+                    "Se", " ", "il", " ", "tasto", " ", "\[EGrave]", " ", 
+                    "selezionato", " ", "allora", " ", "verde"}], ",", " ", 
+                    RowBox[{"altrimenti", " ", "se", " ", "premuto", " ", 
+                    RowBox[{"rosso", "."}]}]}], "*)"}], "\n", 
+                    "                ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"selectedNote", " ", "\[Equal]", " ", 
+                    RowBox[{"toPitch", "[", 
+                    RowBox[{"note", ",", " ", "oct"}], "]"}]}], ",", "\n", 
+                    "                    ", 
+                    RowBox[{"Darker", "[", "Green", "]"}], "\n", 
+                    "                    ", ",", "\n", "                    ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"dwn", " ", "&&", " ", 
+                    RowBox[{"selectedNote", " ", "\[NotEqual]", " ", 
+                    RowBox[{"-", "1"}]}]}], ",", "\n", 
+                    "                        ", 
+                    RowBox[{"Darker", "[", "Red", "]"}], "\n", 
+                    "                        ", ",", "\n", 
+                    "                        ", "Black"}], "\n", 
+                    "                    ", "]"}]}], "\n", "                ",
+                     "]"}], ",", "\n", "                ", 
+                    RowBox[{"Rectangle", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    "dwn", ",", "\n", "                    ", "0.05", "\n", 
+                    "                    ", ",", "\n", "                    ",
+                     "0"}], "\n", "                ", "]"}], ",", " ", 
+                    "2.5"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    "dwn", ",", "\n", "                    ", "0.4", "\n", 
+                    "                    ", ",", "\n", "                    ",
+                     "0.5"}], "\n", "                ", "]"}], ",", " ", 
+                    "5"}], "}"}]}], "]"}], ",", " ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{"shownotes", ",", "\n", "                    ", 
+                    RowBox[{"Text", "[", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{
+                    RowBox[{
+                    "note", " ", "<>", " ", "\"\< \>\"", " ", "<>", " ", 
+                    RowBox[{"ToString", "[", "oct", "]"}]}], ",", " ", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    "dwn", ",", "\n", "                            ", "9", 
+                    "\n", "                            ", ",", "\n", 
+                    "                            ", "10"}], "\n", 
+                    "                        ", "]"}], ",", " ", "White", ",",
+                     " ", "\"\<Label\>\""}], "\n", "                    ", 
+                    "]"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0.25", ",", " ", "3.5"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", "0"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", "1"}], "}"}]}], "]"}], "\n", 
+                    "                    ", ",", "\n", "                    ", 
+                    RowBox[{"{", "}"}]}], "\n", "                ", "]"}]}], 
+                    "}"}], "}"}], ",", " ", 
+                  RowBox[{"ImageSize", " ", "\[Rule]", " ", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"12", " ", "*", " ", "scale"}], ",", " ", 
+                    RowBox[{"60", " ", "*", " ", "scale"}]}], "}"}]}], ",", 
+                  " ", 
+                  RowBox[{"PlotRange", " ", "\[Rule]", " ", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"0", ",", " ", "0.5"}], "}"}], ",", " ", 
+                    RowBox[{"{", 
+                    RowBox[{"2.5", ",", " ", "5"}], "}"}]}], "}"}]}], ",", 
+                  " ", 
+                  RowBox[{"ImageMargins", " ", "\[Rule]", " ", "0"}]}], "]"}],
+                 "\n", "            ", "]"}], ",", "\n", "            ", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"\"\<MouseDown\>\"", " ", "\[RuleDelayed]", " ", 
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"dwn", " ", "=", " ", "True"}], ";", " ", 
+                    RowBox[{"onKeyDown", "[", 
+                    RowBox[{"note", ",", " ", "oct"}], "]"}]}], ")"}]}], ",", 
+                 "\n", "                ", 
+                 RowBox[{"\"\<MouseUp\>\"", " ", "\[RuleDelayed]", " ", 
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"dwn", " ", "=", " ", "False"}], ";", " ", 
+                    RowBox[{"onKeyUp", "[", 
+                    RowBox[{"note", ",", " ", "oct"}], "]"}]}], ")"}]}]}], 
+                "\n", "            ", "}"}]}], "]"}]}], "\n", "        ", 
+            "]"}]}], ";", "\n", "    ", 
+          RowBox[{
+           RowBox[{"whiteset", "[", "oct_", "]"}], " ", ":=", "\n", 
+           "        ", 
+           RowBox[{"Grid", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"Flatten", "[", 
+               RowBox[{"Map", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{"whitekey", "[", 
+                    RowBox[{"#", ",", " ", "oct"}], "]"}], ")"}], "&"}], ",", 
+                 " ", 
+                 RowBox[{"{", 
+                  RowBox[{
+                  "\"\<C\>\"", ",", " ", "\"\<D\>\"", ",", " ", "\"\<E\>\"", 
+                   ",", " ", "\"\<F\>\"", ",", " ", "\"\<G\>\"", ",", " ", 
+                   "\"\<A\>\"", ",", " ", "\"\<B\>\""}], "}"}]}], "]"}], 
+               "]"}], "}"}], ",", " ", 
+             RowBox[{"Spacings", " ", "\[Rule]", " ", "0"}]}], "]"}]}], ";", 
+          "\n", "    ", 
+          RowBox[{
+           RowBox[{"blackset", "[", "oct_", "]"}], " ", ":=", "\n", 
+           "        ", 
+           RowBox[{"Grid", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"{", "\n", "            ", 
+               RowBox[{"vert", ",", " ", 
+                RowBox[{"space", "[", "15", "]"}], ",", " ", 
+                RowBox[{"blackkey", "[", 
+                 RowBox[{"\"\<C#\>\"", ",", " ", "oct"}], "]"}], ",", "\n", 
+                "            ", 
+                RowBox[{"space", "[", "10", "]"}], ",", " ", 
+                RowBox[{"blackkey", "[", 
+                 RowBox[{"\"\<D#\>\"", ",", " ", "oct"}], "]"}], ",", "\n", 
+                "            ", 
+                RowBox[{"space", "[", "14.01", "]"}], ",", " ", "vert", ",", 
+                " ", 
+                RowBox[{"space", "[", "0.01", "]"}], ",", " ", "vert", ",", 
+                " ", 
+                RowBox[{"space", "[", "14.5", "]"}], ",", " ", 
+                RowBox[{"blackkey", "[", 
+                 RowBox[{"\"\<F#\>\"", ",", " ", "oct"}], "]"}], ",", " ", 
+                RowBox[{"space", "[", "11", "]"}], ",", " ", 
+                RowBox[{"blackkey", "[", 
+                 RowBox[{"\"\<G#\>\"", ",", " ", "oct"}], "]"}], ",", " ", 
+                RowBox[{"space", "[", "10.5", "]"}], ",", " ", 
+                RowBox[{"blackkey", "[", 
+                 RowBox[{"\"\<A#\>\"", ",", " ", "oct"}], "]"}], ",", " ", 
+                RowBox[{"space", "[", "14", "]"}], ",", " ", "vert"}], "\n", 
+               "        ", "}"}], "}"}], ",", " ", 
+             RowBox[{"Spacings", " ", "\[Rule]", " ", 
+              RowBox[{"-", "0.04"}]}], ",", " ", 
+             RowBox[{"Alignment", " ", "\[Rule]", " ", "Left"}]}], "]"}]}], 
+          ";", "\n", "    ", 
+          RowBox[{
+           RowBox[{"keyboardsplit", "[", "octinit_", "]"}], " ", ":=", "\n", 
+           "        ", 
+           RowBox[{"Grid", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Flatten", "[", 
+                RowBox[{"Table", "[", 
+                 RowBox[{
+                  RowBox[{"blackset", "[", "i", "]"}], ",", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"i", ",", " ", "octinit", ",", " ", 
+                    RowBox[{"octinit", " ", "+", " ", "1"}]}], "}"}]}], "]"}],
+                 "]"}], ",", " ", 
+               RowBox[{"Flatten", "[", 
+                RowBox[{"Table", "[", 
+                 RowBox[{
+                  RowBox[{"whiteset", "[", "i", "]"}], ",", " ", 
+                  RowBox[{"{", 
+                   RowBox[{"i", ",", " ", "octinit", ",", " ", 
+                    RowBox[{"octinit", " ", "+", " ", "1"}]}], "}"}]}], "]"}],
+                 "]"}]}], "}"}], ",", " ", 
+             RowBox[{"Spacings", " ", "\[Rule]", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\"\<Columns\>\"", " ", "\[Rule]", " ", 
+                 RowBox[{"{", 
+                  RowBox[{"{", "0", "}"}], "}"}]}], ",", " ", 
+                RowBox[{"\"\<Rows\>\"", " ", "\[Rule]", " ", 
+                 RowBox[{"{", 
+                  RowBox[{"{", 
+                   RowBox[{"-", "0.1"}], "}"}], "}"}]}]}], "}"}]}], ",", " ", 
+             RowBox[{"Alignment", " ", "\[Rule]", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\"\<Columns\>\"", " ", "\[Rule]", " ", 
+                 RowBox[{"{", 
+                  RowBox[{"{", "Left", "}"}], "}"}]}], ",", " ", 
+                RowBox[{"\"\<Rows\>\"", " ", "\[Rule]", " ", 
+                 RowBox[{"{", 
+                  RowBox[{"{", "Top", "}"}], "}"}]}]}], "}"}]}]}], "]"}]}], 
+          ";", "\n", "    ", 
+          RowBox[{"Deploy", "[", 
+           RowBox[{"keyboardsplit", "[", "pianoInitOctave", "]"}], "]"}]}], 
+         ",", "\n", "    ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+            "shownotes", ",", " ", "False", ",", " ", "\"\<show notes\>\""}], 
+            "}"}], ",", " ", 
+           RowBox[{"{", 
+            RowBox[{"True", ",", " ", "False"}], "}"}]}], "}"}], ",", "\n", 
+         "    ", 
+         RowBox[{"TrackedSymbols", " ", "\[RuleDelayed]", " ", 
+          RowBox[{"{", 
+           RowBox[{"shownotes", ",", " ", "selectedNote"}], "}"}]}], ",", 
+         "\n", "    ", 
+         RowBox[{"Initialization", " ", "\[RuleDelayed]", " ", 
+          RowBox[{"{", 
+           RowBox[{"dwn", " ", "=", " ", "False"}], "}"}]}], ",", "\n", 
+         "    ", 
+         RowBox[{"LocalizeVariables", " ", "\[Rule]", " ", "False"}], ",", 
+         "\n", "    ", 
+         RowBox[{"ContinuousAction", " ", "\[Rule]", " ", "False"}]}], "\n", 
+        "]"}]}]}], "\n", "]"}]}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.8297977503565493`*^9, 3.8297977669206038`*^9}, {
+  3.829797800425994*^9, 3.829797801119501*^9}, {3.8297978726632524`*^9, 
+  3.8297978768477054`*^9}, {3.829797923884304*^9, 
+  3.829798015610821*^9}},ExpressionUUID->"b548105e-0e9f-4813-b3d0-\
+ef2b993c547d"]
 },
 NotebookEventActions->$CellContext`none,
-WindowSize->{1057.3333333333333`, 536.3333333333334},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{1920, 1007},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
 TaggingRules->{
  "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
-Magnification:>1. Inherited,
+Magnification:>1.1 Inherited,
 FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"1e928417-c104-45a2-be5e-3c4cf7f80533"
@@ -1411,28 +2096,29 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 616, 11, 28, "Input",ExpressionUUID->"a90f37b3-f7f7-4cc6-a790-37dea597ad9e"],
-Cell[1177, 33, 445, 8, 28, "Input",ExpressionUUID->"52caf788-dc38-401b-a815-5373dc0a4702"],
-Cell[1625, 43, 243, 5, 28, "Input",ExpressionUUID->"84ff5693-cacf-4e44-b295-547e94c103c4"],
-Cell[1871, 50, 279, 6, 28, "Input",ExpressionUUID->"e4725962-5a75-4dfd-b201-b242acb2cfcd"],
-Cell[2153, 58, 149, 3, 48, "Input",ExpressionUUID->"3313b55d-be00-4177-904a-a8cb790c7d37"],
-Cell[2305, 63, 1053, 30, 163, "Input",ExpressionUUID->"0209d083-10f9-4e84-852c-22e7081398c4"],
-Cell[3361, 95, 404, 8, 28, "Input",ExpressionUUID->"87fe3367-2b4e-460f-b85e-b91bfbe84476"],
-Cell[3768, 105, 4035, 111, 240, "Input",ExpressionUUID->"75d85cf6-f3ce-40c8-af59-8e19f361afc7"],
-Cell[7806, 218, 11112, 240, 891, "Input",ExpressionUUID->"133f0636-f5ba-47f3-ba9f-4043dc14c5b4"],
-Cell[18921, 460, 175, 3, 28, "Input",ExpressionUUID->"fac587c5-5a88-4dc3-970f-dcd99c02c168"],
-Cell[19099, 465, 154, 3, 28, "Input",ExpressionUUID->"12a892cc-4b39-4e76-9a95-186e9199d99d"],
+Cell[558, 20, 616, 11, 32, "Input",ExpressionUUID->"a90f37b3-f7f7-4cc6-a790-37dea597ad9e"],
+Cell[1177, 33, 445, 8, 32, "Input",ExpressionUUID->"52caf788-dc38-401b-a815-5373dc0a4702"],
+Cell[1625, 43, 243, 5, 32, "Input",ExpressionUUID->"84ff5693-cacf-4e44-b295-547e94c103c4"],
+Cell[1871, 50, 279, 6, 32, "Input",ExpressionUUID->"e4725962-5a75-4dfd-b201-b242acb2cfcd"],
+Cell[2153, 58, 149, 3, 55, "Input",ExpressionUUID->"3313b55d-be00-4177-904a-a8cb790c7d37"],
+Cell[2305, 63, 1096, 29, 187, "Input",ExpressionUUID->"0209d083-10f9-4e84-852c-22e7081398c4"],
+Cell[3404, 94, 404, 8, 32, "Input",ExpressionUUID->"87fe3367-2b4e-460f-b85e-b91bfbe84476"],
+Cell[3811, 104, 4343, 109, 297, "Input",ExpressionUUID->"75d85cf6-f3ce-40c8-af59-8e19f361afc7"],
+Cell[8157, 215, 11112, 240, 1001, "Input",ExpressionUUID->"133f0636-f5ba-47f3-ba9f-4043dc14c5b4"],
+Cell[19272, 457, 175, 3, 32, "Input",ExpressionUUID->"fac587c5-5a88-4dc3-970f-dcd99c02c168"],
+Cell[19450, 462, 154, 3, 32, "Input",ExpressionUUID->"12a892cc-4b39-4e76-9a95-186e9199d99d"],
 Cell[CellGroupData[{
-Cell[19278, 472, 27074, 591, 1313, "Input",ExpressionUUID->"c8a0d00a-9f55-45c1-a4d9-cbd3989803fb"],
-Cell[46355, 1065, 9413, 196, 299, "Output",ExpressionUUID->"70245d8f-d929-4407-9fda-4dffa5fc01f4"]
+Cell[19629, 469, 27122, 591, 1353, "Input",ExpressionUUID->"c8a0d00a-9f55-45c1-a4d9-cbd3989803fb"],
+Cell[46754, 1062, 9409, 196, 338, "Output",ExpressionUUID->"0a2b925a-bfae-4646-ba36-0fae3598457b"]
 }, Open  ]],
-Cell[55783, 1264, 1505, 29, 86, "Input",ExpressionUUID->"45528dca-ebfe-4434-9f5d-05a98112e3c3"],
-Cell[57291, 1295, 1453, 37, 144, "Input",ExpressionUUID->"460b371e-80c9-4236-b260-84a6cd423133"],
-Cell[58747, 1334, 147, 3, 48, "Input",ExpressionUUID->"722bb543-55f0-4b3e-8c47-7c9bb07c8a53"],
-Cell[58897, 1339, 536, 9, 48, "Input",ExpressionUUID->"ad6905e1-9cb2-4c46-8123-fa62dcd641f8"],
-Cell[59436, 1350, 306, 6, 28, "Input",ExpressionUUID->"74a19569-b5ef-46c4-a541-6c7bd88a99a3"],
-Cell[59745, 1358, 187, 4, 28, "Input",ExpressionUUID->"827c9a79-365d-4518-a1a5-738a3ed63acc"],
-Cell[59935, 1364, 1057, 26, 182, "Input",ExpressionUUID->"4c379e23-3d1d-4e7f-a857-0f5ea3880b5b"]
+Cell[56178, 1261, 1573, 29, 99, "Input",ExpressionUUID->"45528dca-ebfe-4434-9f5d-05a98112e3c3"],
+Cell[57754, 1292, 1453, 37, 165, "Input",ExpressionUUID->"460b371e-80c9-4236-b260-84a6cd423133"],
+Cell[59210, 1331, 147, 3, 55, "Input",ExpressionUUID->"722bb543-55f0-4b3e-8c47-7c9bb07c8a53"],
+Cell[59360, 1336, 536, 9, 55, "Input",ExpressionUUID->"ad6905e1-9cb2-4c46-8123-fa62dcd641f8"],
+Cell[59899, 1347, 306, 6, 32, "Input",ExpressionUUID->"74a19569-b5ef-46c4-a541-6c7bd88a99a3"],
+Cell[60208, 1355, 187, 4, 32, "Input",ExpressionUUID->"827c9a79-365d-4518-a1a5-738a3ed63acc"],
+Cell[60398, 1361, 1040, 25, 187, "Input",ExpressionUUID->"4c379e23-3d1d-4e7f-a857-0f5ea3880b5b"],
+Cell[61441, 1388, 32518, 687, 3597, "Input",ExpressionUUID->"b548105e-0e9f-4813-b3d0-ef2b993c547d"]
 }
 ]
 *)
