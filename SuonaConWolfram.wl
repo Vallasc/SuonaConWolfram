@@ -2,7 +2,7 @@
 
 BeginPackage["SuonaConWolfram`"]
 
-Piano::usage = "Print a new paino";
+Piano::usage = "Print a new piano";
 
 Begin["`Private`"]
 
