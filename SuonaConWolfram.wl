@@ -1,8 +1,20 @@
 (* ::Package:: *)
 
+(* :Title : SuonaConWolfram *)
+(* :Context : SuonaConWolfram` *)
+(* :Author : Gruppo 5 *)
+(* :Summary : Package che permette di creare un paino virtuale e di effettuare delle operazioni su di esso *)
+(* :Copyright : Gruppo 5 2021 *)
+(* :Package Version : 1 *)
+(* :Mathematica Version : 12.2 *)
+(* :History : *)
+(* :Discussion : *)
+
 BeginPackage["SuonaConWolfram`"]
 
-Piano::usage = "Print a new piano";
+Piano::usage = "Piano[ottava, onDwn, onDwnPar, onUp, onUpPar] ritorna un nuovo pianoforte che parte da octave";
+KeyDown::usage = "KeyDown[nota, ottava] preme il tasto del piano corrsiposndente alla nota e all'ottava specificata";
+KeysUp::usage = "KeyUp[] Rilascia tutti i tasti del piano";
 
 Begin["`Private`"]
 
@@ -13,23 +25,34 @@ synth = MidiSystem`getSynthesizer[];
 synth @ open[];
 $Channel = First[synth @ getChannels[]];
 
-Piano[octave_] :=
-    DynamicModule[{scale = 2, shownotes = False, pianoInitOctave = octave, selectedNote = -1, playedNote = -1},
-        allNotes = List["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
-        toPitch[note_, oct_] :=
-            (First[First[Position[allNotes, note]]] - 1) + (oct * 12);
-        onKeyDown[note_, oct_] := (
-            playedNote = toPitch[note, oct]; $Channel @ noteOn[toPitch[note, oct], 80]
-        );
-        onKeyUp[note_, oct_] := (
-            playedNote = -1; $Channel @ allNotesOff[]
-        );
-        keyDown[note_, oct_] := (
-            selectedNote = toPitch[note, oct]; $Channel @ noteOn[toPitch[note, oct], 80]
-        );
-        keyUp[note_, oct_] := (
-            selectedNote = -1; $Channel @ allNotesOff[]
-        );
+allNotes = List["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+toPitch[note_, oct_] :=
+    (First[First[Position[allNotes, note]]] - 1) + (oct * 12);
+
+selectedNote = -1;
+KeyDown[note_, oct_] :=
+    Block[{},
+        selectedNote = toPitch[note, oct]; $Channel @ noteOn[toPitch[note, oct], 80]
+    ];
+KeysUp[] :=
+    Block[{},
+        selectedNote = -1; $Channel @ allNotesOff[]
+    ];
+
+Piano[octave_, onDwn_, onDwnPar_, onUp_, onUpPar_] :=
+    DynamicModule[{scale = 2, shownotes = False, pianoInitOctave = octave, playedNote = -1},
+        onKeyDown[note_, oct_] :=
+            Block[{},
+                playedNote = toPitch[note, oct];
+                $Channel @ noteOn[toPitch[note, oct], 80];
+                onDwn[onDwnPar]
+            ];
+        onKeyUp[note_, oct_] :=
+            Block[{},
+                playedNote = -1;
+                $Channel @ allNotesOff[];
+                onUp[onUpPar]
+            ];
         Manipulate[
             scale = 2;
             whitekey[note_, oct_] :=
@@ -154,7 +177,6 @@ Piano[octave_] :=
                         "MouseUp" :> (dwn = False; onKeyUp[note, oct])
                     }]
                 ];
-                
             whiteset[oct_] :=
                 Grid[{Flatten[Map[(whitekey[#, oct])&, {"C", "D", "E", "F", "G", "A", "B"}]]}, Spacings -> 0];
             blackset[oct_] :=
@@ -163,10 +185,8 @@ Piano[octave_] :=
                     space[10], blackkey["D#", oct],
                     space[14.01], vert, space[0.01], vert, space[14.5], blackkey["F#", oct], space[11], blackkey["G#", oct], space[10.5], blackkey["A#", oct], space[14], vert
                 }}, Spacings -> -0.04, Alignment -> Left];
-                
             keyboardsplit[octinit_] :=
                 Grid[{Flatten[Table[blackset[i], {i, octinit, octinit + 1}]], Flatten[Table[whiteset[i], {i, octinit, octinit + 1}]]}, Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}];
-            
             Deploy[keyboardsplit[pianoInitOctave]],
             {{shownotes, False, "show notes"}, {True, False}},
             TrackedSymbols :> {shownotes, selectedNote},
@@ -179,9 +199,3 @@ Piano[octave_] :=
 
 End[]
 EndPackage[]
-
-
-
-
-
-
