@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    327242,       5564]
-NotebookOptionsPosition[    325573,       5526]
-NotebookOutlinePosition[    325935,       5542]
-CellTagsIndexPosition[    325892,       5539]
+NotebookDataLength[    327955,       5568]
+NotebookOptionsPosition[    326639,       5537]
+NotebookOutlinePosition[    327001,       5553]
+CellTagsIndexPosition[    326958,       5550]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -21,7 +21,7 @@ Notebook[{
 
 Cell[CellGroupData[{
 Cell[TextData[{
- StyleBox["SUONA CON WOLFRAM", "Title",
+ StyleBox["SUONA CON NOI, SUONA CON IL LUPO", "Title",
   FontSize->72],
  StyleBox["\n\n", "Title"],
  StyleBox["FOTO 1 , FOTO 2 , FOTO 3 , FOTO 4\n", "Text",
@@ -85,7 +85,9 @@ A) (anno 1, curriculum A)",
    3.82979747614507*^9}, {3.829801903873741*^9, 3.8298019047047434`*^9}, {
    3.8298053607699976`*^9, 3.8298053782515526`*^9}, 3.829806886666275*^9, {
    3.829807014942298*^9, 3.8298072005023155`*^9}, {3.8298073791416016`*^9, 
-   3.829807387990775*^9}},
+   3.829807387990775*^9}, {3.829971036163863*^9, 3.829971038500819*^9}, {
+   3.829972757615815*^9, 3.829972765383801*^9}, {3.829973378550141*^9, 
+   3.8299733847633295`*^9}},
  TextAlignment->Center,ExpressionUUID->"18690890-25b2-4038-963d-bd95f41df185"],
 
 Cell[TextData[{
@@ -145,21 +147,6 @@ Cell[TextData[{
    3.829807014942298*^9, 
    3.829807202111151*^9}},ExpressionUUID->"1ba52b7d-4cd7-4e90-8537-\
 eb288605617f"],
-
-Cell[BoxData[
- RowBox[{"Import", " ", "[", 
-  "\"\<C:\\\\Users\\\\Angelo\\\\Desktop\\\\Matematica \
-Computazionale\\\\SuonaConWolfram-master\\\\SuonaConWolfram.wl\>\"", 
-  "]"}]], "Input",
- CellChangeTimes->{{3.82980538685995*^9, 3.8298053907893157`*^9}, {
-  3.829805483900635*^9, 3.829805512729639*^9}, {3.829805610940241*^9, 
-  3.829805632007228*^9}, {3.8298056751312284`*^9, 3.829805685871358*^9}, {
-  3.829806017506466*^9, 3.8298060462552843`*^9}, {3.829806107078579*^9, 
-  3.829806187016755*^9}},
- CellLabel->"In[36]:=",ExpressionUUID->"723e4d76-2c84-4eda-a2e8-65d7aaba9896"]
-}, Open  ]],
-
-Cell[CellGroupData[{
 
 Cell[TextData[{
  StyleBox["\n", "Title"],
@@ -233,8 +220,8 @@ Cell[TextData[{
  "\n",
  StyleBox["1.2 Introduzione alla musica: Le note musicali e le ottave;\n1.3 \
 La tastiera del pianoforte: I tasti bianchi e neri;\n1.4 Come si suona un \
-pianoforte: Introduzione guidata;\n1.4.1 Come suonare un pianoforte: Le \
-scale;\n1.5 I file MIDI;\n1.6 Carica o genera un file MIDI.", "Subsubsection"],
+pianoforte: Introduzione guidata;\n1.5 I file MIDI;\n1.6 Carica o genera un \
+file MIDI.", "Subsubsection"],
  StyleBox["\n", "Subsection"],
  StyleBox["Sezione 2: ", "Subsubsection",
   FontSize->24],
@@ -297,8 +284,9 @@ suona la traccia MIDI autonomamente.\n", "Subsubsection"],
    3.829795702587922*^9, 3.829795706084727*^9}, 3.829797234135888*^9, {
    3.8297974102795067`*^9, 3.8297974145457277`*^9}, {3.8297974504616747`*^9, 
    3.82979747614507*^9}, {3.829801903873741*^9, 3.8298019047047434`*^9}, 
-   3.8298053722629194`*^9, {3.8298072383495884`*^9, 
-   3.829807239226574*^9}},ExpressionUUID->"98238ea6-dd90-4ec0-a81d-\
+   3.8298053722629194`*^9, {3.8298072383495884`*^9, 3.829807239226574*^9}, {
+   3.8299748559680233`*^9, 
+   3.829974856305085*^9}},ExpressionUUID->"98238ea6-dd90-4ec0-a81d-\
 018cecef54ae"],
 
 Cell[TextData[{
@@ -314,7 +302,7 @@ lo strumento musicale.\nIl notebook si compone di due parti:\n   1) Una parte \
 introduttiva in cui viene esposta la storia della parola musica e i concetti \
 basilari: note, ottave, ecc...\n   2) Una seconda parte in cui l'utente pu\
 \[OGrave] testare se effettivamente se ha capito i concetti precedentemente \
-spiegati  inizialmente in maniera guidata e successivamente autonomamente. \n \
+spiegati  inizialmente in maniera guidata e successivamente autonomamente. \n\
 Per quanto riguarda le melodie da poter suonare ci siamo serviti dei file \
 MIDI i quali, a libera discrezione dell'utente, possono essere caricati da \
 lui stesso o generati in maniera automatica.\nIl pianoforte potr\[AGrave] poi \
@@ -324,8 +312,11 @@ corrispondenti ai vari tasti tramite la checkbox \"show notes\".\nIl target \
 del nostro notebook \[EGrave] un \"pubblico novizio\" il quale si sta \
 affacciando per la prima volta nel mondo della musica. \n", "Text",
   FontColor->GrayLevel[0]],
- StyleBox["Ma per capire meglio, suona con noi,",
+ StyleBox["Ma per capire meglio, ",
   FontColor->GrayLevel[0]],
+ StyleBox["suona con noi,",
+  FontSize->36,
+  FontColor->RGBColor[1, 0, 0]],
  " ",
  StyleBox["suona con", "Section",
   FontSize->36,
@@ -333,7 +324,7 @@ affacciando per la prima volta nel mondo della musica. \n", "Text",
  StyleBox[" ",
   FontSize->36,
   FontColor->RGBColor[1, 0, 0]],
- StyleBox["Wolfram", "Section",
+ StyleBox["il lupo", "Section",
   FontSize->36,
   FontColor->RGBColor[1, 0, 0]],
  StyleBox["!",
@@ -388,6 +379,8 @@ costruito in base a precise regole.\nPer cominciare questi suoni si chiamano \
  StyleBox["  ", "Text"],
  StyleBox["DO RE MI FA SOL LA SI", "Subsection",
   FontColor->RGBColor[0, 0, 1]],
+ StyleBox[".", "Subsection",
+  FontColor->GrayLevel[0]],
  StyleBox["\n", "Text"],
  StyleBox["Queste sette note in successione formano una famiglia chiamata \
 ottava, nella musica di queste famiglie ce ne sono sette e sono una di \
@@ -537,7 +530,7 @@ iIiIiOg2738A9Jf1uQ==
     BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
     Selectable->False],
    DefaultBaseStyle->"ImageGraphics",
-   ImageMargins->{{484., 0.}, {5., 0.}},
+   ImageMargins->{{441., 0.}, {5., 0.}},
    ImagePadding->{{0., 0.}, {0., 0.}},
    ImageSizeRaw->{545, 129},
    PlotRange->{{0., 545.}, {0., 129.}},
@@ -548,10 +541,28 @@ iIiIiOg2738A9Jf1uQ==
   FontColor->GrayLevel[0]],
  StyleBox["DO", "Text",
   FontColor->RGBColor[0, 0, 1]],
- StyleBox[" al Si ci sono 7 tasti bianchi e 5 tasti neri; in tutto 12 tasti \
-che formano una ottava. Tutta la tastiera del pianoforte  \[EGrave]  formata \
-da 7 ottave. L'intervallo di ottava invece \[EGrave] la distanza fra due note \
-vicine dello stesso nome: es. dal  ", "Text",
+ StyleBox[" al Si ci sono 7 ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["tasti bianchi", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" e 5 ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["tasti neri", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox["; in tutto 12 ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["tasti", "Text",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" che formano una ottava. Tutta la tastiera del pianoforte  \
+\[EGrave]  formata da 7 ottave. L'intervallo di ottava invece \[EGrave] la \
+distanza fra due ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["note", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" vicine dello stesso nome: es. dal  ", "Text",
   FontColor->GrayLevel[0]],
  StyleBox["DO", "Text",
   FontColor->RGBColor[0, 0, 1]],
@@ -559,7 +570,11 @@ vicine dello stesso nome: es. dal  ", "Text",
   FontColor->GrayLevel[0]],
  StyleBox["DO", "Text",
   FontColor->RGBColor[0, 0, 1]],
- StyleBox[" successivo; dal RE all'altro ", "Text",
+ StyleBox[" successivo; dal ", "Text",
+  FontColor->GrayLevel[0]],
+ StyleBox["RE", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" all'altro ", "Text",
   FontColor->GrayLevel[0]],
  StyleBox["RE", "Text",
   FontColor->RGBColor[0, 0, 1]],
@@ -579,7 +594,7 @@ fino all'ultimo tasto corrispondente alla ", "Text",
 pianoforte).", "Text",
   FontColor->GrayLevel[0]],
  StyleBox["\n", "Text"],
- StyleBox["\n            ", "Subsubsection"],
+ StyleBox["\n           ", "Subsubsection"],
  Cell[BoxData[
   GraphicsBox[
    TagBox[RasterBox[CompressedData["
@@ -2288,8 +2303,8 @@ BoPBYDAYDAaDwVAg/D+FgBHT
     BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
     Selectable->False],
    DefaultBaseStyle->"ImageGraphics",
-   ImageMargins->{{507., 24.}, {5., 5.}},
-   ImageSize->{Automatic, 258.31111111111113`},
+   ImageMargins->{{498., 24.}, {5., 5.}},
+   ImageSize->{479.35983263598337`, Automatic},
    ImageSizeRaw->{450, 239},
    PlotRange->{{0, 450}, {0, 239}}]], "Input",ExpressionUUID->
   "5db3fd34-7576-4ece-9353-6f39d6e5c759"],
@@ -5056,27 +5071,33 @@ suonare)", "Text"]
    3.8298053722629194`*^9, {3.8298072383495884`*^9, 3.829807239226574*^9}, 
    3.8298080274083767`*^9, {3.8298082019744387`*^9, 3.8298082070128946`*^9}, 
    3.8298094929486656`*^9, 3.8298095394991646`*^9, {3.829809766865132*^9, 
-   3.8298097694737124`*^9}, {3.8298098053737717`*^9, 3.8298099156614265`*^9}},
- 
+   3.8298097694737124`*^9}, {3.8298098053737717`*^9, 
+   3.8298099156614265`*^9}, {3.8299047745765686`*^9, 3.829904783753558*^9}, {
+   3.829973393037697*^9, 3.829973399892854*^9}, 3.8299748038553066`*^9},
  TextJustification->1.,ExpressionUUID->"415d64ee-c915-4f5f-bc65-9e2f3eeeedbc"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{
-  RowBox[{"Piano", "[", "4", "]"}], "\n"}]], "Code",
+ RowBox[{"Piano", "[", "2", "]"}]], "Code",
  CellChangeTimes->{{3.8296215252391253`*^9, 3.8296215412832837`*^9}, {
-  3.8296227429015965`*^9, 3.829622743653366*^9}, {3.8296228036091924`*^9, 
-  3.8296228057572055`*^9}, {3.8296228385946026`*^9, 3.82962285958044*^9}, {
-  3.829806278142468*^9, 3.8298062976881247`*^9}, {3.8298063587754717`*^9, 
-  3.829806410169097*^9}, {3.8298065615653076`*^9, 3.8298065739144382`*^9}, {
-  3.829806745114702*^9, 3.8298068323400307`*^9}},
- CellLabel->"In[35]:=",ExpressionUUID->"59a68b7b-7ffd-4f6e-be0e-117ee0892e84"],
+   3.8296227429015965`*^9, 3.829622743653366*^9}, {3.8296228036091924`*^9, 
+   3.8296228057572055`*^9}, {3.8296228385946026`*^9, 3.82962285958044*^9}, {
+   3.829806278142468*^9, 3.8298062976881247`*^9}, {3.8298063587754717`*^9, 
+   3.829806410169097*^9}, {3.8298065615653076`*^9, 3.8298065739144382`*^9}, {
+   3.829806745114702*^9, 3.8298068323400307`*^9}, 3.8299008068292193`*^9, 
+   3.829901782528934*^9, {3.8299018410580826`*^9, 3.829901861331066*^9}, {
+   3.8299025988399906`*^9, 3.8299026019006443`*^9}, {3.829904187367715*^9, 
+   3.8299041910431414`*^9}, {3.8299055348402534`*^9, 3.829905544351261*^9}, {
+   3.8299062829528723`*^9, 3.8299062968703675`*^9}, {3.829970474692356*^9, 
+   3.8299704749097743`*^9}},
+ CellLabel->
+  "In[160]:=",ExpressionUUID->"59a68b7b-7ffd-4f6e-be0e-117ee0892e84"],
 
 Cell[BoxData[
  DynamicModuleBox[{SuonaConWolfram`Private`scale$$ = 2, 
-  SuonaConWolfram`Private`shownotes$$ = False, 
-  SuonaConWolfram`Private`pianoInitOctave$$ = 4, 
+  SuonaConWolfram`Private`shownotes$$ = True, 
+  SuonaConWolfram`Private`pianoInitOctave$$ = 2, 
   SuonaConWolfram`Private`selectedNote$$ = -1, 
   SuonaConWolfram`Private`playedNote$$ = -1}, 
   TagBox[
@@ -5087,14 +5108,14 @@ Cell[BoxData[
         Hold[SuonaConWolfram`Private`shownotes$$], False, "show notes"}, {
        True, False}}}, Typeset`size$$ = {616., {97.5, 103.5}}, 
      Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False,
-      SuonaConWolfram`Private`shownotes$$$5972$$ = False}, 
+      SuonaConWolfram`Private`shownotes$$$22135$$ = False}, 
      DynamicBox[Manipulate`ManipulateBoxes[
       1, StandardForm, 
        "Variables" :> {SuonaConWolfram`Private`shownotes$$ = False}, 
        "ControllerVariables" :> {
          Hold[
          SuonaConWolfram`Private`shownotes$$, 
-          SuonaConWolfram`Private`shownotes$$$5972$$, False]}, 
+          SuonaConWolfram`Private`shownotes$$$22135$$, False]}, 
        "OtherVariables" :> {
         Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
          Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -5308,13 +5329,25 @@ Cell[BoxData[
    Manipulate`InterpretManipulate[1]],
   DynamicModuleValues:>{}]], "Output",
  CellChangeTimes->{{3.829806764199752*^9, 3.829806833359304*^9}, {
-  3.8298098646320667`*^9, 3.829809877560814*^9}},
- CellLabel->"Out[35]=",ExpressionUUID->"f69103b7-bd87-4c0d-86a4-4ccd268c88a2"]
+   3.8298098646320667`*^9, 3.829809877560814*^9}, {3.829900620454197*^9, 
+   3.8299006253182907`*^9}, 3.8299007743806143`*^9, {3.8299008092844677`*^9, 
+   3.8299008307740707`*^9}, {3.8299017729933596`*^9, 3.829901784873042*^9}, {
+   3.8299018430471973`*^9, 3.829901864362219*^9}, 3.8299025207167826`*^9, 
+   3.82990260336349*^9, {3.8299043792359257`*^9, 3.8299043974891434`*^9}, 
+   3.8299044967435355`*^9, 3.829904586633348*^9, 3.829904626437536*^9, 
+   3.8299046948142614`*^9, 3.8299048569244766`*^9, 3.829905545669732*^9, 
+   3.8299056343120346`*^9, {3.829905675612203*^9, 3.829905701152416*^9}, {
+   3.8299062893652625`*^9, 3.829906299304119*^9}, {3.829968072958681*^9, 
+   3.8299680891679387`*^9}, 3.8299693709137354`*^9, 3.829969408624024*^9, 
+   3.8299695596258554`*^9, 3.82996959838706*^9, {3.829970041378064*^9, 
+   3.8299700472612443`*^9}, 3.8299705806335125`*^9, 3.8299712267223096`*^9},
+ CellLabel->
+  "Out[160]=",ExpressionUUID->"9de18624-6043-4000-b2b0-fd009c82ae32"]
 }, Open  ]],
 
 Cell[TextData[{
  StyleBox["\n\n", "Text"],
- StyleBox["1.4.1 Come suonare un pianoforte: Le scale\n", "Subsubsection"],
+ StyleBox["\n", "Subsubsection"],
  StyleBox["Nella teoria musicale, una ", "Text",
   FontColor->GrayLevel[0]],
  StyleBox["scala", "Text",
@@ -5343,7 +5376,12 @@ hanno le seguenti note:", "Text",
        ",
  StyleBox["\n", "Text"],
  StyleBox["1.5 I file MIDI\n", "Subsubsection"],
- StyleBox["I ",
+ StyleBox["MIDI",
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox[" \[EGrave] un acronimo, significa Musical Instrument Digital \
+Interface. In sostanza si tratta di un protocollo standard concernente l\
+\[CloseCurlyQuote]interazione degli strumenti elettronici. I ",
   FontColor->GrayLevel[0]],
  StyleBox["file MIDI",
   FontWeight->"Bold",
@@ -5403,13 +5441,11 @@ termini di kbyte risultano adattissimi anche come sottofondi musicali delle \
 pagine web.",
   FontColor->GrayLevel[0]],
  "\n",
- StyleBox["\n1.6 Carica o genera un file MIDI\n", "Subsubsection"],
- Cell[BoxData[""], "Input",
-  CellChangeTimes->{{3.8298018810839853`*^9, 3.8298018825249147`*^9}, 
-    3.8298022048168335`*^9, 3.8298023064103346`*^9, 3.829802354607541*^9, 
-    3.829802517073845*^9},ExpressionUUID->
-  "dded2d1f-d776-46dd-b4a4-5b3949e43e46"],
- "Button per caricare file MIDI"
+ StyleBox["\n1.6 Genera casualmente un file MIDI\n", "Subsubsection"],
+ "In questa parte sar\[AGrave] possibile generare casualmente un file MIDI \
+cliccando semplicemente sul button corrispondente. Ne verr\[AGrave] \
+selezionato uno randomicamente  da un lista messa da noi a disposizione e \
+fornita nella cartella \[OpenCurlyDoubleQuote]MIDI\[CloseCurlyDoubleQuote]."
 }], "Text",
  CellChangeTimes->{{3.8296211762578754`*^9, 3.8296212082605724`*^9}, {
    3.8296222007692614`*^9, 3.8296222094884644`*^9}, 3.829622717588594*^9, 
@@ -5430,52 +5466,12 @@ pagine web.",
    3.829802176262039*^9, 3.829802184441774*^9}, 3.829802495615637*^9, {
    3.829802556840209*^9, 3.8298025590153155`*^9}, {3.829803673143975*^9, 
    3.829803691941292*^9}, {3.8298069414898643`*^9, 3.8298069418423786`*^9}, {
-   3.8298081401366916`*^9, 3.8298081582479343`*^9}},
+   3.8298081401366916`*^9, 3.8298081582479343`*^9}, {3.8299021331859193`*^9, 
+   3.8299021562380686`*^9}, 3.8299681175670524`*^9, {3.829970857999226*^9, 
+   3.8299708730141125`*^9}, 3.8299709049034595`*^9, {3.829972829855297*^9, 
+   3.8299729343607717`*^9}, {3.829972989705902*^9, 3.829973076021699*^9}, {
+   3.829973111882919*^9, 3.8299731684113517`*^9}, 3.8299747900883713`*^9},
  TextJustification->1.,ExpressionUUID->"aad1e666-6660-4722-a197-684c8e4f7856"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[{
- RowBox[{"fileName", "=", 
-  RowBox[{"SystemDialogInput", "[", "\"\<FileOpen\>\"", "]"}]}], "\n", 
- RowBox[{"Row", "[", 
-  RowBox[{"{", 
-   RowBox[{"Item", "[", 
-    RowBox[{
-     RowBox[{"FileNameSetter", "[", 
-      RowBox[{"Dynamic", "[", "selectedFile", "]"}], "]"}], ",", " ", 
-     RowBox[{"Alignment", " ", "->", " ", "Center"}]}], "]"}], "}"}], 
-  "]"}]}], "Code",
- CellChangeTimes->{{3.8296211762578754`*^9, 3.8296212082605724`*^9}, {
-   3.8296222007692614`*^9, 3.8296222094884644`*^9}, 3.829622717588594*^9, 
-   3.829626628938427*^9, {3.829626997882193*^9, 3.8296270057116113`*^9}, {
-   3.8296270669902115`*^9, 3.8296271374082947`*^9}, {3.82962801636893*^9, 
-   3.829628047611189*^9}, 3.829628399373274*^9, {3.8296284521347933`*^9, 
-   3.829628453558485*^9}, {3.829628537376582*^9, 3.829628594609431*^9}, 
-   3.829628655620367*^9, {3.829628693855671*^9, 3.8296288181056128`*^9}, {
-   3.8296288504697466`*^9, 3.829628875633363*^9}, {3.8296290015367594`*^9, 
-   3.8296290120317736`*^9}, {3.829795734549037*^9, 3.829795741219525*^9}, 
-   3.829795991080843*^9, {3.8297963326470976`*^9, 3.8297963630961494`*^9}, 
-   3.8297964224255905`*^9, {3.8297965037753973`*^9, 3.829796521106743*^9}, {
-   3.8297965953485894`*^9, 3.8297966229944983`*^9}, {3.8297966989776173`*^9, 
-   3.82979669993471*^9}, 3.8297974052952642`*^9, {3.8297975326853313`*^9, 
-   3.8297975394966955`*^9}, {3.8297983435918274`*^9, 3.829798356210598*^9}, {
-   3.8298019248468313`*^9, 3.829801925052746*^9}, {3.8298020203023777`*^9, 
-   3.829802038695699*^9}, {3.829802078711465*^9, 3.829802130760006*^9}, {
-   3.829802176262039*^9, 3.829802184441774*^9}, {3.829802500553668*^9, 
-   3.8298025229576335`*^9}, {3.829802561453414*^9, 3.829802574864087*^9}, {
-   3.8298069648485413`*^9, 3.829806977162261*^9}},
- CellLabel->"In[37]:=",ExpressionUUID->"ebe20f45-4a38-4dac-8f19-b5afba9cb8df"],
-
-Cell[BoxData[
- TemplateBox[{ItemBox[
-    TemplateBox[{
-      Dynamic[$CellContext`selectedFile], "Open", All}, 
-     "FileNameSetterBoxes"], Alignment -> Center, StripOnInput -> False]},
-  "RowDefault"]], "Output",
- CellChangeTimes->{3.8298060687622185`*^9, 3.8298069880070677`*^9},
- CellLabel->"Out[38]=",ExpressionUUID->"3ac490b8-c218-45c9-ab94-0128e3f10604"]
-}, Open  ]],
 
 Cell[TextData[{
  StyleBox["\n", "Subsection"],
@@ -5487,7 +5483,7 @@ Cell[TextData[{
 suona la traccia MIDI autonomamente.", "Subsubsection"],
  StyleBox["\n", "Subsection"],
  "\n",
- StyleBox["3 -  Approfondimenti:", "Subsubsection",
+ StyleBox["3 -  Approfondimenti: (?)", "Subsubsection",
   FontSize->24],
  StyleBox["\n\n", "Subsection"],
  StyleBox["4 - Bibliografia e Sitografia:", "Subsubsection",
@@ -5501,7 +5497,19 @@ https://pianofortelezioni.it/note-musicali/?s2-ssl=yes\n", "Text"],
  StyleBox["\n", "Subsection"],
  StyleBox["5 - Lavoro Futuro:", "Subsubsection",
   FontSize->24],
- "\n\n\n\n\n\n\n\n\n\n"
+ "\nCome lavoro futuro pensavamo di estendere la parte relativa al paragrafo \
+1.6, in particolare vorremmo inserire due button uno relativo al caricamento \
+del MIDI direttamente dal file system dell\[CloseCurlyQuote]utente ed un \
+altro che ti rimanda ad una pagina web dove \[EGrave] possibile scaricarli (i \
+file MIDI) sul proprio computer . \nAvevamo iniziato ad implementare la cosa \
+nel package (il codice \[EGrave] presente nella cartella \
+\[OpenCurlyDoubleQuote]lavoro effettuato\[CloseCurlyDoubleQuote] ) ma abbiamo \
+constatato che sarebbe necessario effettuare dei controlli su quanto caricato \
+essendo i MIDI composti da tanti elementi al suo interno. Quanto fatto per il \
+\[OpenCurlyDoubleQuote]cerca\[CloseCurlyDoubleQuote] \[EGrave] gi\[AGrave] \
+completo in realt\[AGrave], manca la parte del \[OpenCurlyDoubleQuote]carica\
+\[CloseCurlyDoubleQuote] dove per ora premuto il button ti stampa il path del \
+file che viene selezionato.\n\n\n\n\n\n\n\n\n\n"
 }], "Text",
  CellChangeTimes->{{3.8296211762578754`*^9, 3.8296212082605724`*^9}, {
    3.8296222007692614`*^9, 3.8296222094884644`*^9}, 3.829622717588594*^9, 
@@ -5519,8 +5527,11 @@ https://pianofortelezioni.it/note-musicali/?s2-ssl=yes\n", "Text"],
    3.8297975394966955`*^9}, {3.8297983435918274`*^9, 3.829798356210598*^9}, {
    3.8298019248468313`*^9, 3.829801925052746*^9}, {3.8298020203023777`*^9, 
    3.829802038695699*^9}, {3.829802078711465*^9, 3.829802130760006*^9}, {
-   3.829802176262039*^9, 
-   3.829802184441774*^9}},ExpressionUUID->"bee2ecd5-914b-4954-a474-\
+   3.829802176262039*^9, 3.829802184441774*^9}, {3.829972706896353*^9, 
+   3.8299727466410894`*^9}, {3.8299731922978067`*^9, 3.82997328019678*^9}, {
+   3.8299735632739754`*^9, 3.829973832821102*^9}, {3.829973864865119*^9, 
+   3.829974060004572*^9}, {3.8299746433840322`*^9, 
+   3.829974645250902*^9}},ExpressionUUID->"bee2ecd5-914b-4954-a474-\
 41b0b5868d05"]
 }, Open  ]]
 },
@@ -5542,29 +5553,22 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 4217, 66, 345, "Subtitle",ExpressionUUID->"18690890-25b2-4038-963d-bd95f41df185",
+Cell[580, 22, 4380, 68, 345, "Subtitle",ExpressionUUID->"18690890-25b2-4038-963d-bd95f41df185",
  InitializationCell->True],
-Cell[4800, 90, 3788, 56, 129, "Subtitle",ExpressionUUID->"1ba52b7d-4cd7-4e90-8537-eb288605617f",
+Cell[4963, 92, 3788, 56, 129, "Subtitle",ExpressionUUID->"1ba52b7d-4cd7-4e90-8537-eb288605617f",
  InitializationCell->True],
-Cell[8591, 148, 580, 10, 28, "Input",ExpressionUUID->"723e4d76-2c84-4eda-a2e8-65d7aaba9896"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[9208, 163, 3825, 58, 284, "Subtitle",ExpressionUUID->"e9f3eabe-e1d6-4d00-b1ec-a3eb9141a860",
+Cell[8754, 150, 3825, 58, 284, "Subtitle",ExpressionUUID->"e9f3eabe-e1d6-4d00-b1ec-a3eb9141a860",
  InitializationCell->True],
-Cell[13036, 223, 4660, 78, 552, "Subtitle",ExpressionUUID->"98238ea6-dd90-4ec0-a81d-018cecef54ae",
+Cell[12582, 210, 4667, 79, 527, "Subtitle",ExpressionUUID->"98238ea6-dd90-4ec0-a81d-018cecef54ae",
  InitializationCell->True],
-Cell[17699, 303, 284707, 4757, 3002, "Subtitle",ExpressionUUID->"415d64ee-c915-4f5f-bc65-9e2f3eeeedbc",
+Cell[17252, 291, 285523, 4785, 2999, "Subtitle",ExpressionUUID->"415d64ee-c915-4f5f-bc65-9e2f3eeeedbc",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[302431, 5064, 579, 9, 69, "Code",ExpressionUUID->"59a68b7b-7ffd-4f6e-be0e-117ee0892e84"],
-Cell[303013, 5075, 11283, 236, 305, "Output",ExpressionUUID->"f69103b7-bd87-4c0d-86a4-4ccd268c88a2"]
+Cell[302800, 5080, 927, 14, 50, "Code",ExpressionUUID->"59a68b7b-7ffd-4f6e-be0e-117ee0892e84"],
+Cell[303730, 5096, 12137, 248, 305, "Output",ExpressionUUID->"9de18624-6043-4000-b2b0-fd009c82ae32"]
 }, Open  ]],
-Cell[314311, 5314, 6658, 119, 890, "Text",ExpressionUUID->"aad1e666-6660-4722-a197-684c8e4f7856"],
-Cell[CellGroupData[{
-Cell[320994, 5437, 1868, 30, 69, "Code",ExpressionUUID->"ebe20f45-4a38-4dac-8f19-b5afba9cb8df"],
-Cell[322865, 5469, 361, 7, 44, "Output",ExpressionUUID->"3ac490b8-c218-45c9-ab94-0128e3f10604"]
-}, Open  ]],
-Cell[323241, 5479, 2316, 44, 687, "Text",ExpressionUUID->"bee2ecd5-914b-4954-a474-41b0b5868d05"]
+Cell[315882, 5347, 7218, 126, 934, "Text",ExpressionUUID->"aad1e666-6660-4722-a197-684c8e4f7856"],
+Cell[323103, 5475, 3520, 59, 775, "Text",ExpressionUUID->"bee2ecd5-914b-4954-a474-41b0b5868d05"]
 }, Open  ]]
 }
 ]
