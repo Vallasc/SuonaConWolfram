@@ -18,6 +18,7 @@ KeysUp::usage = "KeyUp[] Rilascia tutti i tasti del piano";
 PlaySong::"ddddd";
 ResetPiano::"dddddd";
 LearnNotes::"dddddd";
+GenerateMidi::usage = "Randomly generates a MIDI file";
 
 Begin["`Private`"]
 
@@ -247,6 +248,9 @@ LearnNotes[notesList_] := (
     selectNextNote[];
     Panel[DynamicModule[{inputNote = ""},Piano[3, onDwNote, onUpNote]]]
 )
+
+(* Restituisce il path del file selezionato *)
+GenerateMidi[] := Button["Genera casualmente", Print[SystemDialogInput["FileOpen"]], Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, Orange}, Background -> LightOrange]
 
 End[];
 EndPackage[];
