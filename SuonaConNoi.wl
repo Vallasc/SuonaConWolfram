@@ -9,7 +9,6 @@
 (* :Mathematica Version : 12.2 *)
 (* :History : *)
 (* :Discussion : *)
-
 BeginPackage["SuonaConNoi`", "JLink`"]
 
 Piano::usage = "Piano[ottava, onDwn, onDwnPar, onUp, onUpPar] ritorna un nuovo pianoforte che parte da octave";
@@ -87,7 +86,7 @@ Piano[octave_, onDwn_, onUp_] :=
                         If[selectedNote == joinNote[note, oct],
                             Lighter[Green]
                             ,
-                            If[dwn && selectedNote != -1,
+                            If[dwn && selectedNote != "",
                                 Lighter[Red]
                                 ,
                                 White
@@ -196,15 +195,13 @@ Piano[octave_, onDwn_, onUp_] :=
             keyboardsplit[octinit_] :=
                 Grid[{Flatten[Table[blackset[i], {i, octinit, octinit + 1}]], Flatten[Table[whiteset[i], {i, octinit, octinit + 1}]]}, Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}];
             Deploy[keyboardsplit[pianoInitOctave]],
-            {{shownotes, False, "show notes"}, {True, False}},
+            {{shownotes, False, "Mostra note"}, {True, False}},
             TrackedSymbols :> {shownotes, selectedNote},
             Initialization :> {dwn = False},
             LocalizeVariables -> False,
             ContinuousAction -> False
         ]
     ]
-
-
 (* Tutorial *)
 Needs["Experimental`"];
 midiNotes = {};
@@ -229,8 +226,10 @@ selectNextNote[] := (
     If[Length[midiNotes] > 0,
         (selectedNote = First[midiNotes];
             midiNotes = Delete[midiNotes, 1];
-        ),
+        )
+        ,
         ResetPiano[];
+        selectedNote = "END";
     ]
 );
 
@@ -238,19 +237,70 @@ checkNote[] :=
     If[selectedNote == playedNote,
         selectNextNote[]
     ];
+
 Experimental`ValueFunction[playedNote] :=
     If[playedNote != "",
         checkNote[]
     ];
 
+selectNextNoteLearn[] := (
+    If[Length[midiNotes] > 0,
+        (selectedNote = First[midiNotes];
+            midiNotes = Delete[midiNotes, 1];
+            $Channel @ allNotesOff[];
+            $Channel @ noteOn[toPitch[baseSelectedNote[], 3], 80]
+        )
+        ,
+        ResetPiano[];
+        selectedNote = "END";
+    ]
+);
+baseSelectedNote[] := First[StringCases[selectedNote, {RegularExpression["[A-G]#?"], RegularExpression["\\d+"]}]];
+textField = "Inserisci la nota qui";
+textOut = "";
 LearnNotes[notesList_] := (
     midiNotes = notesList;
-    selectNextNote[];
-    Panel[DynamicModule[{inputNote = ""},Piano[3, onDwNote, onUpNote]]]
+    selectNextNoteLearn[];
+    textField = "";
+    Panel[Column[{
+        Piano[3, onDwNote, onUpNote],
+        Dynamic[If[selectedNote != "END",
+            Column[{
+                Text[Style["Inserisci la nota qui sotto", Black]],
+                InputField[Dynamic[textField], String],
+                If[textField == baseSelectedNote[] && selectedNote != "",
+                    Text[Style["OK, molto bene!", Green, Bold, 18]]
+                    ,
+                    If[selectedNote != "",
+                        Text[Style["Nota non corretta", Red, Bold, 18]]
+                        ,
+                        Text[Style["", Blue, Bold, 18]]
+                    ]
+                ],
+                Button["Controlla", (Pause[0.6];
+                        If[textField == baseSelectedNote[],
+                            selectNextNoteLearn[]; textField = "";
+                        ]
+                    )
+                ]
+            }]
+            ,
+            Text[Style["Hai finito, complimenti!", Green, Bold, 18]]
+        ]]
+    }]]
 )
 
+  (*checkInputField[] :=
+    Dynamic[If[textField == selectedNote,
+        selectNextNote[]; textOut = "OK",
+        textOut = "ERROR";
+    ]];
+    
+Experimental`ValueFunction[textField] := checkInputField[]*)
+
 (* Restituisce il path del file selezionato *)
-GenerateMidi[] := Button["Genera casualmente", Print[SystemDialogInput["FileOpen"]], Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, Orange}, Background -> LightOrange]
+GenerateMidi[] :=
+    Button["Genera casualmente", Print[SystemDialogInput["FileOpen"]], Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, Orange}, Background -> LightOrange]
 
 End[];
 EndPackage[];
