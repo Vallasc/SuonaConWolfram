@@ -15,6 +15,9 @@ BeginPackage["SuonaConNoi`", "JLink`"]
 Piano::usage = "Piano[ottava, onDwn, onDwnPar, onUp, onUpPar] ritorna un nuovo pianoforte che parte da octave";
 KeyDown::usage = "KeyDown[nota, ottava] preme il tasto del piano corrsiposndente alla nota e all'ottava specificata";
 KeysUp::usage = "KeyUp[] Rilascia tutti i tasti del piano";
+PlaySong::"ddddd";
+ResetPiano::"dddddd";
+LearnNotes::"dddddd";
 
 Begin["`Private`"]
 
@@ -28,9 +31,12 @@ $Channel = First[synth @ getChannels[]];
 allNotes = List["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 toPitch[note_, oct_] :=
     (First[First[Position[allNotes, note]]] - 1) + (oct * 12);
-toNote[pitch_] := allNotes[[Mod[pitch, 12] + 1]];
+toNote[pitch_] :=
+    allNotes[[Mod[pitch, 12] + 1]];
+joinNote[note_, oct_] :=
+    StringJoin[note, ToString[oct]];
 
-selectedNote = -1;
+selectedNote = "";
 KeyDown[note_, oct_] :=
     Block[{},
         selectedNote = toPitch[note, oct]; $Channel @ noteOn[toPitch[note, oct], 80]
@@ -46,20 +52,20 @@ Piano[octave_, onDwn_, onUp_] :=
             Block[{},
                 playedNote = toPitch[note, oct];
                 $Channel @ noteOn[toPitch[note, oct], 80];
-                onDwn[StringJoin[note, ToString[oct]]]
+                onDwn[joinNote[note, oct]]
             ];
         onKeyUp[note_, oct_] :=
             Block[{},
                 playedNote = -1;
                 $Channel @ allNotesOff[];
-                onUp[StringJoin[note, ToString[oct]]]
+                onUp[joinNote[note, oct]]
             ];
         Manipulate[
             scale = 2;
             whitekey[note_, oct_] :=
                 Mouseover[(* Normal not pressed *)
                     Graphics[{{EdgeForm[],
-                    If[selectedNote == toPitch[note, oct],
+                    If[selectedNote == joinNote[note, oct],
                         Lighter[Green]
                         ,
                         White
@@ -77,7 +83,7 @@ Piano[octave_, onDwn_, onUp_] :=
                     EventHandler[Dynamic[
                         Graphics[{{EdgeForm[],
                         (* Se il tasto \[EGrave] selezionato allora verde, altrimenti se premuto rosso.*)
-                        If[selectedNote == toPitch[note, oct],
+                        If[selectedNote == joinNote[note, oct],
                             Lighter[Green]
                             ,
                             If[dwn && selectedNote != -1,
@@ -131,7 +137,7 @@ Piano[octave_, onDwn_, onUp_] :=
             blackkey[note_, oct_] :=
                 Mouseover[(* Normal not pressed *)
                     Graphics[{{EdgeForm[Black],
-                    If[selectedNote == toPitch[note, oct],
+                    If[selectedNote == joinNote[note, oct],
                         Darker[Green]
                         ,
                         Black
@@ -146,10 +152,10 @@ Piano[octave_, onDwn_, onUp_] :=
                     EventHandler[Dynamic[
                         Graphics[{{EdgeForm[Black],
                         (* Se il tasto \[EGrave] selezionato allora verde, altrimenti se premuto rosso.*)
-                        If[selectedNote == toPitch[note, oct],
+                        If[selectedNote == joinNote[note, oct],
                             Darker[Green]
                             ,
-                            If[dwn && selectedNote != -1,
+                            If[dwn && selectedNote != "",
                                 Darker[Red]
                                 ,
                                 Black
@@ -198,5 +204,52 @@ Piano[octave_, onDwn_, onUp_] :=
     ]
 
 
-End[]
-EndPackage[]
+(* Tutorial *)
+Needs["Experimental`"];
+midiNotes = {};
+playedNote = "";
+onDwNote[note_] :=
+    playedNote = note;
+onUpNote[note_] :=
+    playedNote = "";
+
+PlaySong[notesList_] := (
+    midiNotes = notesList;
+    selectNextNote[];
+    Piano[3, onDwNote, onUpNote]
+)
+
+ResetPiano[] := (
+    selectedNote = "";
+    midiNotes = {};
+);
+
+selectNextNote[] := (
+    If[Length[midiNotes] > 0,
+        (selectedNote = First[midiNotes];
+            midiNotes = Delete[midiNotes, 1];
+        ),
+        ResetPiano[];
+    ]
+);
+
+checkNote[] :=
+    If[selectedNote == playedNote,
+        selectNextNote[]
+    ];
+Experimental`ValueFunction[playedNote] :=
+    If[playedNote != "",
+        checkNote[]
+    ];
+
+LearnNotes[notesList_] := (
+    midiNotes = notesList;
+    selectNextNote[];
+    Panel[DynamicModule[{inputNote = ""},Piano[3, onDwNote, onUpNote]]]
+)
+
+End[];
+EndPackage[];
+
+
+
