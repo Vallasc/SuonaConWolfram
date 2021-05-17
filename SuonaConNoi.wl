@@ -275,37 +275,39 @@ LearnNotes[notesList_] := (
     midiNotes = notesList;
     selectNextNoteLearn[];
     textField = "";
-    Panel[Column[{
+    Panel[
+    Column[{
         Piano[3, onDwNote, onUpNote],
         Dynamic[If[selectedNote != "END" && state == 0,
             Column[{
-                Text[Style["Inserisci la nota qui sotto", Black]],
-                InputField[Dynamic[textField], String],
-                If[ToUpperCase[textField] == baseSelectedNote[] && selectedNote != "",
+                Text[Style["Inserisci la nota e clicca il bottone controlla", Black,Bold,18]],
+                InputField[Dynamic[textField], String, BaseStyle-> 15,FieldHint->"Inserire la nota qui.."],
+                
+                If[ToUpperCase[textField] == baseSelectedNote[],
                     Text[Style["OK, molto bene!", Green, Bold, 18]]
                     ,
-                    If[selectedNote != "",
+                    If[textField != "",
                         Text[Style["Nota non corretta", Red, Bold, 18]]
                         ,
                         Text[""]
                     ]
-                ], 
-            }]
+                ] 
+            }, Center]
             ,
             Text[Style["Hai finito, complimenti!", Green, Bold, 18]]
         ]],
         Dynamic[If[selectedNote != "END",
-            Button["Controlla", (Pause[0.6];
+            Button["Controlla",(Pause[0.6];
                     If[ToUpperCase[textField] == baseSelectedNote[] && selectedNote != "",
                         selectNextNoteLearn[];
                         textField = "";
                     ]
-                )
+                ),ImageSize->{200,50}
             ]
             ,
             Text[""]
         ]]
-    }]]
+    },ItemSize->{100,Automatic},Alignment->Center]]
 )
 
 GetNotesFromMidi[midiPath_] := (
@@ -321,3 +323,6 @@ GenerateMidi[] :=
 
 End[];
 EndPackage[];
+
+
+
