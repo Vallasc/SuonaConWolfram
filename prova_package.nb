@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     54235,       1097]
-NotebookOptionsPosition[     53172,       1069]
-NotebookOutlinePosition[     53698,       1088]
-CellTagsIndexPosition[     53655,       1085]
+NotebookDataLength[     56399,       1130]
+NotebookOptionsPosition[     55335,       1102]
+NotebookOutlinePosition[     55862,       1121]
+CellTagsIndexPosition[     55819,       1118]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -49,8 +49,8 @@ Cell[BoxData[{
    3.830408448761451*^9, 3.830408457529138*^9}, {3.830410042618412*^9, 
    3.830410071250181*^9}, {3.8304126283749833`*^9, 3.830412647022537*^9}, {
    3.8304126787588844`*^9, 3.830412690966668*^9}, {3.8304127924549665`*^9, 
-   3.8304127950617776`*^9}},
- CellLabel->"In[1]:=",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
+   3.8304127950617776`*^9}, 3.8304233300420723`*^9},
+ CellLabel->"In[9]:=",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
 
 Cell[BoxData[
  PanelBox[
@@ -60,7 +60,7 @@ Cell[BoxData[
         Text[
          Style[SuonaConNoi`Private`titleLearn, Black, Bold, 24]], 
         StandardForm],
-       ImageSizeCache->{333., {6., 23.}}]},
+       ImageSizeCache->{148., {6., 23.}}]},
      {
       DynamicBox[ToBoxes[
         If[SuonaConNoi`Private`noteLearnStarted, 
@@ -366,7 +366,7 @@ Cell[BoxData[
               If[SuonaConNoi`Private`errorsLearn == 0, Green, Orange], Bold, 
               18]]}, Center], 
           Text[""]]], StandardForm],
-       ImageSizeCache->{0., {3., 12.}}]},
+       ImageSizeCache->{376., {35., 41.}}]},
      {
       DynamicBox[ToBoxes[
         If[
@@ -385,7 +385,7 @@ Cell[BoxData[
           Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, 
             Darker[Orange]}, Background -> LightOrange], 
          Text[""]], StandardForm],
-       ImageSizeCache->{0., {3., 12.}}]}
+       ImageSizeCache->{200., {21., 29.}}]}
     },
     DefaultBaseStyle->"Column",
     GridBoxAlignment->{"Columns" -> {{Center}}},
@@ -447,8 +447,12 @@ Cell[BoxData[
    3.8304202663483105`*^9, 3.830420303229709*^9, 3.830420701256993*^9, 
    3.83042074490506*^9, 3.830421133302604*^9, 3.8304211961372166`*^9, 
    3.830421314760392*^9, 3.830421392931321*^9, 3.8304214379001102`*^9, 
-   3.8304214827935977`*^9, 3.830421583137101*^9, 3.830421645635505*^9},
- CellLabel->"Out[2]=",ExpressionUUID->"6151803a-1fd9-416b-a1e3-637560a8b179"]
+   3.8304214827935977`*^9, 3.830421583137101*^9, 3.830421645635505*^9, 
+   3.830421895047429*^9, 3.8304220826886415`*^9, {3.830422171779488*^9, 
+   3.830422229240011*^9}, 3.8304223116561284`*^9, 3.830422418482127*^9, 
+   3.8304231311413207`*^9, 3.8304232408052483`*^9, 3.8304233343281393`*^9, 
+   3.8304233854715056`*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"bab18209-f94b-4e5b-bb67-deca5dbb7131"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -459,8 +463,8 @@ Cell[BoxData[
    3.8302507270789733`*^9, 3.830250727244583*^9}, {3.830405264269734*^9, 
    3.8304052649167356`*^9}, 3.8304063949346566`*^9, {3.830409600858551*^9, 
    3.83040961069767*^9}, {3.8304096777067175`*^9, 3.830409680931452*^9}, 
-   3.830410164180611*^9},
- CellLabel->"In[3]:=",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
+   3.830410164180611*^9, 3.8304232623542*^9},
+ CellLabel->"In[11]:=",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
 
 Cell[BoxData[
  PanelBox[
@@ -470,17 +474,21 @@ Cell[BoxData[
         Text[
          Style[SuonaConNoi`Private`titleTutorial, Black, Bold, 24]], 
         StandardForm],
-       ImageSizeCache->{243., {6., 23.}}]},
+       ImageSizeCache->{128., {6., 23.}}]},
      {
       TemplateBox[{
         ButtonBox[
         "\"Genera casualmente\"", 
          ButtonFunction :> (
-          SuonaConNoi`Private`midiNotesTutorial = SuonaConNoi`GetNotesFromMidi[
-             Part[SuonaConNoi`Private`paths, 
-              RandomInteger[{1, 
-                Length[SuonaConNoi`Private`paths]}]]]; 
-          SuonaConNoi`Private`nextNoteTutorial[]), 
+          SuonaConNoi`Private`filePath = Part[SuonaConNoi`Private`paths, 
+             RandomInteger[{1, 
+               Length[SuonaConNoi`Private`paths]}]]; 
+          SuonaConNoi`Private`titleTutorial = 
+           FileNameTake[SuonaConNoi`Private`filePath]; 
+          SuonaConNoi`Private`midiNotesTutorial = 
+           SuonaConNoi`GetNotesFromMidi[SuonaConNoi`Private`filePath]; 
+          SuonaConNoi`Private`nextNoteTutorial[]; 
+          SuonaConNoi`Private`playSongEnded = False), 
          ImageSize -> {200, Automatic}, Method -> "Queued", 
          BaseStyle -> {"GenericButton", 16, Bold, 
            RGBColor[
@@ -489,11 +497,15 @@ Cell[BoxData[
          Automatic], 
         ButtonBox[
         "\"Seleziona file MIDI\"", 
-         ButtonFunction :> (
-          SuonaConNoi`Private`midiNotesTutorial = SuonaConNoi`GetNotesFromMidi[
-             ToString[
-              SystemDialogInput["FileOpen", ".mid"]]]; 
-          SuonaConNoi`Private`nextNoteTutorial[]), 
+         ButtonFunction :> (SuonaConNoi`Private`filePath = ToString[
+             SystemDialogInput["FileOpen", ".mid"]]; 
+          If[SuonaConNoi`Private`filePath != "$Canceled", 
+            SuonaConNoi`Private`midiNotesTutorial = 
+             SuonaConNoi`GetNotesFromMidi[SuonaConNoi`Private`filePath]; 
+            SuonaConNoi`Private`titleTutorial = 
+             FileNameTake[SuonaConNoi`Private`filePath]; 
+            SuonaConNoi`Private`nextNoteTutorial[]; 
+            SuonaConNoi`Private`playSongEnded = False]), 
          ImageSize -> {200, Automatic}, Method -> "Queued", 
          BaseStyle -> {"GenericButton", 16, Bold, 
            RGBColor[
@@ -752,7 +764,14 @@ Cell[BoxData[
          Deployed->True,
          StripOnInput->False],
         Manipulate`InterpretManipulate[1]],
-       DynamicModuleValues:>{}]}
+       DynamicModuleValues:>{}]},
+     {
+      DynamicBox[ToBoxes[
+        If[SuonaConNoi`Private`playSongEnded, 
+         Text[
+          Style["Bravo!", Green, Bold, 20]], 
+         Text[""]], StandardForm],
+       ImageSizeCache->{63., {5., 19.}}]}
     },
     DefaultBaseStyle->"Column",
     GridBoxAlignment->{"Columns" -> {{Center}}},
@@ -801,8 +820,12 @@ Cell[BoxData[
    3.8304211339597797`*^9, 3.8304211513463182`*^9}, {3.8304211967612114`*^9, 
    3.8304212195248847`*^9}, 3.8304213181883936`*^9, {3.830421397824406*^9, 
    3.830421441827153*^9}, 3.830421483413226*^9, 3.8304215837628045`*^9, 
-   3.830421646313504*^9},
- CellLabel->"Out[3]=",ExpressionUUID->"1538e4e0-3c21-4113-ba59-fd202ed4d5ed"]
+   3.830421646313504*^9, 3.8304218955253973`*^9, 3.830422083308641*^9, 
+   3.8304221721944866`*^9, {3.8304222022846184`*^9, 3.83042222967901*^9}, 
+   3.830422312050129*^9, 3.830422419110159*^9, 3.8304231318093204`*^9, {
+   3.830423241566247*^9, 3.8304232655756598`*^9}, 3.8304233368291693`*^9, 
+   3.830423389499343*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"1b102c11-af8d-4d77-a427-8e7e3a624302"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1056,19 +1079,29 @@ Cell[BoxData[
     StripOnInput->False],
    Manipulate`InterpretManipulate[1]],
   DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->CompressedData["
-1:eJxTTMoPSmVkYGDQAOJvm+QV33a+cXye3W0MorVkvjuC6JIMvRAQHXT0/2IQ
-bSn/7xCI5tgw8x+IdsqqYn4HpDutHcRA9ET2mRog2nztLBMQXTNFyBJEXwvZ
-4g6idWQr40E0q2FoLoj+JSfWAKKTBPvbQLRCz6NNIFpGYPppEN32YNdzEP1j
-+uz3ILpj0oJ/IHpamjz3eyB9S+uCAoiOklpkAKKTvk2xBtHeUZ32IPrCjHYv
-EH0msTsYRLMUi7h9AtIfeI8Hg+gJ60JSQfTP7YxZINpq2/7ZINrzkdFCEP3v
-1ImLINrJfNFNEG2WVv4XRMdvZ+L6DKQfbLoiCKIB4Wm20A==
-  "],
- CellLabel->"Out[4]=",ExpressionUUID->"694b7307-a456-41ea-bb05-2ef33187194f"]
+ CellChangeTimes->{
+  3.830409480990596*^9, 3.8304096283569217`*^9, 3.830409743722188*^9, 
+   3.8304098894502506`*^9, 3.830410527992837*^9, 3.8304107759413114`*^9, 
+   3.830411252802738*^9, 3.830411291825471*^9, 3.8304114420072675`*^9, 
+   3.8304115887821736`*^9, 3.8304116848336444`*^9, 3.8304117205806255`*^9, 
+   3.830411837635356*^9, 3.830412027784811*^9, 3.830412138662234*^9, 
+   3.8304122886912813`*^9, 3.830412340470872*^9, 3.830412695079605*^9, 
+   3.8304128927207165`*^9, 3.8304131178399076`*^9, 3.830413180862301*^9, 
+   3.830413301017887*^9, 3.8304134009812727`*^9, 3.830413574505231*^9, 
+   3.8304137010657167`*^9, 3.830413788655076*^9, 3.830413820292272*^9, 
+   3.830413908237404*^9, 3.830413980355688*^9, 3.83042001663904*^9, 
+   3.8304201262204514`*^9, 3.830420266646309*^9, 3.8304203040537076`*^9, 
+   3.8304207019909945`*^9, 3.8304207455901227`*^9, 3.8304211342747793`*^9, 
+   3.8304211970692453`*^9, 3.830421483731227*^9, 3.830421584084884*^9, 
+   3.8304216466468353`*^9, 3.830421895871402*^9, 3.830422083650674*^9, 
+   3.830422172544487*^9, {3.830422202669619*^9, 3.83042223001401*^9}, {
+   3.830422312390129*^9, 3.830422334843441*^9}, 3.830422419442131*^9, 
+   3.8304231321913214`*^9, 3.8304232419714165`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"0ffb9b48-573d-432c-8d41-c36c2b770447"]
 }, Open  ]]
 },
-WindowSize->{1224, 1007},
-WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+WindowSize->{1224, 991},
+WindowMargins->{{Automatic, -20}, {Automatic, 11}},
 TaggingRules->{
  "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
 Magnification:>1. Inherited,
@@ -1088,16 +1121,16 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 1528, 30, 48, "Input",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
-Cell[2111, 54, 20524, 396, 527, "Output",ExpressionUUID->"6151803a-1fd9-416b-a1e3-637560a8b179"]
+Cell[580, 22, 1552, 30, 48, "Input",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
+Cell[2135, 54, 20781, 400, 623, "Output",ExpressionUUID->"bab18209-f94b-4e5b-bb67-deca5dbb7131"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22672, 455, 453, 7, 28, "Input",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
-Cell[23128, 464, 17687, 340, 487, "Output",ExpressionUUID->"1538e4e0-3c21-4113-ba59-fd202ed4d5ed"]
+Cell[22953, 459, 474, 7, 28, "Input",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
+Cell[23430, 468, 18714, 359, 517, "Output",ExpressionUUID->"1b102c11-af8d-4d77-a427-8e7e3a624302"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[40852, 809, 249, 4, 28, "Input",ExpressionUUID->"935eea3e-d62c-4977-a0ab-20040a23bb46"],
-Cell[41104, 815, 12052, 251, 408, "Output",ExpressionUUID->"694b7307-a456-41ea-bb05-2ef33187194f"]
+Cell[42181, 832, 249, 4, 28, "Input",ExpressionUUID->"935eea3e-d62c-4977-a0ab-20040a23bb46"],
+Cell[42433, 838, 12886, 261, 387, "Output",ExpressionUUID->"0ffb9b48-573d-432c-8d41-c36c2b770447"]
 }, Open  ]]
 }
 ]

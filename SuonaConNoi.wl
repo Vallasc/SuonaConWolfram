@@ -375,12 +375,13 @@ octaveNote[note_] :=
 
 (*************************************************************** Tutorial *****************************************************************************************)
 midiNotesTutorial = {};
-playSongStarted = False;
+Dynamic[playSongEnded];
 Dynamic[titleTutorial];
 
 PlaySong[] := (
     titleTutorial = "Suona la traccia MIDI";
     errorsTutorial = 0;
+    playSongEnded = False;
     Panel[
         Column[{
             Dynamic[Text[Style[titleTutorial, Black, Bold, 24]]],
@@ -388,7 +389,11 @@ PlaySong[] := (
                 generateMidi[],
                 pickMidi[]
             }],
-            Piano[1]
+            Piano[1],
+            Dynamic[If[playSongEnded,
+                    Text[Style["Bravo!", Green, Bold, 20]],
+                    Text[""]
+                ]]
         }, Alignment -> Center]
     ]
 )
@@ -405,6 +410,7 @@ nextNoteTutorial[] := (
         ,
         midiNotesTutorial = {};
         selectedNoteTutorial = "END";
+        playSongEnded = True;
     ]
 )
 
@@ -430,8 +436,13 @@ paths = List[
 
 pickMidi[] := (
     Button["Seleziona file MIDI",
-        midiNotesTutorial = GetNotesFromMidi[ToString[SystemDialogInput["FileOpen", ".mid"]]];
-        nextNoteTutorial[],
+        filePath = ToString[SystemDialogInput["FileOpen", ".mid"]];
+        If[filePath !="$Canceled",
+           midiNotesTutorial = GetNotesFromMidi[filePath];
+           titleTutorial = FileNameTake[filePath];
+           nextNoteTutorial[];
+           playSongEnded = False
+        ],
         ImageSize -> {200, Automatic},
         Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, Darker[Orange]}, Background -> LightOrange
     ]
@@ -439,8 +450,11 @@ pickMidi[] := (
 
 generateMidi[] := (
     Button["Genera casualmente",
-        midiNotesTutorial = GetNotesFromMidi[paths[[RandomInteger[{1, Length[paths]}]]]];
-        nextNoteTutorial[],
+        filePath = paths[[RandomInteger[{1, Length[paths]}]]];
+        titleTutorial = FileNameTake[filePath];
+        midiNotesTutorial = GetNotesFromMidi[filePath];
+        nextNoteTutorial[];
+        playSongEnded = False,
         ImageSize -> {200, Automatic},
         Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, Darker[Orange]}, Background -> LightOrange
     ]
