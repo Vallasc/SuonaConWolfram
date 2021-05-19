@@ -1,0 +1,14 @@
+GetNotesFromMidiN[n_]:=(
+fileMidi=GetNotesFromMidi[];
+If[Length[fileMidi]>n,midiNotesTutorial=NoteTake[fileMidi,n], midiNotesTutorial=fileMidi]
+)
+
+(* Restituisce il path del file selezionato *)
+
+(* Ripeti esercizio PlaySong *)
+RepeatPlaySong[notes_] :=
+    Button["Ripeti esercizio", PlaySong[notes], Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, Orange}, Background -> LightOrange]
+
+(* Genera nuovo esercizio PlaySong *)
+GenerateNewPlaySong[n_] :=
+Button["Genera nuovo esercizio", GetNotesFromMidiN[n], Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, Orange}, Background -> LightOrange]
