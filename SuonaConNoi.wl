@@ -31,36 +31,45 @@ Begin["`Private`"]
 LoadJavaClass["javax.sound.midi.MidiSystem"];
 synth = MidiSystem`getSynthesizer[];
 synth @ open[];
+(* Canale del synth midi*)
 $Channel = First[synth @ getChannels[]];
 
+(* Note musicali *)
 allNotes = List["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+(* Converte da nota e ottava a pitch*)
 toPitch[note_, oct_] :=
     (First[First[Position[allNotes, note]]] - 1) + (oct * 12);
-toNote[pitch_] :=
-    allNotes[[Mod[pitch, 12] + 1]];
+(* Concatena la nota e l'ottava*)
 joinNote[note_, oct_] :=
     StringJoin[note, ToString[oct]];
 
+(* Numero di ottave nel piano *)
 pianoNumOfOct = 2;
+(* Ottava iniziale nel piano in modalit\[AGrave] Learn*)
 octaveLearn = 3;
+(* Ottava iniziale nel piano in modalit\[AGrave] Tutorial*)
 octaveTutorial = 3;
+(* Ottava iniziale nel piano in modalit\[AGrave] Free*)
 octaveFree = 3;
 
+(* Nota selezionata nel piano in modalit\[AGrave] Learn *)
 selectedNoteLearn = "";
+(* Nota selezionata nel piano in modalit\[AGrave] Tutorial *)
 selectedNoteTutorial = "";
-
+(* Nota premuta nel piano *)
 playedNote = "";
 
-KeyDown[note_, oct_] :=
-    Module[{},
+(* Suona la nota all'ottava nel piano corrente*)
+KeyDown[note_, oct_] := (
         selectedNote = toPitch[note, oct]; $Channel @ noteOn[toPitch[note, oct], 80]
-    ];
-KeysUp[] :=
-    Module[{},
+        )
+(* Rilascia la nota nel piano corrente*)
+KeysUp[] := (
         selectedNote = -1; $Channel @ allNotesOff[]
-    ];
+        );
 
-(* pstate, 0 = learn, 1 = tutorial, 2 = free *)
+(* Visualizza il pianoforte virtuale a schermo *)
+(* pstate in dica la modalit\[AGrave] del piano, 0 = learn, 1 = tutorial, 2 = free *)
 Piano[pstate_] :=
     With[{pianostate = pstate},
         DynamicModule[{scale = 2.8, shownotes = False},
@@ -278,6 +287,7 @@ Piano[pstate_] :=
 
 (*************************************************************** Learn *****************************************************************************************)
 midiNotesLearn = {};
+currentList = {};
 noteLearnStarted = False;
 Dynamic[titleLearn];
 
@@ -294,6 +304,7 @@ LearnNotes[notesList_] := (
                 Button["Ricomincia",
                     errorsLearn = 0;
                     midiNotesLearn = notesList;
+                    currentList = {};
                     nextNoteLearn[],
                     ImageSize -> {200, Automatic},
                     Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, Darker[Orange]}, Background -> LightOrange
@@ -347,7 +358,6 @@ LearnNotes[notesList_] := (
     ]
 )
 
-currentList = {};
 nextNoteLearn[] := (
     $Channel @ allNotesOff[];
     If[Length[currentList] == 0 && Length[midiNotesLearn] > 0,
@@ -430,8 +440,21 @@ Experimental`ValueFunction[playedNote] := (
 SetDirectory[NotebookDirectory[]];
 
 paths = List[
-    "./MIDI/prova1.mid",
-    "./MIDI/perElisa.mid"
+    "./MIDI/50_special.mid",
+    "./MIDI/Africa_Toto.mid",
+    "./MIDI/Attenti_al_lupo.mid",
+    "./MIDI/Blinding_Lights_The_Weeknd.mid",
+    "./MIDI/Centro_di_gravita_permanente.mid",
+    "./MIDI/Cuccurucuccu.mid",
+    "./MIDI/La_canzone_del_sole.mid",
+    "./MIDI/Marcia_imperiale.mid",
+    "./MIDI/Mila_e_Shiro.mid",
+    "./MIDI/Nella_vecchia_fattoria.mid",
+    "./MIDI/Per_Elisa.mid",
+    "./MIDI/Stand_by_me.mid",
+    "./MIDI/Super_Mario_Bros.mid",
+    "./MIDI/The_Final_Countdown.mid",
+    "./MIDI/Africa_Toto.mid"
 ];
 
 pickMidi[] := (
