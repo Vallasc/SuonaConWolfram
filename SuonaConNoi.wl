@@ -3,7 +3,7 @@
 (* :Title : SuonaConNoi *)
 (* :Context : SuonaConNoi` *)
 (* :Author : Gruppo 5 *)
-(* :Summary : Package che permette di creare un paino virtuale e di effettuare delle operazioni su di esso *)
+(* :Summary : Package che permette di creare un piano virtuale e di effettuare delle operazioni su di esso *)
 (* :Copyright : Gruppo 5 2021 *)
 (* :Package Version : 1 *)
 (* :Mathematica Version : 12.2 *)
@@ -15,14 +15,13 @@ BeginPackage["SuonaConNoi`", "JLink`"]
 Piano::usage = "Piano[ottava, onDwn, onUp] ritorna un nuovo pianoforte che parte da octave";
 KeyDown::usage = "KeyDown[nota, ottava] preme il tasto del piano corrsiposndente alla nota e all'ottava specificata";
 KeysUp::usage = "KeyUp[] Rilascia tutti i tasti del piano";
-PlaySong::usage = "ddddd";
-ResetPiano::usage = "dddddd";
-LearnNotes::usage = "dddddd";
-PickMidi::usage = "Randomly generates a MIDI file";
-GetNotesFromMidi::usage = "dd";
+PlaySong::usage = "PlaySong[] genera l'interfaccia piano per suonare una traccia MIDI";
+LearnNotes::usage = "LearnNotes[notesList] data una lista di note controlla che il pitch inserito dall'utente sia corretto";
+PickMidi::usage = "PickMidi[] permette di selezionare un file MIDI dal proprio dispositivo";
+GetNotesFromMidi::usage = "GetNotesFromMidi[midiPath] dato un file MIDI, ritorna una lista di tutte le note che lo compongono";
 RepeatPlaySong::usage = "RepeatPlaySong[notes] fa ripetere l'esercizio PlaySong all'utente";
 GenerateNewPlaySong::usage = "GenerateNewPlaySong[notes] genera un nuovo esercio PlaySong con una melodia differente dalla precedente";
-GenerateMidi::usage = "";
+GenerateMidi::usage = "GenerateMidi[] genera casualmente un file MIDI";
 
 Begin["`Private`"]
 
