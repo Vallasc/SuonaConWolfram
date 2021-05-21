@@ -5,10 +5,8 @@
 (* :Author : Gruppo 5 *)
 (* :Summary : Package che permette di creare un pianoforte virtuale e di effettuare delle operazioni su di esso *)
 (* :Copyright : Gruppo 5 2021 *)
-(* :Package Version : 1 *)
+(* :Package Version : 2 *)
 (* :Mathematica Version : 12.2 *)
-(* :History : *)
-(* :Discussion : *)
 
 BeginPackage["SuonaConNoi`", {"JLink`", "Experimental`"}]
 
@@ -59,7 +57,9 @@ initOctTutorial = 3;
 initOctFree = 3;
 
 (* Scalatura del piano *)
-scale = 2.8;
+scale = 3;
+(* Numero di sencondi di attesa del bottone avanti in Learn *)
+btnPauseNext = 0.6;
 
 (* Nota selezionata nel piano in modalit\[AGrave] Learn *)
 selectedNoteLearn = "";
@@ -90,7 +90,6 @@ joinNote[note_, oct_] :=
 (* pstate in dica la modalit\[AGrave] del piano, 0 = learn, 1 = tutorial, 2 = free *)
 Piano[pstate_] :=
     With[{pianostate = pstate},
-    
         DynamicModule[{shownotes = False},
         
             (* Chiamata quando viene premuto un tasto del piano *)
@@ -108,20 +107,18 @@ Piano[pstate_] :=
             Manipulate[
                 (* Disegna a schermo un tasto bianco *)
                 whitekey[note_, oct_] :=
-                    Mouseover[(* Normal not pressed *)
+                    Mouseover[(* Tasto non premuto *)
                         Graphics[{{EdgeForm[],
                         Switch[pianostate,
-                            0,
+                            0, (* Nota selezionata in Learn *)
                                 If[selectedNoteLearn == joinNote[note, oct],
-                                    Lighter[Green]
-                                    ,
+                                    Lighter[Green],
                                     White
                                 ]
                             ,
-                            1,
+                            1, (* Nota selezionata in Tutorial *)
                                 If[selectedNoteTutorial == joinNote[note, oct],
-                                    Lighter[Green]
-                                    ,
+                                    Lighter[Green],
                                     Lighter[octaveColors[[oct]], 0.9]
                                 ]
                             ,
@@ -130,8 +127,7 @@ Piano[pstate_] :=
                         ],
                         Rectangle[{0, 0}, {1, 2}]}, {Line[{{0, 2}, {0, 0}, {1, 0}, {1, 2}}]},
                         If[shownotes,
-                            Text[Style[note <> ToString[oct], 10, "Label"], {0.5, 1}] (* TODO Style label *)
-                            ,
+                            Text[Style[note <> ToString[oct], 10, "Label"], {0.5, 1}], (* Mostra etichetta in sans serif *)
                             {}
                         ]},
                         ImageSize -> {22 * scale, 41 * scale},
@@ -142,53 +138,29 @@ Piano[pstate_] :=
                         EventHandler[Dynamic[
                             Graphics[{{EdgeForm[],
                             Switch[pianostate,
-                                0,
+                                0, (* Nota selezionata in Learn *)
                                     If[selectedNoteLearn == joinNote[note, oct],
-                                        Lighter[Green]
-                                        ,
+                                        Lighter[Green],
                                         White
-                                    ]
-                                ,
+                                    ],
                                 (* Se il tasto \[EGrave] selezionato allora verde, altrimenti se premuto rosso.*)
-                                1,
+                                1, (* Nota selezionata in Tutorial *)
                                     If[selectedNoteTutorial == joinNote[note, oct],
-                                        Lighter[Green]
-                                        ,
+                                        Lighter[Green],
+                                        (* Se il tasto \[EGrave] premuto *)
                                         If[dwn && selectedNoteTutorial != "" && selectedNoteTutorial != "END",
-                                            Lighter[Red]
-                                            ,
+                                            Lighter[Red],
                                             Lighter[octaveColors[[oct]], 0.9]
                                         ]
-                                    ]
-                                ,
-                                2,
-                                    White
+                                    ],
+                                2, White
                             ],
                             (* Mostra animazione tasti quando vengono premuti, in questo caso l'altezza *)
-                            Rectangle[{0, If[dwn,0.15,0]
-                            }, {1, 2}]}, Line[{{0, 2}, {0, If[dwn,
-                                    0.15
-                                    ,
-                                    0
-                                ]
-                            }, {1, If[dwn,
-                                    0.15
-                                    ,
-                                    0
-                                ]
-                            }, {1, 2}}], If[shownotes,
-                                Text[Style[note <> ToString[oct], If[dwn,
-                                        9
-                                        ,
-                                        10
-                                    ], "Label"
-                                ], {0.5, If[dwn,
-                                        1.1
-                                        ,
-                                        1
-                                    ]
-                                }]
-                                ,
+                            Rectangle[{0, If[dwn,0.15,0]}, {1, 2}]}, 
+                            Line[{{0, 2}, {0, If[dwn, 0.15, 0]}, {1, If[dwn, 0.15, 0]}, {1, 2}}],
+                             If[shownotes,
+                                Text[Style[note <> ToString[oct], If[dwn, 9,10], "Label" ], (* Mostra etichetta in sans serif *)
+                                {0.5, If[dwn, 1.1, 1]}],
                                 {}
                             ]},
                             ImageSize -> {22 * scale, 41 * scale},
@@ -199,28 +171,29 @@ Piano[pstate_] :=
                             "MouseUp" :> (dwn = False; onKeyUp[note, oct])
                         }]
                     ];
+                    
                 (* Disegna a schermo uno spazio bianco *)
                 space[wd_] :=
                     Graphics[{White, Rectangle[{0, 0}, {wd, 1}]}, ImageSize -> {wd * scale, 10}, PlotRange -> {{0, 0}, {2.5, 5}}, ImageMargins -> 0];
+                    
                 (* Disegna a schermo la barra verticale che divide i tasti *)
                 vert :=
                     Graphics[Line[{{0, 0}, {0, 1}}], PlotRange -> {{-0.001, 0.001}, {0, 1}}, ImageSize -> {2 * scale, 60 * scale}, ImageMargins -> 0];
+                    
                 (* Disegna a schermo un tasto bianco *)
                 blackkey[note_, oct_] :=
                     Mouseover[(* Normal not pressed *)
                         Graphics[{{EdgeForm[Black],
                         Switch[pianostate,
-                            0,
+                            0, (* Nota selezionata in Learn *)
                                 If[selectedNoteLearn == joinNote[note, oct],
-                                    Darker[Green]
-                                    ,
+                                    Darker[Green],
                                     Black
                                 ]
                             ,
-                            1,
+                            1, (* Nota selezionata in Tutorial *)
                                 If[selectedNoteTutorial == joinNote[note, oct],
-                                    Darker[Green]
-                                    ,
+                                    Darker[Green],
                                     Black
                                 ]
                             ,
@@ -228,8 +201,8 @@ Piano[pstate_] :=
                                 Black
                         ],
                         Rectangle[{0, 2.5}, {0.5, 5}]}, If[shownotes,
-                            Text[Style[note <> " " <> ToString[oct], 10, White, "Label"], {0.25, 3.5}, {0, 0}, {0, 1}]
-                            ,
+                            Text[Style[note <> " " <> ToString[oct], 10, White, "Label"], (* Mostra etichetta in sans serif *)
+                            {0.25, 3.5}, {0, 0}, {0, 1}],
                             {}
                         ]}, ImageSize -> {12 * scale, 60 * scale},
                         PlotRange -> {{0, 0.5}, {2.5, 5}},
@@ -237,21 +210,18 @@ Piano[pstate_] :=
                         EventHandler[Dynamic[
                             Graphics[{{EdgeForm[Black],
                             Switch[pianostate,
-                                0,
+                                0, (* Nota selezionata in Learn *)
                                     If[selectedNoteLearn == joinNote[note, oct],
-                                        Darker[Green]
-                                        ,
+                                        Darker[Green],
                                         Black
                                     ]
                                 ,
                                 (* Se il tasto \[EGrave] selezionato allora verde, altrimenti se premuto rosso.*)
-                                1,
+                                1, (* Nota selezionata in tutorial *)
                                     If[selectedNoteTutorial == joinNote[note, oct],
-                                        Darker[Green]
-                                        ,
+                                        Darker[Green] ,
                                         If[dwn && selectedNoteTutorial != "" && selectedNoteTutorial != "END",
-                                            Darker[Red]
-                                            ,
+                                            Darker[Red],
                                             Black
                                         ]
                                     ]
@@ -260,24 +230,15 @@ Piano[pstate_] :=
                                     Black
                             ],
                             (* Mostra animazione tasti quando vengono premuti, in questo caso la larghezza *)
-                            Rectangle[{If[dwn,
-                                0.05
-                                ,
-                                0
-                            ], 2.5}, {If[dwn,
-                                0.4
-                                ,
-                                0.5
-                            ], 5}], If[shownotes,
-                                Text[Style[note <> " " <> ToString[oct], If[dwn,
-                                        9
-                                        ,
-                                        10
-                                    ], White, "Label"
-                                ], {0.25, 3.5}, {0, 0}, {0, 1}]
-                                ,
+                            Rectangle[{If[dwn, 0.05, 0], 2.5}, {If[dwn, 0.4, 0.5], 5}], 
+                            If[shownotes,
+                                Text[Style[note <> " " <> ToString[oct], If[dwn, 9,10], White, "Label"], (* Mostra etichetta in sans serif *)
+                                {0.25, 3.5}, {0, 0}, {0, 1}],
                                 {}
-                            ]}}, ImageSize -> {12 * scale, 60 * scale}, PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0]
+                            ]}}, 
+                            ImageSize -> {12 * scale, 60 * scale}, 
+                            PlotRange -> {{0, 0.5}, {2.5, 5}}, 
+                            ImageMargins -> 0]
                         ],
                         {"MouseDown" :> (dwn = True; onKeyDown[note, oct]),
                             "MouseUp" :> (dwn = False; onKeyUp[note, oct])
@@ -301,28 +262,19 @@ Piano[pstate_] :=
                     Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
                     Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}];
                 (* Deploy manipulate *)    
-                Deploy[keyboardsplit[Switch[pianostate,
-                    0,
-                        initOctLearn
-                    ,
-                    1,
-                        initOctTutorial
-                    ,
-                    2,
-                        initOctFree
-                ], Switch[pianostate,
-                    0,
-                        numOctLearn
-                    ,
-                    1,
-                        numOctTutorial
-                    ,
-                    2,
-                        numOctFree
+                Deploy[keyboardsplit[
+                Switch[pianostate, (* Ottava iniziale *)
+                    0, initOctLearn,
+                    1, initOctTutorial,
+                    2, initOctFree
+                ], Switch[pianostate, (* Numero di ottave *)
+                    0, numOctLearn,
+                    1, numOctTutorial,
+                    2, numOctFree
                 ]]],
                 
                 {{shownotes, False, "Mostra note"}, {True, False}},
-                (* Simboli che vengono tracciati dalla manipulate *)
+                (* Simboli che vengono tracciati dalla manipulate, quando cambiano la manipulate si riaggiorna *)
                 TrackedSymbols :> {shownotes, selectedNoteLearn, selectedNoteTutorial,
                                    initOctLearn, initOctTutorial, initOctFree, numOctLearn, numOctTutorial, numOctFree},
                 Initialization :> {dwn = False},
@@ -394,7 +346,7 @@ LearnNotes[notesList_] := Module[{},
             ]],
             (* Bottone che controlla la correttezza dell'input *)
             Dynamic[If[selectedNoteLearn != "END" && noteLearnStarted,
-                Button["Avanti ", (Pause[0.6];
+                Button["Avanti ", (Pause[btnPauseNext];
                         If[textField != "" && ToUpperCase[textField] == baseNote[selectedNoteLearn] && selectedNoteLearn != "",
                             nextNoteLearn,
                             errorsLearn += 1;
@@ -510,6 +462,7 @@ SetDirectory[NotebookDirectory[]];
 (* Permette di selezionare un file MIDI dal proprio dispositivo *)
 pickMidi := Button["Seleziona file MIDI ",
          filePath = ToString[SystemDialogInput["FileOpen", ".mid"]];
+         (* Controlla se ci sono stati errori *)
          If[filePath !="$Canceled",
            midiNotesTutorial = GetNotesFromMidi[filePath];
            titleTutorial = FileNameTake[filePath];
@@ -553,11 +506,7 @@ KeysUp := Module[{},
         selectedNote = -1; channel @ allNotesOff[]
 ]
         
+        
 End[];
 EndPackage[];
-
-
-
-
-
 

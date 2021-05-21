@@ -1,0 +1,189 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6155,        179]
+NotebookOptionsPosition[      5331,        160]
+NotebookOutlinePosition[      5734,        176]
+CellTagsIndexPosition[      5691,        173]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"GetNotesFromMidiN", "[", "n_", "]"}], ":=", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"fileMidi", "=", 
+      RowBox[{"GetNotesFromMidi", "[", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Length", "[", "fileMidi", "]"}], ">", "n"}], ",", 
+       RowBox[{"midiNotesTutorial", "=", 
+        RowBox[{"NoteTake", "[", 
+         RowBox[{"fileMidi", ",", "n"}], "]"}]}], ",", 
+       RowBox[{"midiNotesTutorial", "=", "fileMidi"}]}], "]"}]}], ")"}]}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.830599371331354*^9, 
+  3.8305993852587705`*^9}},ExpressionUUID->"9982ab2c-94da-4690-8556-\
+fe4983af02f7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Ripeti", " ", "esercizio", " ", "PlaySong"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"RepeatPlaySong", "[", "notes_", "]"}], ":=", 
+    RowBox[{"Button", "[", 
+     RowBox[{"\"\<Ripeti esercizio\>\"", ",", 
+      RowBox[{"PlaySong", "[", "notes", "]"}], ",", 
+      RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}], ",", 
+      RowBox[{"BaseStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<GenericButton\>\"", ",", "16", ",", "Bold", ",", "Orange"}], 
+        "}"}]}], ",", 
+      RowBox[{"Background", "\[Rule]", "LightOrange"}]}], "]"}]}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{"Genera", " ", "nuovo", " ", "esercizio", " ", "PlaySong"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"GenerateNewPlaySong", "[", "n_", "]"}], ":=", 
+    RowBox[{"Button", "[", 
+     RowBox[{"\"\<Genera nuovo esercizio\>\"", ",", 
+      RowBox[{"GetNotesFromMidiN", "[", "n", "]"}], ",", 
+      RowBox[{"Method", "\[Rule]", "\"\<Queued\>\""}], ",", 
+      RowBox[{"BaseStyle", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<GenericButton\>\"", ",", "16", ",", "Bold", ",", "Orange"}], 
+        "}"}]}], ",", 
+      RowBox[{"Background", "\[Rule]", "LightOrange"}]}], "]"}]}], 
+   "\n"}]}]], "Input",
+ CellChangeTimes->{{3.830599395210287*^9, 
+  3.830599395578476*^9}},ExpressionUUID->"1a61fc91-cd16-44d2-85e4-\
+75004bc68b28"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EmitSound", "[", 
+   RowBox[{"Sound", "[", 
+    RowBox[{"SoundNote", "[", 
+     RowBox[{"1", ",", "1", ",", "\"\<Trumpet\>\""}], "]"}], "]"}], "]"}], 
+  "\[IndentingNewLine]", "\n"}]], "Input",
+ CellChangeTimes->{
+  3.830599403291623*^9},ExpressionUUID->"e2f25690-bd4d-48b5-9e18-\
+3ff638a6a4c1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{
+    RowBox[{"EvaluationNotebook", "[", "]"}], ",", 
+    RowBox[{"NotebookEventActions", "\[Rule]", "none"}]}], "]"}], "\n", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{
+  3.8305994083137197`*^9},ExpressionUUID->"8db38ef8-3460-4a65-836b-\
+b81601f15db7"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{
+    RowBox[{"EvaluationNotebook", "[", "]"}], ",", 
+    RowBox[{"NotebookEventActions", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<KeyDown\>\"", ",", "\"\<b\>\""}], "}"}], 
+       "\[RuleDelayed]", 
+       RowBox[{"EmitSound", "[", 
+        RowBox[{"Sound", "[", 
+         RowBox[{"SoundNote", "[", 
+          RowBox[{"2", ",", "1", ",", "\"\<Trumpet\>\""}], "]"}], "]"}], 
+        "]"}]}], "}"}]}]}], "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<JLink`\>\"", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"ReinstallJava", "[", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"LoadJavaClass", "[", "\"\<javax.sound.midi.MidiSystem\>\"", "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"synth", "=", 
+   RowBox[{"MidiSystem`getSynthesizer", "[", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"synth", "@", 
+   RowBox[{"open", "[", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"$Channel", "=", 
+    RowBox[{"First", "[", 
+     RowBox[{"synth", "@", 
+      RowBox[{"getChannels", "[", "]"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.830599417533222*^9, 
+  3.8305994302013206`*^9}},ExpressionUUID->"587395af-98d7-48b1-8e2e-\
+0e3620359c5e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"callback", "[", "val_", "]"}], ":=", 
+   RowBox[{"(", 
+    RowBox[{"$Channel", "@", 
+     RowBox[{"noteOn", "[", 
+      RowBox[{"64", ",", "100"}], "]"}]}], ")"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"$Channel", "@", 
+    RowBox[{"allNotesOff", "[", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{"listener", "=", 
+  RowBox[{"SocketListen", "[", 
+   RowBox[{"5050", ",", "callback"}], "]"}]}]}], "Input",ExpressionUUID->\
+"f819369f-41ee-4348-9233-c4268cf044e2"]
+},
+WindowSize->{760, 833},
+WindowMargins->{{572, Automatic}, {74, Automatic}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c6462fb0-0a5a-41f5-ba43-5adad11cec88"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 749, 19, 105, "Input",ExpressionUUID->"9982ab2c-94da-4690-8556-fe4983af02f7"],
+Cell[1310, 41, 1472, 37, 162, "Input",ExpressionUUID->"1a61fc91-cd16-44d2-85e4-75004bc68b28"],
+Cell[2785, 80, 330, 9, 67, "Input",ExpressionUUID->"e2f25690-bd4d-48b5-9e18-3ff638a6a4c1"],
+Cell[3118, 91, 331, 9, 67, "Input",ExpressionUUID->"8db38ef8-3460-4a65-836b-b81601f15db7"],
+Cell[3452, 102, 1341, 39, 238, "Input",ExpressionUUID->"587395af-98d7-48b1-8e2e-0e3620359c5e"],
+Cell[4796, 143, 531, 15, 86, "Input",ExpressionUUID->"f819369f-41ee-4348-9233-c4268cf044e2"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
