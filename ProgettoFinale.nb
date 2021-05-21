@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   2509487,      41706]
-NotebookOptionsPosition[   2507782,      41667]
-NotebookOutlinePosition[   2508174,      41684]
-CellTagsIndexPosition[   2508131,      41681]
+NotebookDataLength[   2516506,      41864]
+NotebookOptionsPosition[   2514778,      41824]
+NotebookOutlinePosition[   2515170,      41841]
+CellTagsIndexPosition[   2515127,      41838]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -34528,7 +34528,7 @@ Cell[BoxData[
   RowBox[{"<<", " ", "SuonaConNoi`"}]}]], "Input",
  Editable->False,
  CellOpen->False,
- CellLabel->"In[17]:=",ExpressionUUID->"74fa1eb6-6713-40ad-b114-f37cd19381b5"],
+ CellLabel->"In[1]:=",ExpressionUUID->"74fa1eb6-6713-40ad-b114-f37cd19381b5"],
 
 Cell[TextData[{
  StyleBox["\nPrima di tutto, dal men\[UGrave] orizzontale in alto, eseguire:",
@@ -35361,7 +35361,7 @@ AKz68BmPw+FQAABgtXG5XMh4AAAMg4wHAJBNkPEAANgG92oBALIMMt5r/X9S
   "f646a20f-ee10-4944-9ab5-7a6d6c399b57"],
  StyleBox["\n \n \n \n \n", "Subsubsection"],
  StyleBox["INDICE",
-  FontSize->60,
+  FontSize->72,
   FontColor->RGBColor[1, 0, 0]],
  "\n",
  StyleBox["Sezione 1:", "Subsubsection",
@@ -35385,20 +35385,38 @@ tastiera del pianoforte: I tasti bianchi e neri", "Subsubsection",
   FontSize->40],
  StyleBox["\n", "Subsubsection"],
  StyleBox["3.0 I file MIDI\n3.1 L\[CloseCurlyQuote]utente suona la traccia \
-MIDI nota per nota\n3.2 Ora tocca a te! Prova a suonare", "Subsubsection",
+MIDI nota per nota", "Subsubsection",
   FontSize->24],
  StyleBox["\n", "Subsubsection"],
  StyleBox["Sezione 4: ", "Subsubsection",
   FontSize->40],
- StyleBox["\n4.0 Bibliografia e Sitografia", "Subsubsection",
+ StyleBox["\n4.0 Ora tocca a te! Prova a suonare\n", "Subsubsection",
+  FontSize->24],
+ StyleBox["Sezione 5:", "Subsubsection",
+  FontSize->40],
+ StyleBox[" \n", "Subsubsection",
+  FontSize->36],
+ StyleBox["5.0 - Built-in e funzionalit\[AGrave] usate (non viste a lezione)\n\
+", "Subsubsection",
+  FontSize->24],
+ StyleBox["Sezione 6:", "Subsubsection",
+  FontSize->40],
+ StyleBox[" ", "Subsubsection",
+  FontSize->36],
+ StyleBox["\n6.0 - Alcuni dei problemi incontrati e soluzioni adottate\n", 
+  "Subsubsection",
+  FontSize->24],
+ StyleBox["Sezione 7:\n", "Subsubsection",
+  FontSize->40],
+ StyleBox["7.0 - Bibliografia e Sitografia", "Subsubsection",
   FontSize->24],
  StyleBox["\n", "Subsubsection"],
- StyleBox["Sezione 5:", "Subsubsection",
+ StyleBox["Sezione 8:", "Subsubsection",
   FontSize->40],
  StyleBox[" ", "Subsubsection",
   FontSize->36],
  StyleBox["\n", "Subsubsection"],
- StyleBox["5.0 Commenti e  Lavoro futuro\n\n\n\n", "Subsubsection",
+ StyleBox["8.0 - Commenti e Lavoro futuro\n\n\n", "Subsubsection",
   FontSize->24],
  StyleBox["\n \n", "Subsubsection"],
  StyleBox["Sezione 1:", "Subsubsection",
@@ -35418,11 +35436,11 @@ basilari: ", "Text",
  StyleBox["note", "Text",
   FontSize->18,
   FontColor->RGBColor[0, 0, 1]],
- StyleBox[", ottave, ecc...\n   2) Una seconda parte in cui l'utente pu\
-\[OGrave] testare se effettivamente se ha compreso i concetti precedentemente \
-spiegati, inizialmente in maniera guidata e successivamente autonomamente. \n\
-Per quanto riguarda le melodie da poter suonare ci siamo serviti dei file ", 
-  "Text",
+ StyleBox[", ottave, ecc... (Sezione 1 e 2);\n   2) Una seconda parte in cui \
+l'utente pu\[OGrave] testare se effettivamente se ha compreso i concetti \
+precedentemente spiegati, inizialmente in maniera guidata e successivamente \
+autonomamente (Sezione 3 e 4). \nPer quanto riguarda le melodie da poter \
+suonare ci siamo serviti dei file ", "Text",
   FontSize->18,
   FontColor->GrayLevel[0]],
  StyleBox["MIDI", "Text",
@@ -40266,12 +40284,19 @@ suonare un pianoforte in maniera guidata, cominciamo con i tasti bianchi.",
   FontSize->18,
   FontColor->GrayLevel[0]],
  StyleBox["Per semplicit\[AGrave] abbiamo scelto di farti suonare l\
-\[CloseCurlyQuote]ottava numero 3 per cui le note faranno riferimento alla \
-terza ottava.\nSe dovessi aver bisogno di un aiuto e non dovessi ricordare a \
+\[CloseCurlyQuote]ottava numero 3 e 4 per cui le note faranno riferimento \
+alla terza e quarta ottava.\n", "Text",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox["Se dovessi aver bisogno di un aiuto e non dovessi ricordare a \
 quale nota si fa rifermiento puoi sempre selezionare la casella \
-\[OpenCurlyDoubleQuote]Mostra note\[CloseCurlyDoubleQuote].\nLe note che \
-inserirai tramite l\[CloseCurlyQuote]apposita casella fanno riferimento all\
-\[CloseCurlyQuote]alfabeto latino (A = ", "Text",
+\[OpenCurlyDoubleQuote]Mostra note\[CloseCurlyDoubleQuote].", "Text",
+  FontSize->18,
+  FontColor->GrayLevel[0]],
+ StyleBox["\nLe note che inserirai tramite l\[CloseCurlyQuote]apposita \
+casella fanno riferimento all\[CloseCurlyQuote]alfabeto latino (A = ", "Text",
+  
   FontSize->18,
   FontWeight->"Bold",
   FontColor->GrayLevel[0]],
@@ -40287,13 +40312,22 @@ inserirai tramite l\[CloseCurlyQuote]apposita casella fanno riferimento all\
   FontSize->18,
   FontWeight->"Bold",
   FontColor->RGBColor[0, 0, 1]],
- StyleBox[" ecc...) e il controllo non \[EGrave] case sensitive per cui puoi \
+ StyleBox[" ecc...) e il controllo non \[EGrave] case-sensitive per cui puoi \
 inserire lettere minuscole o maiuscole senza distinzione, a patto che siano \
 corrette.", "Text",
   FontSize->18,
   FontWeight->"Bold",
   FontColor->GrayLevel[0]],
- StyleBox[" \nCome gi\[AGrave] specificato nella parte introduttiva (nel \
+ StyleBox["  ", "Text",
+  FontSize->18,
+  FontColor->GrayLevel[0]],
+ StyleBox["Non devi inserire il numeretto che segue le note perch\[EGrave] fa \
+riferimento all\[CloseCurlyQuote]ottava (che in questo caso sono la terza e \
+la quarta).", "Text",
+  FontSize->18,
+  FontWeight->"Bold",
+  FontColor->GrayLevel[0]],
+ StyleBox["\nCome gi\[AGrave] specificato nella parte introduttiva (nel \
 sottoparagrafo 1.3) per quanto riguarda i tasti neri useremo il solo diesis \
 per cui sar\[AGrave] necessario inserire la nota seguita da un #.\nSuonerai \
 prima i tasti bianchi, poi quelli neri e infine una lista di ", "Text",
@@ -40302,7 +40336,7 @@ prima i tasti bianchi, poi quelli neri e infine una lista di ", "Text",
  StyleBox["note", "Text",
   FontSize->18,
   FontColor->RGBColor[0, 0, 1]],
- StyleBox[" scelte da noi.\n", "Text",
+ StyleBox[" scelte da noi.\n\n", "Text",
   FontSize->18,
   FontColor->GrayLevel[0]],
  StyleBox["Premi Start per iniziare!\n", "Text",
@@ -40380,7 +40414,15 @@ prima i tasti bianchi, poi quelli neri e infine una lista di ", "Text",
    3.8305736328585777`*^9}, {3.830573673190791*^9, 3.8305736911486673`*^9}, 
    3.830573731738567*^9, 3.830573807964081*^9, {3.830573901605381*^9, 
    3.830573906865216*^9}, {3.830574019641616*^9, 3.8305740215502496`*^9}, {
-   3.830574053436901*^9, 3.8305742614786444`*^9}},
+   3.830574053436901*^9, 3.8305742614786444`*^9}, {3.830584184900443*^9, 
+   3.8305842025772376`*^9}, {3.8305843303731546`*^9, 
+   3.8305843425013666`*^9}, {3.8305844790148726`*^9, 3.830584599178858*^9}, {
+   3.8305848001341276`*^9, 3.8305848346960783`*^9}, {3.830584894484808*^9, 
+   3.830584895483877*^9}, {3.830585050184061*^9, 3.8305850664695067`*^9}, 
+   3.8305851048040595`*^9, {3.8305853108118277`*^9, 3.830585384864459*^9}, {
+   3.830586386255767*^9, 3.8305864217499833`*^9}, {3.830586463823321*^9, 
+   3.8305864985460567`*^9}, 3.8305866101988597`*^9, {3.830593664838656*^9, 
+   3.830593695649226*^9}, {3.8305966274471226`*^9, 3.8305966468270545`*^9}},
  TextJustification->1.,ExpressionUUID->"415d64ee-c915-4f5f-bc65-9e2f3eeeedbc"],
 
 Cell[CellGroupData[{
@@ -40426,7 +40468,7 @@ Cell[BoxData[
    3.8304258929794874`*^9}, {3.830572457599622*^9, 3.830572514538788*^9}, {
    3.830572545386383*^9, 3.8305726211950636`*^9}, 3.8305726975340843`*^9, {
    3.830572823211423*^9, 3.8305728257167172`*^9}},
- CellLabel->"In[14]:=",ExpressionUUID->"6e46b435-a4fa-464b-9236-57232c18a9dd"],
+ CellLabel->"In[2]:=",ExpressionUUID->"6e46b435-a4fa-464b-9236-57232c18a9dd"],
 
 Cell[BoxData[
  PanelBox[
@@ -40468,7 +40510,7 @@ Cell[BoxData[
              Hold[SuonaConNoi`Private`shownotes$$], False, "Mostra note"}, {
             True, False}}}, Typeset`size$$ = {686., {111., 116.}}, 
           Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-          False, SuonaConNoi`Private`shownotes$$$13399$$ = False}, 
+          False, SuonaConNoi`Private`shownotes$$$2576$$ = False}, 
           
           DynamicBox[Manipulate`ManipulateBoxes[
            1, StandardForm, 
@@ -40476,7 +40518,7 @@ Cell[BoxData[
             "ControllerVariables" :> {
               Hold[
               SuonaConNoi`Private`shownotes$$, 
-               SuonaConNoi`Private`shownotes$$$13399$$, False]}, 
+               SuonaConNoi`Private`shownotes$$$2576$$, False]}, 
             "OtherVariables" :> {
              Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
               Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -40779,8 +40821,9 @@ Cell[BoxData[
    3.8303990944266973`*^9, 3.8304037957003984`*^9, 3.8304092776020937`*^9, 
    3.8304093567723904`*^9, {3.830425895684182*^9, 3.8304259035006523`*^9}, 
    3.830571475629379*^9, 3.8305726234253054`*^9, 3.8305727007765102`*^9, 
-   3.83057283225044*^9, 3.8305728623940763`*^9, 3.8305730678551884`*^9},
- CellLabel->"Out[14]=",ExpressionUUID->"768a8a84-3747-404f-909e-046b3c432aae"]
+   3.83057283225044*^9, 3.8305728623940763`*^9, 3.8305730678551884`*^9, 
+   3.8305927630432167`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"4e793a32-a061-4ab1-87d4-2168a571a15b"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -40942,8 +40985,38 @@ caricando un qualsiasi file .mid. \n",
  StyleBox["Nota bene:",
   FontSize->18,
   FontWeight->"Bold"],
- StyleBox[" Semmai volessi caricare tu stesso un file . mid deve trattarsi di \
-una traccia semplice, con preferibilmente un solo strumento.\n",
+ StyleBox[" ",
+  FontSize->18],
+ StyleBox["Semmai volessi caricare tu stesso un file . mid deve trattarsi di \
+una traccia semplice, con preferibilmente un solo strumento.",
+  FontSize->18,
+  FontWeight->"Bold"],
+ StyleBox["\nIl titolo cambia dinamicamente e prende il nome della traccia ",
+  FontSize->18],
+ StyleBox["MIDI",
+  FontSize->18,
+  FontWeight->"Bold"],
+ StyleBox[" che si sta suonando.\n",
+  FontSize->18],
+ StyleBox["In questa sezione a differenza della 2 e della 4 per poter suonare \
+una melodia \[EGrave] necessario avere pi\[UGrave] ottave (non solo la terza \
+e la quarta). Pertanto il pianoforte subir\[AGrave] un cambio di ottava \
+dinamico e tale operazione verr\[AGrave] evidenziata tramite un cambio di \
+colore(dei tasti). Guarda bene la legenda messa a disposizione per capire \
+quale ottava stai suonando ",
+  FontSize->18,
+  FontWeight->"Bold"],
+ StyleBox["(vedi sezione 6 per ulteriori informazioni).",
+  FontSize->18],
+ StyleBox[" \n",
+  FontSize->18,
+  FontWeight->"Bold"],
+ StyleBox["PS:",
+  FontSize->18],
+ StyleBox[" ",
+  FontSize->18,
+  FontWeight->"Bold"],
+ StyleBox["oct=ottava\n\n",
   FontSize->18],
  StyleBox["Premi un bottone per iniziare!\n", "Subsubsection",
   FontSize->36,
@@ -40978,16 +41051,25 @@ una traccia semplice, con preferibilmente un solo strumento.\n",
    3.830574857120084*^9}, {3.8305749196551285`*^9, 3.8305749619518504`*^9}, {
    3.8305749921284113`*^9, 3.8305750575285797`*^9}, {3.83057509646095*^9, 
    3.8305751341172795`*^9}, {3.830575211369036*^9, 3.830575509880719*^9}, {
-   3.830575545794425*^9, 
-   3.8305755524997454`*^9}},ExpressionUUID->"66738757-b2ec-40ca-9ed8-\
+   3.830575545794425*^9, 3.8305755524997454`*^9}, {3.8305842459928627`*^9, 
+   3.83058428604064*^9}, {3.830584364484558*^9, 3.8305843814627132`*^9}, {
+   3.8305846210471725`*^9, 3.8305846875720153`*^9}, {3.830584726675231*^9, 
+   3.8305847918229823`*^9}, {3.8305931368772345`*^9, 3.8305932320921035`*^9}, 
+   3.830595467493044*^9, {3.8305965081626253`*^9, 3.8305965192633653`*^9}, {
+   3.8305967835754766`*^9, 3.8305968422282143`*^9}, {3.8305968738139935`*^9, 
+   3.830596935550989*^9}, {3.8305969694149046`*^9, 
+   3.8305971356818485`*^9}},ExpressionUUID->"66738757-b2ec-40ca-9ed8-\
 85da59cf6b9d"],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"PlaySong", "[", "]"}]], "Input",
- CellChangeTimes->{{3.8304264077054243`*^9, 3.830426425246002*^9}},
- CellLabel->"In[15]:=",ExpressionUUID->"15b7c5bf-f5f2-4ca3-8a70-2eae050c8fae"],
+Cell[BoxData["PlaySong"], "Input",
+ Editable->False,
+ CellOpen->False,
+ CellChangeTimes->{{3.8304264077054243`*^9, 3.830426425246002*^9}, {
+  3.830598377784582*^9, 
+  3.830598378106367*^9}},ExpressionUUID->"15b7c5bf-f5f2-4ca3-8a70-\
+2eae050c8fae"],
 
 Cell[BoxData[
  PanelBox[
@@ -41047,7 +41129,7 @@ Cell[BoxData[
              Hold[SuonaConNoi`Private`shownotes$$], False, "Mostra note"}, {
             True, False}}}, Typeset`size$$ = {686., {111., 116.}}, 
           Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-          False, SuonaConNoi`Private`shownotes$$$13425$$ = False}, 
+          False, SuonaConNoi`Private`shownotes$$$2614$$ = False}, 
           
           DynamicBox[Manipulate`ManipulateBoxes[
            1, StandardForm, 
@@ -41055,7 +41137,7 @@ Cell[BoxData[
             "ControllerVariables" :> {
               Hold[
               SuonaConNoi`Private`shownotes$$, 
-               SuonaConNoi`Private`shownotes$$$13425$$, False]}, 
+               SuonaConNoi`Private`shownotes$$$2614$$, False]}, 
             "OtherVariables" :> {
              Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
               Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -41303,31 +41385,40 @@ Cell[BoxData[
     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
    "Column"]]], "Output",
  CellChangeTimes->{{3.830426412944399*^9, 3.830426428607524*^9}, 
-   3.830571476440301*^9, 3.8305728628478622`*^9, 3.830573068271077*^9},
- CellLabel->"Out[15]=",ExpressionUUID->"debe235b-92f9-4eca-bf67-e2bb105c1b99"]
+   3.830571476440301*^9, 3.8305728628478622`*^9, 3.830573068271077*^9, 
+   3.830592763683505*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"c7deff54-0226-47ec-9c1f-701fa9c73a10"]
 }, Open  ]],
 
 Cell[TextData[{
- StyleBox["\n3.2 Ora tocca a te! Prova a suonare\n", "Subsubsection",
+ StyleBox["\nSezione 4:", "Subsubsection",
+  FontSize->55],
+ StyleBox["\n4.0 - Ora tocca a te! Prova a suonare\n", "Subsubsection",
   FontSize->40],
  StyleBox["Ti lasciamo piena libert\[AGrave] di suonare ci\[OGrave] che vuoi, \
-ti diamo a disposizione sempre la terza e quarta ottava per \
-semplicit\[AGrave]. Ricorda che puoi selezionare il tasto \
+",
+  FontSize->18],
+ StyleBox["ti diamo a disposizione sempre la terza e quarta ottava per \
+semplicit\[AGrave]",
+  FontSize->18,
+  FontWeight->"Bold"],
+ StyleBox[". Ricorda che puoi selezionare il tasto \
 \[OpenCurlyDoubleQuote]Mostra note\[CloseCurlyDoubleQuote] semmai non dovessi \
 ricordarti qualche ",
   FontSize->18],
  StyleBox["nota",
   FontSize->18,
   FontColor->RGBColor[0, 0, 1]],
- StyleBox[". \n",
+ StyleBox[". \n\n",
   FontSize->18]
 }], "Text",
  Editable->False,
  CellChangeTimes->{{3.8304264832039084`*^9, 3.8304265026275063`*^9}, {
    3.830427471570131*^9, 3.830427476553423*^9}, {3.830427615335705*^9, 
    3.8304277470309844`*^9}, 3.830427787801382*^9, 3.830573709740114*^9, {
-   3.8305755885710993`*^9, 
-   3.8305755894487953`*^9}},ExpressionUUID->"58c29adc-065b-442a-a5a9-\
+   3.8305755885710993`*^9, 3.8305755894487953`*^9}, {3.8305844036663647`*^9, 
+   3.8305844217328005`*^9}, 3.8305861398172565`*^9, 
+   3.8305954764390097`*^9},ExpressionUUID->"58c29adc-065b-442a-a5a9-\
 6e50625e2e4d"],
 
 Cell[CellGroupData[{
@@ -41338,7 +41429,7 @@ Cell[BoxData[
  CellOpen->False,
  CellChangeTimes->{{3.8304264701320963`*^9, 3.830426476032657*^9}, {
    3.8305714896045694`*^9, 3.830571508512929*^9}, 3.8305715388460803`*^9},
- CellLabel->"In[16]:=",ExpressionUUID->"ebaf74fc-3629-4962-8ecf-8228506966c5"],
+ CellLabel->"In[4]:=",ExpressionUUID->"ebaf74fc-3629-4962-8ecf-8228506966c5"],
 
 Cell[BoxData[
  DynamicModuleBox[{SuonaConNoi`Private`scale$$ = 2.8, 
@@ -41351,14 +41442,14 @@ Cell[BoxData[
         Hold[SuonaConNoi`Private`shownotes$$], False, "Mostra note"}, {
        True, False}}}, Typeset`size$$ = {686., {111., 116.}}, 
      Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False,
-      SuonaConNoi`Private`shownotes$$$13450$$ = False}, 
+      SuonaConNoi`Private`shownotes$$$2640$$ = False}, 
      DynamicBox[Manipulate`ManipulateBoxes[
       1, StandardForm, 
        "Variables" :> {SuonaConNoi`Private`shownotes$$ = False}, 
        "ControllerVariables" :> {
          Hold[
          SuonaConNoi`Private`shownotes$$, 
-          SuonaConNoi`Private`shownotes$$$13450$$, False]}, 
+          SuonaConNoi`Private`shownotes$$$2640$$, False]}, 
        "OtherVariables" :> {
         Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
          Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -41587,40 +41678,91 @@ Cell[BoxData[
    Manipulate`InterpretManipulate[1]],
   DynamicModuleValues:>{}]], "Output",
  CellChangeTimes->{3.8305717724098463`*^9, 3.8305728632158794`*^9, 
-  3.8305730687289*^9},
- CellLabel->"Out[16]=",ExpressionUUID->"353fbdbc-07f4-4d48-b1c2-c059ba95c067"]
+  3.8305730687289*^9, 3.830592764167642*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"a3f638f6-a991-45fe-b146-79a6a21bb418"]
 }, Open  ]],
 
 Cell[TextData[{
  StyleBox["\n\n\n", "Subsection",
   FontSize->18],
- StyleBox["Sezione 4: ", "Subsubsection",
+ StyleBox["Sezione 5:", "Subsubsection",
+  FontSize->55],
+ StyleBox[" \n", "Subsubsection",
+  FontSize->36],
+ StyleBox["5.0 - Built-in e funzionalit\[AGrave] usate (non viste a lezione)\n\
+", "Subsubsection",
+  FontSize->40],
+ StyleBox["Le built-in che abbiamo utilizzato non viste a lezione sono \
+MouseOver ed EventHandler.",
+  FontSize->18],
+ StyleBox["\n", "Subsubsection",
+  FontSize->18],
+ StyleBox["Le funzionalit\[AGrave] invece sono JLink ed Experimental. La \
+prima serve a chiamare classi di Java, nel nostro caso per utilizzare il \
+sintetizzatore e riprodurre suoni in modo continuativo, cosa che la built-in \
+EmitSound non permette.\nExperimental invece serve semplicemente a \
+controllare se una variabile viene modificata.\n",
+  FontSize->18],
+ StyleBox["\n", "Subsubsection",
+  FontSize->40],
+ StyleBox["Sezione 6:", "Subsubsection",
+  FontSize->55],
+ StyleBox[" \n", "Subsubsection",
+  FontSize->36],
+ StyleBox["6.0 - Alcuni problemi incontrati e soluzioni adottate", 
+  "Subsubsection",
+  FontSize->40],
+ "\n",
+ StyleBox["Come abbiamo specificato precedentemente nelle sezioni 2 e 4 \
+abbiamo utilizzato la terza e la quarta ottava a fini esemplificativi cosa \
+che per\[OGrave] non \[EGrave] stata possibile nella sezione 3.1. Per suonare \
+una traccia ",
+  FontSize->18],
+ StyleBox["MIDI",
+  FontSize->18,
+  FontWeight->"Bold"],
+ StyleBox["  \[EGrave] necessario usare pi\[UGrave] ottave altrimenti la \
+melodia non \[EGrave] corretta e non sarebbe fedele \
+all\[CloseCurlyQuote]originale. Per questo motivo abbiamo deciso di \
+implementare un metodo che effettua uno shift delle ottave (passando da una \
+quarta a una quinta ad esempio)  a seconda della nota da dover suonare. \
+Inizialmente il cambio dinamico di ottava era possibile notarlo solamente \
+quando la checkbox \[OpenCurlyDoubleQuote]Mostra note\[CloseCurlyDoubleQuote] \
+era selezionata. Ora l\[CloseCurlyQuote]utente sar\[AGrave] in grado di \
+percepire questo cambio attraverso una scala che  associa ad ogni colore una \
+specifica ottava. ",
+  FontSize->18],
+ "\n\n\n",
+ StyleBox["Sezione 7: ", "Subsubsection",
   FontSize->55],
  StyleBox["\n", "Subsection",
   FontSize->18],
- StyleBox["4 - Bibliografia e Sitografia ", "Subsubsection",
+ StyleBox["7 - Bibliografia e Sitografia ", "Subsubsection",
   FontSize->40],
  StyleBox["\n", "Subsection",
   FontSize->18],
  StyleBox["\[Bullet] https://it.wikipedia.org/wiki/Musica\n\[Bullet] \
+https://demonstrations.wolfram.com/PianoKeys\n\[Bullet] \
 http://web.tiscali.it/studieprove/l\[CloseCurlyQuote]abc.htm\n\[Bullet] \
 http://www.pianofortefacile.com/conosciamo-la-tastiera-del-pianoforte.html\n\
 \[Bullet] https://digilander.libero.it/rastex/midi.htm\n\[Bullet] \
-https://pianofortelezioni.it/note-musicali/?s2-ssl=yes\n\n\n", "Text",
+https://pianofortelezioni.it/note-musicali/?s2-ssl=yes\n\[Bullet] \
+https://www.wolfram.com/language/elementary-introduction/2nd-ed\n\n\n", "Text",
   FontSize->18],
- StyleBox["Sezione 5:", "Subsubsection",
+ StyleBox["Sezione 8:", "Subsubsection",
   FontSize->55],
  StyleBox[" ", "Subsubsection",
   FontSize->36],
  StyleBox["\n", "Subsection",
   FontSize->18],
- StyleBox["5 - Commenti e Lavoro Futuro \n", "Subsubsection",
+ StyleBox["8.0 - Commenti e Lavoro Futuro \n", "Subsubsection",
   FontSize->40],
- StyleBox["Il nostro progetto \[EGrave] rivolto ad un pubblico non esperto e \
-che si affaccia per la prima volta nel mondo della musica e in particolare \
-dei pianoforti. Allo stesso tempo nella sezione 3.2 si pu\[OGrave] suonare \
-liberamente senza essere vincolati e lasciando piena libert\[AGrave] all\
-\[CloseCurlyQuote]utente. ",
+ StyleBox["Il nostro progetto \[EGrave] rivolto ad un pubblico novizio, che \
+si affaccia per la prima volta nel mondo della musica e in particolare dei \
+pianoforti, ma anche ad uno esperto, in quanto \[EGrave] possibile suonare \
+liberamente senza essere vincolati.  \nAbbiamo gi\[AGrave] reso possibile \
+utilizzare tre ottave anzich\[EGrave] due, basta modificare le costanti \
+definite ad inizio package.",
   FontSize->18],
  StyleBox["\n", "Subsubsection",
   FontSize->18],
@@ -41642,18 +41784,17 @@ automaticamente suonato un ",
  StyleBox["\[Bullet]", "Text",
   FontSize->18],
  StyleBox[" Al momento nella parte introduttiva in cui \
-l\[CloseCurlyQuote]utente impara a suonare. Per quanto riguarda la serie di \
-note scelte da noi (sezione 2) vorremmo poter rendere possibile generare \
+l\[CloseCurlyQuote]utente impara a suonare, per quanto riguarda la serie di \
+note scelte da noi (sezione 2), vorremmo poter rendere possibile generare \
 delle note casuali ogni qual volta si inizia l\[CloseCurlyQuote]esercizio (le \
-note passate come parametro della funzione LearNotes saranno randomiche e non \
-scelte a priori).\n",
+note passate come parametro della funzione LearnNotes saranno randomiche e \
+non scelte a priori).\n",
   FontSize->18],
  StyleBox["\[Bullet]", "Text",
   FontSize->18],
  StyleBox[" Nella funzione Piano sar\[AGrave] possibile scegliere tra pi\
 \[UGrave] strumenti rendendo il pianoforte una tastiera elettronica.",
-  FontSize->18],
- "\n"
+  FontSize->18]
 }], "Text",
  Editable->False,
  CellChangeTimes->{{3.83042643681364*^9, 3.8304264978432336`*^9}, {
@@ -41661,7 +41802,23 @@ scelte a priori).\n",
    3.830427283069686*^9}, {3.830427905116771*^9, 3.8304279217838287`*^9}, 
    3.830573714178508*^9, {3.830575609057379*^9, 3.830575609409436*^9}, {
    3.8305756613037243`*^9, 3.8305757857190924`*^9}, {3.8305759096149273`*^9, 
-   3.83057609401752*^9}},
+   3.83057609401752*^9}, {3.830584428758895*^9, 3.8305844378211727`*^9}, {
+   3.8305852053008385`*^9, 3.8305852996174817`*^9}, {3.8305853948562407`*^9, 
+   3.8305857751803594`*^9}, {3.8305858359822598`*^9, 
+   3.8305859060332823`*^9}, {3.8305859451091013`*^9, 
+   3.8305859993620815`*^9}, {3.830586044286725*^9, 3.830586117446807*^9}, {
+   3.8305861788227973`*^9, 3.8305862193945303`*^9}, 3.83058626608737*^9, {
+   3.8305863409946933`*^9, 3.8305863700622196`*^9}, 3.830586442997046*^9, 
+   3.8305865206575804`*^9, {3.8305865688269396`*^9, 3.8305865694579616`*^9}, {
+   3.8305927794150114`*^9, 3.830593092571578*^9}, {3.8305934283645926`*^9, 
+   3.8305934338295183`*^9}, {3.8305935135772877`*^9, 3.830593518796291*^9}, {
+   3.830597203099861*^9, 3.8305972874664297`*^9}, {3.8305973335010276`*^9, 
+   3.830597336561265*^9}, {3.830597378161485*^9, 3.8305973799432893`*^9}, 
+   3.8305974160501947`*^9, {3.830597455655346*^9, 3.8305977196805053`*^9}, {
+   3.8305977566768026`*^9, 3.8305977616029263`*^9}, {3.8305977962089148`*^9, 
+   3.830597969780997*^9}, {3.8305980001820307`*^9, 3.8305980032774134`*^9}, {
+   3.8305980343982515`*^9, 3.8305982208057632`*^9}, {3.830598311715171*^9, 
+   3.8305983147948895`*^9}, {3.830598345436084*^9, 3.830598349513197*^9}},
  TextJustification->1.,ExpressionUUID->"0ad412dd-f79c-4080-83e9-47c89456e010"]
 }, Open  ]]
 },
@@ -41686,27 +41843,28 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 2103782, 34499, 685, "Subtitle",ExpressionUUID->"18690890-25b2-4038-963d-bd95f41df185",
  InitializationCell->True],
-Cell[2104365, 34523, 283, 7, 15, "Input",ExpressionUUID->"74fa1eb6-6713-40ad-b114-f37cd19381b5",
+Cell[2104365, 34523, 282, 7, 15, "Input",ExpressionUUID->"74fa1eb6-6713-40ad-b114-f37cd19381b5",
  CellOpen->False],
-Cell[2104651, 34532, 343367, 5851, 4317, "Text",ExpressionUUID->"415d64ee-c915-4f5f-bc65-9e2f3eeeedbc",
+Cell[2104650, 34532, 345046, 5893, 4504, "Text",ExpressionUUID->"415d64ee-c915-4f5f-bc65-9e2f3eeeedbc",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[2448043, 40387, 1925, 41, 15, "Input",ExpressionUUID->"6e46b435-a4fa-464b-9236-57232c18a9dd",
+Cell[2449721, 40429, 1924, 41, 15, "Input",ExpressionUUID->"6e46b435-a4fa-464b-9236-57232c18a9dd",
  CellOpen->False],
-Cell[2449971, 40430, 17225, 352, 425, "Output",ExpressionUUID->"768a8a84-3747-404f-909e-046b3c432aae"]
+Cell[2451648, 40472, 17250, 353, 425, "Output",ExpressionUUID->"4e793a32-a061-4ab1-87d4-2168a571a15b"]
 }, Open  ]],
-Cell[2467211, 40785, 8560, 197, 997, "Text",ExpressionUUID->"66738757-b2ec-40ca-9ed8-85da59cf6b9d"],
+Cell[2468913, 40828, 10022, 233, 1099, "Text",ExpressionUUID->"66738757-b2ec-40ca-9ed8-85da59cf6b9d"],
 Cell[CellGroupData[{
-Cell[2475796, 40986, 203, 3, 22, "Input",ExpressionUUID->"15b7c5bf-f5f2-4ca3-8a70-2eae050c8fae"],
-Cell[2476002, 40991, 15557, 315, 407, "Output",ExpressionUUID->"debe235b-92f9-4eca-bf67-e2bb105c1b99"]
-}, Open  ]],
-Cell[2491574, 41309, 885, 21, 136, "Text",ExpressionUUID->"58c29adc-065b-442a-a5a9-6e50625e2e4d"],
-Cell[CellGroupData[{
-Cell[2492484, 41334, 317, 6, 15, "Input",ExpressionUUID->"ebaf74fc-3629-4962-8ecf-8228506966c5",
+Cell[2478960, 41065, 247, 6, 15, "Input",ExpressionUUID->"15b7c5bf-f5f2-4ca3-8a70-2eae050c8fae",
  CellOpen->False],
-Cell[2492804, 41342, 11910, 248, 313, "Output",ExpressionUUID->"353fbdbc-07f4-4d48-b1c2-c059ba95c067"]
+Cell[2479210, 41073, 15580, 316, 407, "Output",ExpressionUUID->"c7deff54-0226-47ec-9c1f-701fa9c73a10"]
 }, Open  ]],
-Cell[2504729, 41593, 3037, 71, 594, "Text",ExpressionUUID->"0ad412dd-f79c-4080-83e9-47c89456e010"]
+Cell[2494805, 41392, 1135, 29, 229, "Text",ExpressionUUID->"58c29adc-065b-442a-a5a9-6e50625e2e4d"],
+Cell[CellGroupData[{
+Cell[2495965, 41425, 316, 6, 15, "Input",ExpressionUUID->"ebaf74fc-3629-4962-8ecf-8228506966c5",
+ CellOpen->False],
+Cell[2496284, 41433, 11929, 248, 313, "Output",ExpressionUUID->"a3f638f6-a991-45fe-b146-79a6a21bb418"]
+}, Open  ]],
+Cell[2508228, 41684, 6534, 137, 1037, "Text",ExpressionUUID->"0ad412dd-f79c-4080-83e9-47c89456e010"]
 }, Open  ]]
 }
 ]
