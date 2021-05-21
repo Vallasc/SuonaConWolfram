@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     56790,       1134]
-NotebookOptionsPosition[     55726,       1106]
-NotebookOutlinePosition[     56253,       1125]
-CellTagsIndexPosition[     56210,       1122]
+NotebookDataLength[     85548,       1692]
+NotebookOptionsPosition[     84482,       1664]
+NotebookOutlinePosition[     85009,       1683]
+CellTagsIndexPosition[     84966,       1680]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -49,8 +49,10 @@ Cell[BoxData[{
    3.830408448761451*^9, 3.830408457529138*^9}, {3.830410042618412*^9, 
    3.830410071250181*^9}, {3.8304126283749833`*^9, 3.830412647022537*^9}, {
    3.8304126787588844`*^9, 3.830412690966668*^9}, {3.8304127924549665`*^9, 
-   3.8304127950617776`*^9}, 3.8304233300420723`*^9},
- CellLabel->"In[1]:=",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
+   3.8304127950617776`*^9}, 3.8304233300420723`*^9, 3.83059105982512*^9, 
+   3.8305911334814267`*^9, 3.8305913622868385`*^9, 3.8305917518824563`*^9, 
+   3.8305940668926144`*^9, 3.830598629512996*^9},
+ CellLabel->"In[2]:=",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
 
 Cell[BoxData[
  PanelBox[
@@ -60,7 +62,7 @@ Cell[BoxData[
         Text[
          Style[SuonaConNoi`Private`titleLearn, Black, Bold, 24]], 
         StandardForm],
-       ImageSizeCache->{148., {6., 23.}}]},
+       ImageSizeCache->{333., {6., 23.}}]},
      {
       DynamicBox[ToBoxes[
         If[SuonaConNoi`Private`noteLearnStarted, 
@@ -69,18 +71,17 @@ Cell[BoxData[
           SuonaConNoi`Private`midiNotesLearn = {{{"C3", "D3", "F3"}, 
               "Tasti bianchi"}, {{"C#3", "D#3", "F#3"}, "Tasti neri"}}; 
           SuonaConNoi`Private`currentList = {}; 
-          SuonaConNoi`Private`nextNoteLearn[], ImageSize -> {200, Automatic}, 
+          SuonaConNoi`Private`nextNoteLearn, ImageSize -> {200, Automatic}, 
           Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, 
             Darker[Orange]}, Background -> LightOrange], 
          Button[
          "Start", SuonaConNoi`Private`noteLearnStarted = True; 
-          SuonaConNoi`Private`nextNoteLearn[], ImageSize -> {200, Automatic}, 
+          SuonaConNoi`Private`nextNoteLearn, ImageSize -> {200, Automatic}, 
           Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, 
             Darker[Orange]}, Background -> LightOrange]], StandardForm],
        ImageSizeCache->{200., {11., 20.}}]},
      {
-      DynamicModuleBox[{SuonaConNoi`Private`scale$$ = 2.8, 
-       SuonaConNoi`Private`shownotes$$ = False}, 
+      DynamicModuleBox[{SuonaConNoi`Private`shownotes$$ = False}, 
        TagBox[
         StyleBox[
          DynamicModuleBox[{Typeset`show$$ = True, Typeset`bookmarkList$$ = {},
@@ -118,7 +119,11 @@ Cell[BoxData[
                     SuonaConNoi`Private`selectedNoteTutorial == 
                     SuonaConNoi`Private`joinNote[
                     SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$], 
-                    Lighter[Green], White], 2, White], 
+                    Lighter[Green], 
+                    Lighter[
+                    Part[
+                    SuonaConNoi`Private`octaveColors, 
+                    SuonaConNoi`Private`oct$], 0.9]], 2, White], 
                    Rectangle[{0, 0}, {1, 2}]}, {
                    Line[{{0, 2}, {0, 0}, {1, 0}, {1, 2}}]}, 
                   If[SuonaConNoi`Private`shownotes$$, 
@@ -128,9 +133,9 @@ Cell[BoxData[
                     ToString[SuonaConNoi`Private`oct$]], 10, "Label"], {
                     0.5, 1}], {}]}, 
                  ImageSize -> {
-                  22 SuonaConNoi`Private`scale$$, 41 
-                   SuonaConNoi`Private`scale$$}, 
-                 PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 0], 
+                  22 SuonaConNoi`Private`scale, 41 SuonaConNoi`Private`scale},
+                  PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 
+                 0], 
                 EventHandler[
                  Dynamic[
                   Graphics[{{
@@ -151,7 +156,11 @@ Cell[BoxData[
                     SuonaConNoi`Private`dwn, 
                     SuonaConNoi`Private`selectedNoteTutorial != "", 
                     SuonaConNoi`Private`selectedNoteTutorial != "END"], 
-                    Lighter[Red], White]], 2, White], 
+                    Lighter[Red], 
+                    Lighter[
+                    Part[
+                    SuonaConNoi`Private`octaveColors, 
+                    SuonaConNoi`Private`oct$], 0.9]]], 2, White], 
                     Rectangle[{0, 
                     If[SuonaConNoi`Private`dwn, 0.15, 0]}, {1, 2}]}, 
                     Line[{{0, 2}, {0, 
@@ -165,29 +174,28 @@ Cell[BoxData[
                     If[SuonaConNoi`Private`dwn, 9, 10], "Label"], {0.5, 
                     If[SuonaConNoi`Private`dwn, 1.1, 1]}], {}]}, 
                    ImageSize -> {
-                    22 SuonaConNoi`Private`scale$$, 41 
-                    SuonaConNoi`Private`scale$$}, 
+                    22 SuonaConNoi`Private`scale, 41 
+                    SuonaConNoi`Private`scale}, 
                    PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 
                    0]], {"MouseDown" :> (SuonaConNoi`Private`dwn = True; 
                    SuonaConNoi`Private`onKeyDown[
-                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 0]), 
+                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$]), 
                   "MouseUp" :> (SuonaConNoi`Private`dwn = False; 
                    SuonaConNoi`Private`onKeyUp[
-                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 
-                    0])}]]; SuonaConNoi`Private`space[
-                Pattern[SuonaConNoi`Private`wd$, 
+                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$])}]]; 
+             SuonaConNoi`Private`space[
+                Pattern[SuonaConNoi`Private`wd, 
                  Blank[]]] := Graphics[{White, 
-                 Rectangle[{0, 0}, {SuonaConNoi`Private`wd$, 1}]}, 
+                 Rectangle[{0, 0}, {SuonaConNoi`Private`wd, 1}]}, 
                 ImageSize -> {
-                 SuonaConNoi`Private`wd$ SuonaConNoi`Private`scale$$, 10}, 
+                 SuonaConNoi`Private`wd SuonaConNoi`Private`scale, 10}, 
                 PlotRange -> {{0, 0}, {2.5, 5}}, ImageMargins -> 0]; 
              SuonaConNoi`Private`vert := Graphics[
                 Line[{{0, 0}, {0, 1}}], 
                 PlotRange -> {{-0.001, 0.001}, {0, 1}}, 
                 ImageSize -> {
-                 2 SuonaConNoi`Private`scale$$, 60 
-                  SuonaConNoi`Private`scale$$}, ImageMargins -> 0]; 
-             SuonaConNoi`Private`blackkey[
+                 2 SuonaConNoi`Private`scale, 60 SuonaConNoi`Private`scale}, 
+                ImageMargins -> 0]; SuonaConNoi`Private`blackkey[
                 Pattern[SuonaConNoi`Private`note$, 
                  Blank[]], 
                 Pattern[SuonaConNoi`Private`oct$, 
@@ -213,9 +221,8 @@ Cell[BoxData[
                     ToString[SuonaConNoi`Private`oct$]], 10, White, 
                     "Label"], {0.25, 3.5}, {0, 0}, {0, 1}], {}]}, 
                  ImageSize -> {
-                  12 SuonaConNoi`Private`scale$$, 60 
-                   SuonaConNoi`Private`scale$$}, 
-                 PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0], 
+                  12 SuonaConNoi`Private`scale, 60 SuonaConNoi`Private`scale},
+                  PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0], 
                 EventHandler[
                  Dynamic[
                   Graphics[{{
@@ -248,16 +255,16 @@ Cell[BoxData[
                     If[SuonaConNoi`Private`dwn, 9, 10], White, "Label"], {
                     0.25, 3.5}, {0, 0}, {0, 1}], {}]}}, 
                    ImageSize -> {
-                    12 SuonaConNoi`Private`scale$$, 60 
-                    SuonaConNoi`Private`scale$$}, 
+                    12 SuonaConNoi`Private`scale, 60 
+                    SuonaConNoi`Private`scale}, 
                    PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0]], {
                  "MouseDown" :> (SuonaConNoi`Private`dwn = True; 
                    SuonaConNoi`Private`onKeyDown[
-                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 0]), 
+                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$]), 
                   "MouseUp" :> (SuonaConNoi`Private`dwn = False; 
                    SuonaConNoi`Private`onKeyUp[
-                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 
-                    0])}]]; SuonaConNoi`Private`whiteset[
+                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$])}]]; 
+             SuonaConNoi`Private`whiteset[
                 Pattern[SuonaConNoi`Private`oct, 
                  Blank[]]] := Grid[{
                  Flatten[
@@ -283,28 +290,34 @@ Cell[BoxData[
                   SuonaConNoi`Private`space[14], SuonaConNoi`Private`vert}}, 
                 Spacings -> 0, Alignment -> Left]; 
              SuonaConNoi`Private`keyboardsplit[
-                Pattern[SuonaConNoi`Private`octinit, 
+                Pattern[SuonaConNoi`Private`initOct, 
+                 Blank[]], 
+                Pattern[SuonaConNoi`Private`numOct, 
                  Blank[]]] := Grid[{
                  Flatten[
                   Table[
                    SuonaConNoi`Private`blackset[SuonaConNoi`Private`i], {
-                   SuonaConNoi`Private`i, SuonaConNoi`Private`octinit, 
-                    SuonaConNoi`Private`octinit + 
-                    SuonaConNoi`Private`pianoNumOfOct - 1}]], 
+                   SuonaConNoi`Private`i, SuonaConNoi`Private`initOct, 
+                    SuonaConNoi`Private`initOct + SuonaConNoi`Private`numOct - 
+                    1}]], 
                  Flatten[
                   Table[
                    SuonaConNoi`Private`whiteset[SuonaConNoi`Private`i], {
-                   SuonaConNoi`Private`i, SuonaConNoi`Private`octinit, 
-                    SuonaConNoi`Private`octinit + 
-                    SuonaConNoi`Private`pianoNumOfOct - 1}]]}, 
-                Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
+                   SuonaConNoi`Private`i, SuonaConNoi`Private`initOct, 
+                    SuonaConNoi`Private`initOct + SuonaConNoi`Private`numOct - 
+                    1}]]}, Spacings -> {
+                 "Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
                 Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]; 
              Deploy[
                SuonaConNoi`Private`keyboardsplit[
                 Switch[
-                0, 0, SuonaConNoi`Private`octaveLearn, 1, 
-                 SuonaConNoi`Private`octaveTutorial, 2, 
-                 SuonaConNoi`Private`octaveFree]]]), 
+                0, 0, SuonaConNoi`Private`initOctLearn, 1, 
+                 SuonaConNoi`Private`initOctTutorial, 2, 
+                 SuonaConNoi`Private`initOctFree], 
+                Switch[
+                0, 0, SuonaConNoi`Private`numOctLearn, 1, 
+                 SuonaConNoi`Private`numOctTutorial, 2, 
+                 SuonaConNoi`Private`numOctFree]]]), 
             "Specifications" :> {{{
                SuonaConNoi`Private`shownotes$$, False, "Mostra note"}, {
                True, False}}}, 
@@ -313,7 +326,12 @@ Cell[BoxData[
                SuonaConNoi`Private`shownotes$$, 
                 SuonaConNoi`Private`selectedNoteLearn, 
                 SuonaConNoi`Private`selectedNoteTutorial, 
-                SuonaConNoi`Private`octaveFree}, LocalizeVariables -> False, 
+                SuonaConNoi`Private`initOctLearn, 
+                SuonaConNoi`Private`initOctTutorial, 
+                SuonaConNoi`Private`initOctFree, 
+                SuonaConNoi`Private`numOctLearn, 
+                SuonaConNoi`Private`numOctTutorial, 
+                SuonaConNoi`Private`numOctFree}, LocalizeVariables -> False, 
               ContinuousAction -> False}, "DefaultOptions" :> {}],
            ImageSizeCache->{917., {181., 187.}},
            SingleEvaluation->True],
@@ -367,26 +385,27 @@ Cell[BoxData[
               If[SuonaConNoi`Private`errorsLearn == 0, Green, Orange], Bold, 
               18]]}, Center], 
           Text[""]]], StandardForm],
-       ImageSizeCache->{376., {35., 41.}}]},
+       ImageSizeCache->{0., {3., 12.}}]},
      {
       DynamicBox[ToBoxes[
         If[
          And[
          SuonaConNoi`Private`selectedNoteLearn != "END", 
           SuonaConNoi`Private`noteLearnStarted], 
-         Button["Avanti", Pause[0.6]; If[
+         Button["Avanti ", Pause[0.6]; If[
             And[
-            ToUpperCase[SuonaConNoi`Private`textField] == 
+            SuonaConNoi`Private`textField != "", 
+             ToUpperCase[SuonaConNoi`Private`textField] == 
              SuonaConNoi`Private`baseNote[
               SuonaConNoi`Private`selectedNoteLearn], 
              SuonaConNoi`Private`selectedNoteLearn != ""], 
-            SuonaConNoi`Private`nextNoteLearn[], 
+            SuonaConNoi`Private`nextNoteLearn, 
             AddTo[SuonaConNoi`Private`errorsLearn, 1]; Null]; 
           SuonaConNoi`Private`textField = ""; Null, ImageSize -> {200, 50}, 
           Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, 
             Darker[Orange]}, Background -> LightOrange], 
          Text[""]], StandardForm],
-       ImageSizeCache->{200., {21., 29.}}]}
+       ImageSizeCache->{0., {3., 12.}}]}
     },
     DefaultBaseStyle->"Column",
     GridBoxAlignment->{"Columns" -> {{Center}}},
@@ -453,20 +472,38 @@ Cell[BoxData[
    3.830422229240011*^9}, 3.8304223116561284`*^9, 3.830422418482127*^9, 
    3.8304231311413207`*^9, 3.8304232408052483`*^9, 3.8304233343281393`*^9, 
    3.8304233854715056`*^9, 3.8305740742360525`*^9, 3.8305743563656435`*^9, 
-   3.8305745026177244`*^9, 3.830575386980491*^9, 3.8305760469794683`*^9},
- CellLabel->"Out[2]=",ExpressionUUID->"f8af27c4-8d86-4504-8f7c-e6e687678c77"]
+   3.8305745026177244`*^9, 3.830575386980491*^9, 3.8305760469794683`*^9, {
+   3.8305910628471193`*^9, 3.830591073759613*^9}, 3.830591136509775*^9, 
+   3.8305912354103336`*^9, 3.8305913128340054`*^9, 3.830591364625149*^9, 
+   3.830591428422924*^9, 3.830591468875752*^9, 3.830591539446664*^9, 
+   3.8305915841850047`*^9, 3.83059163429885*^9, 3.8305917543014264`*^9, 
+   3.8305918127253056`*^9, 3.8305918474055176`*^9, 3.830591978432014*^9, 
+   3.8305920343367558`*^9, 3.830592396080233*^9, 3.83059244829784*^9, 
+   3.8305925832534246`*^9, 3.8305926822204027`*^9, 3.830592715858241*^9, 
+   3.830592883390218*^9, 3.8305930019628844`*^9, 3.8305931221510696`*^9, 
+   3.8305932174427195`*^9, 3.8305932867472296`*^9, 3.830593358503125*^9, 
+   3.830593451964385*^9, {3.8305934880720997`*^9, 3.8305935160445595`*^9}, 
+   3.830593633902584*^9, {3.830593786374091*^9, 3.830593808617627*^9}, 
+   3.830593867545108*^9, 3.830594069346586*^9, 3.8305941114584603`*^9, 
+   3.830594390797826*^9, 3.8305944449065638`*^9, 3.8305944775262566`*^9, 
+   3.8305945689455037`*^9, 3.830594646005245*^9, 3.830594687487012*^9, 
+   3.8305947528715553`*^9, 3.8305948191138563`*^9, 3.8305949119473257`*^9, 
+   3.8305950310748386`*^9, 3.8305951201589727`*^9, 3.830595412551511*^9, 
+   3.8305955049440994`*^9, {3.830598248510371*^9, 3.830598273767415*^9}, 
+   3.8305986342377357`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"9ba9f496-1fd7-455b-a17a-32bcf398f8a9"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"PlaySong", "[", "]"}]], "Input",
+Cell[BoxData["PlaySong"], "Input",
  CellChangeTimes->{{3.830012477201371*^9, 3.8300124807289753`*^9}, {
    3.8302507270789733`*^9, 3.830250727244583*^9}, {3.830405264269734*^9, 
    3.8304052649167356`*^9}, 3.8304063949346566`*^9, {3.830409600858551*^9, 
    3.83040961069767*^9}, {3.8304096777067175`*^9, 3.830409680931452*^9}, 
-   3.830410164180611*^9, 3.8304232623542*^9},
- CellLabel->"In[3]:=",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
+   3.830410164180611*^9, 3.8304232623542*^9, 3.8305911223288417`*^9, {
+   3.8305983178020105`*^9, 3.830598318232452*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
 
 Cell[BoxData[
  PanelBox[
@@ -476,11 +513,11 @@ Cell[BoxData[
         Text[
          Style[SuonaConNoi`Private`titleTutorial, Black, Bold, 24]], 
         StandardForm],
-       ImageSizeCache->{265., {6., 23.}}]},
+       ImageSizeCache->{312., {6., 23.}}]},
      {
       TemplateBox[{
         ButtonBox[
-        "\"Genera casualmente\"", 
+        "\"Genera casualmente \"", 
          ButtonFunction :> (
           SuonaConNoi`Private`filePath = Part[SuonaConNoi`Private`paths, 
              RandomInteger[{1, 
@@ -489,7 +526,7 @@ Cell[BoxData[
            FileNameTake[SuonaConNoi`Private`filePath]; 
           SuonaConNoi`Private`midiNotesTutorial = 
            SuonaConNoi`GetNotesFromMidi[SuonaConNoi`Private`filePath]; 
-          SuonaConNoi`Private`nextNoteTutorial[]; 
+          SuonaConNoi`Private`nextNoteTutorial; 
           SuonaConNoi`Private`playSongEnded = False), 
          ImageSize -> {200, Automatic}, Method -> "Queued", 
          BaseStyle -> {"GenericButton", 16, Bold, 
@@ -498,7 +535,7 @@ Cell[BoxData[
          RGBColor[1, 0.9, 0.8], Appearance -> Automatic, Evaluator -> 
          Automatic], 
         ButtonBox[
-        "\"Seleziona file MIDI\"", 
+        "\"Seleziona file MIDI \"", 
          ButtonFunction :> (SuonaConNoi`Private`filePath = ToString[
              SystemDialogInput["FileOpen", ".mid"]]; 
           If[SuonaConNoi`Private`filePath != "$Canceled", 
@@ -506,7 +543,7 @@ Cell[BoxData[
              SuonaConNoi`GetNotesFromMidi[SuonaConNoi`Private`filePath]; 
             SuonaConNoi`Private`titleTutorial = 
              FileNameTake[SuonaConNoi`Private`filePath]; 
-            SuonaConNoi`Private`nextNoteTutorial[]; 
+            SuonaConNoi`Private`nextNoteTutorial; 
             SuonaConNoi`Private`playSongEnded = False]), 
          ImageSize -> {200, Automatic}, Method -> "Queued", 
          BaseStyle -> {"GenericButton", 16, Bold, 
@@ -516,36 +553,51 @@ Cell[BoxData[
          Automatic]},
        "RowDefault"]},
      {
-      DynamicModuleBox[{SuonaConNoi`Private`scale$$ = 2.8, 
-       SuonaConNoi`Private`shownotes$$ = False}, 
-       TagBox[
-        StyleBox[
-         DynamicModuleBox[{Typeset`show$$ = True, Typeset`bookmarkList$$ = {},
-           Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, 
-          Typeset`animvar$$ = 1, Typeset`name$$ = "\"untitled\"", 
-          Typeset`specs$$ = {{{
-             Hold[SuonaConNoi`Private`shownotes$$], False, "Mostra note"}, {
-            True, False}}}, Typeset`size$$ = {868., {138.5, 144.5}}, 
-          Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-          False}, 
-          
-          DynamicBox[Manipulate`ManipulateBoxes[
-           1, StandardForm, 
-            "Variables" :> {SuonaConNoi`Private`shownotes$$ = False}, 
-            "ControllerVariables" :> {}, 
-            "OtherVariables" :> {
-             Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
-              Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
-              Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
-              Typeset`initDone$$, Typeset`skipInitDone$$}, 
-            "Body" :> (SuonaConNoi`Private`whitekey[
-                Pattern[SuonaConNoi`Private`note$, 
-                 Blank[]], 
-                Pattern[SuonaConNoi`Private`oct$, 
-                 Blank[]]] := Mouseover[
-                Graphics[{{
-                   EdgeForm[], 
-                   Switch[1, 0, 
+      DynamicBox[ToBoxes[
+        If[
+         And[
+         SuonaConNoi`Private`selectedNoteTutorial != "END", 
+          SuonaConNoi`Private`selectedNoteTutorial != ""], 
+         Text[
+          Style[
+           StringJoin[
+           "Nota corrente: ", SuonaConNoi`Private`selectedNoteTutorial], 
+           Black, Bold, 20]], 
+         Text[""]], StandardForm],
+       ImageSizeCache->{185., {5., 19.}}]},
+     {
+      TemplateBox[{
+        DynamicModuleBox[{SuonaConNoi`Private`shownotes$$ = False}, 
+         TagBox[
+          StyleBox[
+           
+           DynamicModuleBox[{
+            Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+             Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, 
+             Typeset`animvar$$ = 1, Typeset`name$$ = "\"untitled\"", 
+             Typeset`specs$$ = {{{
+                 Hold[SuonaConNoi`Private`shownotes$$], False, 
+                 "Mostra note"}, {True, False}}}, 
+             Typeset`size$$ = {868., {138.5, 144.5}}, Typeset`update$$ = 0, 
+             Typeset`initDone$$, Typeset`skipInitDone$$ = False}, 
+            DynamicBox[
+             Manipulate`ManipulateBoxes[
+             1, StandardForm, 
+              "Variables" :> {SuonaConNoi`Private`shownotes$$ = False}, 
+              "ControllerVariables" :> {}, 
+              "OtherVariables" :> {
+               Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$,
+                 Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+                Typeset`specs$$, Typeset`size$$, Typeset`update$$, 
+                Typeset`initDone$$, Typeset`skipInitDone$$}, 
+              "Body" :> (SuonaConNoi`Private`whitekey[
+                  Pattern[SuonaConNoi`Private`note$, 
+                   Blank[]], 
+                  Pattern[SuonaConNoi`Private`oct$, 
+                   Blank[]]] := Mouseover[
+                  Graphics[{{
+                    EdgeForm[], 
+                    Switch[1, 0, 
                     If[
                     SuonaConNoi`Private`selectedNoteLearn == 
                     SuonaConNoi`Private`joinNote[
@@ -555,22 +607,27 @@ Cell[BoxData[
                     SuonaConNoi`Private`selectedNoteTutorial == 
                     SuonaConNoi`Private`joinNote[
                     SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$], 
-                    Lighter[Green], White], 2, White], 
-                   Rectangle[{0, 0}, {1, 2}]}, {
-                   Line[{{0, 2}, {0, 0}, {1, 0}, {1, 2}}]}, 
-                  If[SuonaConNoi`Private`shownotes$$, 
-                   Text[
+                    Lighter[Green], 
+                    Lighter[
+                    Part[
+                    SuonaConNoi`Private`octaveColors, 
+                    SuonaConNoi`Private`oct$], 0.9]], 2, White], 
+                    Rectangle[{0, 0}, {1, 2}]}, {
+                    Line[{{0, 2}, {0, 0}, {1, 0}, {1, 2}}]}, 
+                    If[SuonaConNoi`Private`shownotes$$, 
+                    Text[
                     Style[
                     StringJoin[SuonaConNoi`Private`note$, 
                     ToString[SuonaConNoi`Private`oct$]], 10, "Label"], {
                     0.5, 1}], {}]}, 
-                 ImageSize -> {
-                  22 SuonaConNoi`Private`scale$$, 41 
-                   SuonaConNoi`Private`scale$$}, 
-                 PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 0], 
-                EventHandler[
-                 Dynamic[
-                  Graphics[{{
+                   ImageSize -> {
+                    22 SuonaConNoi`Private`scale, 41 
+                    SuonaConNoi`Private`scale}, 
+                   PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 
+                   0], 
+                  EventHandler[
+                   Dynamic[
+                    Graphics[{{
                     EdgeForm[], 
                     Switch[1, 0, 
                     If[
@@ -588,7 +645,11 @@ Cell[BoxData[
                     SuonaConNoi`Private`dwn, 
                     SuonaConNoi`Private`selectedNoteTutorial != "", 
                     SuonaConNoi`Private`selectedNoteTutorial != "END"], 
-                    Lighter[Red], White]], 2, White], 
+                    Lighter[Red], 
+                    Lighter[
+                    Part[
+                    SuonaConNoi`Private`octaveColors, 
+                    SuonaConNoi`Private`oct$], 0.9]]], 2, White], 
                     Rectangle[{0, 
                     If[SuonaConNoi`Private`dwn, 0.15, 0]}, {1, 2}]}, 
                     Line[{{0, 2}, {0, 
@@ -601,37 +662,36 @@ Cell[BoxData[
                     ToString[SuonaConNoi`Private`oct$]], 
                     If[SuonaConNoi`Private`dwn, 9, 10], "Label"], {0.5, 
                     If[SuonaConNoi`Private`dwn, 1.1, 1]}], {}]}, 
-                   ImageSize -> {
-                    22 SuonaConNoi`Private`scale$$, 41 
-                    SuonaConNoi`Private`scale$$}, 
-                   PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 
-                   0]], {"MouseDown" :> (SuonaConNoi`Private`dwn = True; 
-                   SuonaConNoi`Private`onKeyDown[
-                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 1]), 
-                  "MouseUp" :> (SuonaConNoi`Private`dwn = False; 
-                   SuonaConNoi`Private`onKeyUp[
-                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 
-                    1])}]]; SuonaConNoi`Private`space[
-                Pattern[SuonaConNoi`Private`wd$, 
-                 Blank[]]] := Graphics[{White, 
-                 Rectangle[{0, 0}, {SuonaConNoi`Private`wd$, 1}]}, 
-                ImageSize -> {
-                 SuonaConNoi`Private`wd$ SuonaConNoi`Private`scale$$, 10}, 
-                PlotRange -> {{0, 0}, {2.5, 5}}, ImageMargins -> 0]; 
-             SuonaConNoi`Private`vert := Graphics[
-                Line[{{0, 0}, {0, 1}}], 
-                PlotRange -> {{-0.001, 0.001}, {0, 1}}, 
-                ImageSize -> {
-                 2 SuonaConNoi`Private`scale$$, 60 
-                  SuonaConNoi`Private`scale$$}, ImageMargins -> 0]; 
-             SuonaConNoi`Private`blackkey[
-                Pattern[SuonaConNoi`Private`note$, 
-                 Blank[]], 
-                Pattern[SuonaConNoi`Private`oct$, 
-                 Blank[]]] := Mouseover[
-                Graphics[{{
-                   EdgeForm[Black], 
-                   Switch[1, 0, 
+                    ImageSize -> {
+                    22 SuonaConNoi`Private`scale, 41 
+                    SuonaConNoi`Private`scale}, 
+                    PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 
+                    0]], {"MouseDown" :> (SuonaConNoi`Private`dwn = True; 
+                    SuonaConNoi`Private`onKeyDown[
+                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$]), 
+                    "MouseUp" :> (SuonaConNoi`Private`dwn = False; 
+                    SuonaConNoi`Private`onKeyUp[
+                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$])}]]; 
+               SuonaConNoi`Private`space[
+                  Pattern[SuonaConNoi`Private`wd, 
+                   Blank[]]] := Graphics[{White, 
+                   Rectangle[{0, 0}, {SuonaConNoi`Private`wd, 1}]}, 
+                  ImageSize -> {
+                   SuonaConNoi`Private`wd SuonaConNoi`Private`scale, 10}, 
+                  PlotRange -> {{0, 0}, {2.5, 5}}, ImageMargins -> 0]; 
+               SuonaConNoi`Private`vert := Graphics[
+                  Line[{{0, 0}, {0, 1}}], 
+                  PlotRange -> {{-0.001, 0.001}, {0, 1}}, 
+                  ImageSize -> {
+                   2 SuonaConNoi`Private`scale, 60 SuonaConNoi`Private`scale},
+                   ImageMargins -> 0]; SuonaConNoi`Private`blackkey[
+                  Pattern[SuonaConNoi`Private`note$, 
+                   Blank[]], 
+                  Pattern[SuonaConNoi`Private`oct$, 
+                   Blank[]]] := Mouseover[
+                  Graphics[{{
+                    EdgeForm[Black], 
+                    Switch[1, 0, 
                     If[
                     SuonaConNoi`Private`selectedNoteLearn == 
                     SuonaConNoi`Private`joinNote[
@@ -642,20 +702,20 @@ Cell[BoxData[
                     SuonaConNoi`Private`joinNote[
                     SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$], 
                     Darker[Green], Black], 2, Black], 
-                   Rectangle[{0, 2.5}, {0.5, 5}]}, 
-                  If[SuonaConNoi`Private`shownotes$$, 
-                   Text[
+                    Rectangle[{0, 2.5}, {0.5, 5}]}, 
+                    If[SuonaConNoi`Private`shownotes$$, 
+                    Text[
                     Style[
                     StringJoin[SuonaConNoi`Private`note$, " ", 
                     ToString[SuonaConNoi`Private`oct$]], 10, White, 
                     "Label"], {0.25, 3.5}, {0, 0}, {0, 1}], {}]}, 
-                 ImageSize -> {
-                  12 SuonaConNoi`Private`scale$$, 60 
-                   SuonaConNoi`Private`scale$$}, 
-                 PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0], 
-                EventHandler[
-                 Dynamic[
-                  Graphics[{{
+                   ImageSize -> {
+                    12 SuonaConNoi`Private`scale, 60 
+                    SuonaConNoi`Private`scale}, 
+                   PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0], 
+                  EventHandler[
+                   Dynamic[
+                    Graphics[{{
                     EdgeForm[Black], 
                     Switch[1, 0, 
                     If[
@@ -684,89 +744,573 @@ Cell[BoxData[
                     ToString[SuonaConNoi`Private`oct$]], 
                     If[SuonaConNoi`Private`dwn, 9, 10], White, "Label"], {
                     0.25, 3.5}, {0, 0}, {0, 1}], {}]}}, 
-                   ImageSize -> {
-                    12 SuonaConNoi`Private`scale$$, 60 
-                    SuonaConNoi`Private`scale$$}, 
-                   PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0]], {
-                 "MouseDown" :> (SuonaConNoi`Private`dwn = True; 
-                   SuonaConNoi`Private`onKeyDown[
-                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 1]), 
-                  "MouseUp" :> (SuonaConNoi`Private`dwn = False; 
-                   SuonaConNoi`Private`onKeyUp[
-                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 
-                    1])}]]; SuonaConNoi`Private`whiteset[
-                Pattern[SuonaConNoi`Private`oct, 
-                 Blank[]]] := Grid[{
-                 Flatten[
-                  Map[
-                  SuonaConNoi`Private`whitekey[#, 
+                    ImageSize -> {
+                    12 SuonaConNoi`Private`scale, 60 
+                    SuonaConNoi`Private`scale}, 
+                    PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0]], {
+                   "MouseDown" :> (SuonaConNoi`Private`dwn = True; 
+                    SuonaConNoi`Private`onKeyDown[
+                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$]), 
+                    "MouseUp" :> (SuonaConNoi`Private`dwn = False; 
+                    SuonaConNoi`Private`onKeyUp[
+                    SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$])}]]; 
+               SuonaConNoi`Private`whiteset[
+                  Pattern[SuonaConNoi`Private`oct, 
+                   Blank[]]] := Grid[{
+                   Flatten[
+                    Map[
+                    SuonaConNoi`Private`whitekey[#, 
                     SuonaConNoi`Private`oct]& , {
-                   "C", "D", "E", "F", "G", "A", "B"}]]}, Spacings -> 0]; 
-             SuonaConNoi`Private`blackset[
-                Pattern[SuonaConNoi`Private`oct, 
-                 Blank[]]] := Grid[{{SuonaConNoi`Private`vert, 
-                  SuonaConNoi`Private`space[15], 
-                  SuonaConNoi`Private`blackkey["C#", SuonaConNoi`Private`oct], 
-                  SuonaConNoi`Private`space[10], 
-                  SuonaConNoi`Private`blackkey["D#", SuonaConNoi`Private`oct], 
-                  SuonaConNoi`Private`space[13], SuonaConNoi`Private`vert, 
-                  SuonaConNoi`Private`vert, 
-                  SuonaConNoi`Private`space[14], 
-                  SuonaConNoi`Private`blackkey["F#", SuonaConNoi`Private`oct], 
-                  SuonaConNoi`Private`space[10], 
-                  SuonaConNoi`Private`blackkey["G#", SuonaConNoi`Private`oct], 
-                  SuonaConNoi`Private`space[10], 
-                  SuonaConNoi`Private`blackkey["A#", SuonaConNoi`Private`oct], 
-                  SuonaConNoi`Private`space[14], SuonaConNoi`Private`vert}}, 
-                Spacings -> 0, Alignment -> Left]; 
-             SuonaConNoi`Private`keyboardsplit[
-                Pattern[SuonaConNoi`Private`octinit, 
-                 Blank[]]] := Grid[{
-                 Flatten[
-                  Table[
-                   SuonaConNoi`Private`blackset[SuonaConNoi`Private`i], {
-                   SuonaConNoi`Private`i, SuonaConNoi`Private`octinit, 
-                    SuonaConNoi`Private`octinit + 
-                    SuonaConNoi`Private`pianoNumOfOct - 1}]], 
-                 Flatten[
-                  Table[
-                   SuonaConNoi`Private`whiteset[SuonaConNoi`Private`i], {
-                   SuonaConNoi`Private`i, SuonaConNoi`Private`octinit, 
-                    SuonaConNoi`Private`octinit + 
-                    SuonaConNoi`Private`pianoNumOfOct - 1}]]}, 
-                Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
-                Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]; 
-             Deploy[
+                    "C", "D", "E", "F", "G", "A", "B"}]]}, Spacings -> 0]; 
+               SuonaConNoi`Private`blackset[
+                  Pattern[SuonaConNoi`Private`oct, 
+                   Blank[]]] := Grid[{{SuonaConNoi`Private`vert, 
+                    SuonaConNoi`Private`space[15], 
+                    SuonaConNoi`Private`blackkey[
+                    "C#", SuonaConNoi`Private`oct], 
+                    SuonaConNoi`Private`space[10], 
+                    SuonaConNoi`Private`blackkey[
+                    "D#", SuonaConNoi`Private`oct], 
+                    SuonaConNoi`Private`space[13], SuonaConNoi`Private`vert, 
+                    SuonaConNoi`Private`vert, 
+                    SuonaConNoi`Private`space[14], 
+                    SuonaConNoi`Private`blackkey[
+                    "F#", SuonaConNoi`Private`oct], 
+                    SuonaConNoi`Private`space[10], 
+                    SuonaConNoi`Private`blackkey[
+                    "G#", SuonaConNoi`Private`oct], 
+                    SuonaConNoi`Private`space[10], 
+                    SuonaConNoi`Private`blackkey[
+                    "A#", SuonaConNoi`Private`oct], 
+                    SuonaConNoi`Private`space[14], SuonaConNoi`Private`vert}},
+                   Spacings -> 0, Alignment -> Left]; 
                SuonaConNoi`Private`keyboardsplit[
-                Switch[
-                1, 0, SuonaConNoi`Private`octaveLearn, 1, 
-                 SuonaConNoi`Private`octaveTutorial, 2, 
-                 SuonaConNoi`Private`octaveFree]]]), 
-            "Specifications" :> {{{
-               SuonaConNoi`Private`shownotes$$, False, "Mostra note"}, {
-               True, False}}}, 
-            "Options" :> {
-             TrackedSymbols :> {
-               SuonaConNoi`Private`shownotes$$, 
-                SuonaConNoi`Private`selectedNoteLearn, 
-                SuonaConNoi`Private`selectedNoteTutorial, 
-                SuonaConNoi`Private`octaveFree}, LocalizeVariables -> False, 
-              ContinuousAction -> False}, "DefaultOptions" :> {}],
-           ImageSizeCache->{917., {181., 187.}},
-           SingleEvaluation->True],
-          Deinitialization:>None,
-          DynamicModuleValues:>{},
-          
-          Initialization:>({SuonaConNoi`Private`dwn = False}; 
-           Typeset`initDone$$ = True),
-          SynchronousInitialization->True,
-          UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
-          UnsavedVariables:>{Typeset`initDone$$},
-          UntrackedVariables:>{Typeset`size$$}], "Manipulate",
-         Deployed->True,
-         StripOnInput->False],
-        Manipulate`InterpretManipulate[1]],
-       DynamicModuleValues:>{}]},
+                  Pattern[SuonaConNoi`Private`initOct, 
+                   Blank[]], 
+                  Pattern[SuonaConNoi`Private`numOct, 
+                   Blank[]]] := Grid[{
+                   Flatten[
+                    Table[
+                    SuonaConNoi`Private`blackset[SuonaConNoi`Private`i], {
+                    SuonaConNoi`Private`i, SuonaConNoi`Private`initOct, 
+                    SuonaConNoi`Private`initOct + SuonaConNoi`Private`numOct - 
+                    1}]], 
+                   Flatten[
+                    Table[
+                    SuonaConNoi`Private`whiteset[SuonaConNoi`Private`i], {
+                    SuonaConNoi`Private`i, SuonaConNoi`Private`initOct, 
+                    SuonaConNoi`Private`initOct + SuonaConNoi`Private`numOct - 
+                    1}]]}, Spacings -> {
+                   "Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
+                  Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]; 
+               Deploy[
+                 SuonaConNoi`Private`keyboardsplit[
+                  Switch[
+                  1, 0, SuonaConNoi`Private`initOctLearn, 1, 
+                   SuonaConNoi`Private`initOctTutorial, 2, 
+                   SuonaConNoi`Private`initOctFree], 
+                  Switch[
+                  1, 0, SuonaConNoi`Private`numOctLearn, 1, 
+                   SuonaConNoi`Private`numOctTutorial, 2, 
+                   SuonaConNoi`Private`numOctFree]]]), 
+              "Specifications" :> {{{
+                 SuonaConNoi`Private`shownotes$$, False, "Mostra note"}, {
+                 True, False}}}, 
+              "Options" :> {
+               TrackedSymbols :> {
+                 SuonaConNoi`Private`shownotes$$, 
+                  SuonaConNoi`Private`selectedNoteLearn, 
+                  SuonaConNoi`Private`selectedNoteTutorial, 
+                  SuonaConNoi`Private`initOctLearn, 
+                  SuonaConNoi`Private`initOctTutorial, 
+                  SuonaConNoi`Private`initOctFree, 
+                  SuonaConNoi`Private`numOctLearn, 
+                  SuonaConNoi`Private`numOctTutorial, 
+                  SuonaConNoi`Private`numOctFree}, LocalizeVariables -> False,
+                 ContinuousAction -> False}, "DefaultOptions" :> {}], 
+             ImageSizeCache -> {917., {181., 187.}}, SingleEvaluation -> 
+             True], Deinitialization :> None, DynamicModuleValues :> {}, 
+            Initialization :> ({SuonaConNoi`Private`dwn = False}; 
+             Typeset`initDone$$ = True), SynchronousInitialization -> True, 
+            UndoTrackedVariables :> {Typeset`show$$, Typeset`bookmarkMode$$}, 
+            UnsavedVariables :> {Typeset`initDone$$}, 
+            UntrackedVariables :> {Typeset`size$$}], "Manipulate", Deployed -> 
+           True, StripOnInput -> False], 
+          Manipulate`InterpretManipulate[1]], DynamicModuleValues :> {}], 
+        TemplateBox[{
+         "\"oct1\"", "\"oct2\"", "\"oct3\"", "\"oct4\"", "\"oct5\"", 
+          "\"oct6\"", "\"oct7\"", "\"oct8\""}, "SwatchLegend", 
+         DisplayFunction -> (StyleBox[
+           StyleBox[
+            PaneBox[
+             TagBox[
+              GridBox[{{
+                 TagBox[
+                  GridBox[{{
+                    GraphicsBox[{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[1, 0.5, 0]], 
+                    RectangleBox[{0, 0}, {10, 10}, "RoundingRadius" -> 0]}, 
+                    AspectRatio -> Full, ImageSize -> {10, 10}, 
+                    PlotRangePadding -> None, ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #}, {
+                    GraphicsBox[{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[0, 0, 1]], 
+                    RectangleBox[{0, 0}, {10, 10}, "RoundingRadius" -> 0]}, 
+                    AspectRatio -> Full, ImageSize -> {10, 10}, 
+                    PlotRangePadding -> None, ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}, {
+                    GraphicsBox[{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[1, 1, 0]], 
+                    RectangleBox[{0, 0}, {10, 10}, "RoundingRadius" -> 0]}, 
+                    AspectRatio -> Full, ImageSize -> {10, 10}, 
+                    PlotRangePadding -> None, ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #3}, {
+                    GraphicsBox[{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[1, 0, 1]], 
+                    RectangleBox[{0, 0}, {10, 10}, "RoundingRadius" -> 0]}, 
+                    AspectRatio -> Full, ImageSize -> {10, 10}, 
+                    PlotRangePadding -> None, ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #4}, {
+                    GraphicsBox[{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[0, 1, 0]], 
+                    RectangleBox[{0, 0}, {10, 10}, "RoundingRadius" -> 0]}, 
+                    AspectRatio -> Full, ImageSize -> {10, 10}, 
+                    PlotRangePadding -> None, ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #5}, {
+                    GraphicsBox[{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[0, 1, 1]], 
+                    RectangleBox[{0, 0}, {10, 10}, "RoundingRadius" -> 0]}, 
+                    AspectRatio -> Full, ImageSize -> {10, 10}, 
+                    PlotRangePadding -> None, ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #6}, {
+                    GraphicsBox[{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsoluteThickness[1.6], 
+                    RGBColor[0.6, 0.4, 0.2]], 
+                    RectangleBox[{0, 0}, {10, 10}, "RoundingRadius" -> 0]}, 
+                    AspectRatio -> Full, ImageSize -> {10, 10}, 
+                    PlotRangePadding -> None, ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #7}, {
+                    GraphicsBox[{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsoluteThickness[1.6], 
+                    GrayLevel[0.5]], 
+                    RectangleBox[{0, 0}, {10, 10}, "RoundingRadius" -> 0]}, 
+                    AspectRatio -> Full, ImageSize -> {10, 10}, 
+                    PlotRangePadding -> None, ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #8}}, 
+                   GridBoxAlignment -> {
+                    "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
+                   AutoDelete -> False, 
+                   GridBoxDividers -> {
+                    "Columns" -> {{False}}, "Rows" -> {{False}}}, 
+                   GridBoxItemSize -> {
+                    "Columns" -> {{All}}, "Rows" -> {{All}}}, 
+                   GridBoxSpacings -> {
+                    "Columns" -> {{0.3}}, "Rows" -> {{0.5}}}], "Grid"]}}, 
+               GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+                AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}], 
+              "Grid"], Alignment -> Left, AppearanceElements -> None, 
+             ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+             "ResizeToFit"], LineIndent -> 0, StripOnInput -> False], {
+           FontFamily -> "Arial"}, Background -> Automatic, StripOnInput -> 
+           False]& ), InterpretationFunction :> (RowBox[{"SwatchLegend", "[", 
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{
+                  InterpretationBox[
+                   ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[1, 0.5, 0], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[0.6666666666666666, 0.33333333333333337`, 0.], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"1", ",", "0.5`", ",", "0"}], "]"}], NumberMarks -> 
+                    False]], Appearance -> None, BaseStyle -> {}, 
+                    BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+                    ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[1, 0.5, 0]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   RGBColor[1, 0.5, 0], Editable -> False, Selectable -> 
+                   False], ",", 
+                  InterpretationBox[
+                   ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0, 0, 1], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> RGBColor[0., 0., 0.6666666666666666], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
+                    False]], Appearance -> None, BaseStyle -> {}, 
+                    BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+                    ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0, 0, 1]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   RGBColor[0, 0, 1], Editable -> False, Selectable -> False],
+                   ",", 
+                  InterpretationBox[
+                   ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[1, 1, 0], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[0.6666666666666666, 0.6666666666666666, 0.], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"1", ",", "1", ",", "0"}], "]"}], NumberMarks -> 
+                    False]], Appearance -> None, BaseStyle -> {}, 
+                    BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+                    ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[1, 1, 0]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   RGBColor[1, 1, 0], Editable -> False, Selectable -> False],
+                   ",", 
+                  InterpretationBox[
+                   ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[1, 0, 1], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[0.6666666666666666, 0., 0.6666666666666666], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"1", ",", "0", ",", "1"}], "]"}], NumberMarks -> 
+                    False]], Appearance -> None, BaseStyle -> {}, 
+                    BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+                    ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[1, 0, 1]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   RGBColor[1, 0, 1], Editable -> False, Selectable -> False],
+                   ",", 
+                  InterpretationBox[
+                   ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0, 1, 0], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> RGBColor[0., 0.6666666666666666, 0.], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0", ",", "1", ",", "0"}], "]"}], NumberMarks -> 
+                    False]], Appearance -> None, BaseStyle -> {}, 
+                    BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+                    ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0, 1, 0]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   RGBColor[0, 1, 0], Editable -> False, Selectable -> False],
+                   ",", 
+                  InterpretationBox[
+                   ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0, 1, 1], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[0., 0.6666666666666666, 0.6666666666666666], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0", ",", "1", ",", "1"}], "]"}], NumberMarks -> 
+                    False]], Appearance -> None, BaseStyle -> {}, 
+                    BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+                    ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0, 1, 1]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   RGBColor[0, 1, 1], Editable -> False, Selectable -> False],
+                   ",", 
+                  InterpretationBox[
+                   ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.6, 0.4, 0.2], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0.6`", ",", "0.4`", ",", "0.2`"}], "]"}], 
+                    NumberMarks -> False]], Appearance -> None, 
+                    BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.6, 0.4, 0.2]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   RGBColor[0.6, 0.4, 0.2], Editable -> False, Selectable -> 
+                   False], ",", 
+                  InterpretationBox[
+                   ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    GrayLevel[0.5], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> GrayLevel[0.33333333333333337`], FrameTicks -> 
+                    None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
+                    StyleBox[
+                    RowBox[{"GrayLevel", "[", "0.5`", "]"}], NumberMarks -> 
+                    False]], Appearance -> None, BaseStyle -> {}, 
+                    BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+                    ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    GrayLevel[0.5]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["GrayLevelColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                   GrayLevel[0.5], Editable -> False, Selectable -> False]}], 
+                "}"}], ",", 
+              RowBox[{"{", 
+                
+                RowBox[{#, ",", #2, ",", #3, ",", #4, ",", #5, ",", #6, 
+                  ",", #7, ",", #8}], "}"}]}], "]"}]& ), Editable -> True]},
+       "RowDefault"]},
      {
       DynamicBox[ToBoxes[
         If[SuonaConNoi`Private`playSongEnded, 
@@ -827,21 +1371,38 @@ Cell[BoxData[
    3.830422312050129*^9, 3.830422419110159*^9, 3.8304231318093204`*^9, {
    3.830423241566247*^9, 3.8304232655756598`*^9}, 3.8304233368291693`*^9, 
    3.830423389499343*^9, 3.8305740748990526`*^9, 3.8305743570666437`*^9, 
-   3.8305745065431123`*^9, 3.8305753877114906`*^9, 3.8305760476554685`*^9},
- CellLabel->"Out[3]=",ExpressionUUID->"3c6984b9-8f7c-4bca-9a31-c90664380e60"]
+   3.8305745065431123`*^9, 3.8305753877114906`*^9, 3.8305760476554685`*^9, 
+   3.8305910765685596`*^9, {3.8305911248096437`*^9, 3.830591139600775*^9}, 
+   3.8305912384317975`*^9, 3.8305913158108253`*^9, 3.830591367248187*^9, 
+   3.8305914318217144`*^9, 3.8305914721027627`*^9, 3.8305915421051207`*^9, 
+   3.8305915877780323`*^9, 3.8305916365285172`*^9, 3.8305917565683794`*^9, {
+   3.8305918103735723`*^9, 3.8305918158043036`*^9}, 3.8305918497217484`*^9, 
+   3.8305919807533493`*^9, 3.830592036946757*^9, 3.8305923990681686`*^9, 
+   3.830592452799974*^9, {3.830592586438573*^9, 3.8305926316185293`*^9}, 
+   3.830592684564803*^9, 3.830592719618784*^9, 3.8305930059071407`*^9, 
+   3.8305931301201134`*^9, 3.8305932181847897`*^9, {3.8305934914570885`*^9, 
+   3.830593518439559*^9}, 3.8305936634006157`*^9, {3.8305937872016063`*^9, 
+   3.8305938116674848`*^9}, {3.8305938761907625`*^9, 3.8305938828232045`*^9}, 
+   3.830594071788477*^9, 3.8305941145270743`*^9, 3.8305943932432165`*^9, 
+   3.8305944481855636`*^9, 3.8305944800327272`*^9, 3.830594569468503*^9, 
+   3.8305946485622463`*^9, 3.8305946894710884`*^9, 3.830594755470763*^9, 
+   3.8305948225031714`*^9, 3.8305949145113277`*^9, 3.830595033701704*^9, 
+   3.830595120739971*^9, 3.830595413330512*^9, 3.8305955077997775`*^9, {
+   3.830598252369088*^9, 3.830598274255415*^9}, 3.830598319496518*^9, 
+   3.83059863707651*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"5ea615a5-0231-41c2-acf0-d6b5e0f823f9"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"Piano", "[", "2", "]"}]], "Input",
+Cell[BoxData["PlayFree"], "Input",
  CellChangeTimes->{{3.830409463052528*^9, 3.83040947968933*^9}, {
-  3.830421378732337*^9, 3.83042137936736*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"935eea3e-d62c-4977-a0ab-20040a23bb46"],
+  3.830421378732337*^9, 3.83042137936736*^9}, {3.8305986682667637`*^9, 
+  3.8305986763905687`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"935eea3e-d62c-4977-a0ab-20040a23bb46"],
 
 Cell[BoxData[
- DynamicModuleBox[{SuonaConNoi`Private`scale$$ = 2.8, 
-  SuonaConNoi`Private`shownotes$$ = False}, 
+ DynamicModuleBox[{SuonaConNoi`Private`shownotes$$ = False}, 
   TagBox[
    StyleBox[
     DynamicModuleBox[{Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
@@ -877,7 +1438,11 @@ Cell[BoxData[
                SuonaConNoi`Private`selectedNoteTutorial == 
                 SuonaConNoi`Private`joinNote[
                  SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$], 
-                Lighter[Green], White], 2, White], 
+                Lighter[Green], 
+                Lighter[
+                 Part[
+                 SuonaConNoi`Private`octaveColors, SuonaConNoi`Private`oct$], 
+                 0.9]], 2, White], 
               Rectangle[{0, 0}, {1, 2}]}, {
               Line[{{0, 2}, {0, 0}, {1, 0}, {1, 2}}]}, 
              If[SuonaConNoi`Private`shownotes$$, 
@@ -887,7 +1452,7 @@ Cell[BoxData[
                  ToString[SuonaConNoi`Private`oct$]], 10, "Label"], {
                0.5, 1}], {}]}, 
             ImageSize -> {
-             22 SuonaConNoi`Private`scale$$, 41 SuonaConNoi`Private`scale$$}, 
+             22 SuonaConNoi`Private`scale, 41 SuonaConNoi`Private`scale}, 
             PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 0], 
            EventHandler[
             Dynamic[
@@ -909,7 +1474,11 @@ Cell[BoxData[
                    SuonaConNoi`Private`dwn, 
                     SuonaConNoi`Private`selectedNoteTutorial != "", 
                     SuonaConNoi`Private`selectedNoteTutorial != "END"], 
-                   Lighter[Red], White]], 2, White], 
+                   Lighter[Red], 
+                   Lighter[
+                    Part[
+                    SuonaConNoi`Private`octaveColors, 
+                    SuonaConNoi`Private`oct$], 0.9]]], 2, White], 
                 Rectangle[{0, 
                   If[SuonaConNoi`Private`dwn, 0.15, 0]}, {1, 2}]}, 
                Line[{{0, 2}, {0, 
@@ -923,26 +1492,25 @@ Cell[BoxData[
                   If[SuonaConNoi`Private`dwn, 9, 10], "Label"], {0.5, 
                   If[SuonaConNoi`Private`dwn, 1.1, 1]}], {}]}, 
               ImageSize -> {
-               22 SuonaConNoi`Private`scale$$, 41 
-                SuonaConNoi`Private`scale$$}, 
+               22 SuonaConNoi`Private`scale, 41 SuonaConNoi`Private`scale}, 
               PlotRange -> {{-0.01, 1.01}, {-0.05, 2}}, ImageMargins -> 0]], {
             "MouseDown" :> (SuonaConNoi`Private`dwn = True; 
               SuonaConNoi`Private`onKeyDown[
-               SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 2]), 
+               SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$]), 
              "MouseUp" :> (SuonaConNoi`Private`dwn = False; 
               SuonaConNoi`Private`onKeyUp[
-               SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 2])}]]; 
+               SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$])}]]; 
         SuonaConNoi`Private`space[
-           Pattern[SuonaConNoi`Private`wd$, 
+           Pattern[SuonaConNoi`Private`wd, 
             Blank[]]] := Graphics[{White, 
-            Rectangle[{0, 0}, {SuonaConNoi`Private`wd$, 1}]}, 
+            Rectangle[{0, 0}, {SuonaConNoi`Private`wd, 1}]}, 
            ImageSize -> {
-            SuonaConNoi`Private`wd$ SuonaConNoi`Private`scale$$, 10}, 
+            SuonaConNoi`Private`wd SuonaConNoi`Private`scale, 10}, 
            PlotRange -> {{0, 0}, {2.5, 5}}, ImageMargins -> 0]; 
         SuonaConNoi`Private`vert := Graphics[
            Line[{{0, 0}, {0, 1}}], PlotRange -> {{-0.001, 0.001}, {0, 1}}, 
            ImageSize -> {
-            2 SuonaConNoi`Private`scale$$, 60 SuonaConNoi`Private`scale$$}, 
+            2 SuonaConNoi`Private`scale, 60 SuonaConNoi`Private`scale}, 
            ImageMargins -> 0]; SuonaConNoi`Private`blackkey[
            Pattern[SuonaConNoi`Private`note$, 
             Blank[]], 
@@ -969,7 +1537,7 @@ Cell[BoxData[
                  ToString[SuonaConNoi`Private`oct$]], 10, White, "Label"], {
                0.25, 3.5}, {0, 0}, {0, 1}], {}]}, 
             ImageSize -> {
-             12 SuonaConNoi`Private`scale$$, 60 SuonaConNoi`Private`scale$$}, 
+             12 SuonaConNoi`Private`scale, 60 SuonaConNoi`Private`scale}, 
             PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0], 
            EventHandler[
             Dynamic[
@@ -1003,15 +1571,14 @@ Cell[BoxData[
                    If[SuonaConNoi`Private`dwn, 9, 10], White, "Label"], {0.25,
                    3.5}, {0, 0}, {0, 1}], {}]}}, 
               ImageSize -> {
-               12 SuonaConNoi`Private`scale$$, 60 
-                SuonaConNoi`Private`scale$$}, 
+               12 SuonaConNoi`Private`scale, 60 SuonaConNoi`Private`scale}, 
               PlotRange -> {{0, 0.5}, {2.5, 5}}, ImageMargins -> 0]], {
             "MouseDown" :> (SuonaConNoi`Private`dwn = True; 
               SuonaConNoi`Private`onKeyDown[
-               SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 2]), 
+               SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$]), 
              "MouseUp" :> (SuonaConNoi`Private`dwn = False; 
               SuonaConNoi`Private`onKeyUp[
-               SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$, 2])}]]; 
+               SuonaConNoi`Private`note$, SuonaConNoi`Private`oct$])}]]; 
         SuonaConNoi`Private`whiteset[
            Pattern[SuonaConNoi`Private`oct, 
             Blank[]]] := Grid[{
@@ -1037,27 +1604,32 @@ Cell[BoxData[
              SuonaConNoi`Private`space[14], SuonaConNoi`Private`vert}}, 
            Spacings -> 0, Alignment -> Left]; 
         SuonaConNoi`Private`keyboardsplit[
-           Pattern[SuonaConNoi`Private`octinit, 
+           Pattern[SuonaConNoi`Private`initOct, 
+            Blank[]], 
+           Pattern[SuonaConNoi`Private`numOct, 
             Blank[]]] := Grid[{
             Flatten[
              Table[
               SuonaConNoi`Private`blackset[SuonaConNoi`Private`i], {
-              SuonaConNoi`Private`i, SuonaConNoi`Private`octinit, 
-               SuonaConNoi`Private`octinit + 
-               SuonaConNoi`Private`pianoNumOfOct - 1}]], 
+              SuonaConNoi`Private`i, SuonaConNoi`Private`initOct, 
+               SuonaConNoi`Private`initOct + SuonaConNoi`Private`numOct - 
+               1}]], 
             Flatten[
              Table[
               SuonaConNoi`Private`whiteset[SuonaConNoi`Private`i], {
-              SuonaConNoi`Private`i, SuonaConNoi`Private`octinit, 
-               SuonaConNoi`Private`octinit + 
-               SuonaConNoi`Private`pianoNumOfOct - 1}]]}, 
-           Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
+              SuonaConNoi`Private`i, SuonaConNoi`Private`initOct, 
+               SuonaConNoi`Private`initOct + SuonaConNoi`Private`numOct - 
+               1}]]}, Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
            Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}]; Deploy[
           SuonaConNoi`Private`keyboardsplit[
            Switch[
-           2, 0, SuonaConNoi`Private`octaveLearn, 1, 
-            SuonaConNoi`Private`octaveTutorial, 2, 
-            SuonaConNoi`Private`octaveFree]]]), 
+           2, 0, SuonaConNoi`Private`initOctLearn, 1, 
+            SuonaConNoi`Private`initOctTutorial, 2, 
+            SuonaConNoi`Private`initOctFree], 
+           Switch[
+           2, 0, SuonaConNoi`Private`numOctLearn, 1, 
+            SuonaConNoi`Private`numOctTutorial, 2, 
+            SuonaConNoi`Private`numOctFree]]]), 
        "Specifications" :> {{{
           SuonaConNoi`Private`shownotes$$, False, "Mostra note"}, {
           True, False}}}, 
@@ -1066,7 +1638,11 @@ Cell[BoxData[
           SuonaConNoi`Private`shownotes$$, 
            SuonaConNoi`Private`selectedNoteLearn, 
            SuonaConNoi`Private`selectedNoteTutorial, 
-           SuonaConNoi`Private`octaveFree}, LocalizeVariables -> False, 
+           SuonaConNoi`Private`initOctLearn, 
+           SuonaConNoi`Private`initOctTutorial, 
+           SuonaConNoi`Private`initOctFree, SuonaConNoi`Private`numOctLearn, 
+           SuonaConNoi`Private`numOctTutorial, 
+           SuonaConNoi`Private`numOctFree}, LocalizeVariables -> False, 
          ContinuousAction -> False}, "DefaultOptions" :> {}],
       ImageSizeCache->{919., {181., 187.}},
       SingleEvaluation->True],
@@ -1082,30 +1658,12 @@ Cell[BoxData[
     StripOnInput->False],
    Manipulate`InterpretManipulate[1]],
   DynamicModuleValues:>{}]], "Output",
- CellChangeTimes->{
-  3.830409480990596*^9, 3.8304096283569217`*^9, 3.830409743722188*^9, 
-   3.8304098894502506`*^9, 3.830410527992837*^9, 3.8304107759413114`*^9, 
-   3.830411252802738*^9, 3.830411291825471*^9, 3.8304114420072675`*^9, 
-   3.8304115887821736`*^9, 3.8304116848336444`*^9, 3.8304117205806255`*^9, 
-   3.830411837635356*^9, 3.830412027784811*^9, 3.830412138662234*^9, 
-   3.8304122886912813`*^9, 3.830412340470872*^9, 3.830412695079605*^9, 
-   3.8304128927207165`*^9, 3.8304131178399076`*^9, 3.830413180862301*^9, 
-   3.830413301017887*^9, 3.8304134009812727`*^9, 3.830413574505231*^9, 
-   3.8304137010657167`*^9, 3.830413788655076*^9, 3.830413820292272*^9, 
-   3.830413908237404*^9, 3.830413980355688*^9, 3.83042001663904*^9, 
-   3.8304201262204514`*^9, 3.830420266646309*^9, 3.8304203040537076`*^9, 
-   3.8304207019909945`*^9, 3.8304207455901227`*^9, 3.8304211342747793`*^9, 
-   3.8304211970692453`*^9, 3.830421483731227*^9, 3.830421584084884*^9, 
-   3.8304216466468353`*^9, 3.830421895871402*^9, 3.830422083650674*^9, 
-   3.830422172544487*^9, {3.830422202669619*^9, 3.83042223001401*^9}, {
-   3.830422312390129*^9, 3.830422334843441*^9}, 3.830422419442131*^9, 
-   3.8304231321913214`*^9, 3.8304232419714165`*^9, 3.8305740752540517`*^9, 
-   3.8305743574046755`*^9, 3.8305753880457926`*^9, 3.8305760480004683`*^9},
- CellLabel->"Out[4]=",ExpressionUUID->"e3bdb99c-bb21-4b71-b0e2-0b33d2d0e5a1"]
+ CellChangeTimes->{3.8305986795669365`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"b33a86fe-eaa9-4c3a-9a92-26f265d4d085"]
 }, Open  ]]
 },
-WindowSize->{1224, 991},
-WindowMargins->{{Automatic, -20}, {Automatic, 11}},
+WindowSize->{1106, 892},
+WindowMargins->{{Automatic, -13}, {Automatic, 30}},
 TaggingRules->{
  "WelcomeScreenSettings" -> {"FEStarting" -> False}, "TryRealOnly" -> False},
 Magnification:>1. Inherited,
@@ -1125,16 +1683,16 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 1552, 30, 48, "Input",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
-Cell[2135, 54, 20951, 402, 623, "Output",ExpressionUUID->"f8af27c4-8d86-4504-8f7c-e6e687678c77"]
+Cell[580, 22, 1699, 32, 48, "Input",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
+Cell[2282, 56, 22969, 437, 527, "Output",ExpressionUUID->"9ba9f496-1fd7-455b-a17a-32bcf398f8a9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23123, 461, 473, 7, 28, "Input",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
-Cell[23599, 470, 18836, 360, 528, "Output",ExpressionUUID->"3c6984b9-8f7c-4bca-9a31-c90664380e60"]
+Cell[25288, 498, 527, 7, 28, "Input",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
+Cell[25818, 507, 46000, 885, 537, "Output",ExpressionUUID->"5ea615a5-0231-41c2-acf0-d6b5e0f823f9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42472, 835, 249, 4, 28, "Input",ExpressionUUID->"935eea3e-d62c-4977-a0ab-20040a23bb46"],
-Cell[42724, 841, 12986, 262, 387, "Output",ExpressionUUID->"e3bdb99c-bb21-4b71-b0e2-0b33d2d0e5a1"]
+Cell[71855, 1397, 278, 4, 28, "Input",ExpressionUUID->"935eea3e-d62c-4977-a0ab-20040a23bb46"],
+Cell[72136, 1403, 12330, 258, 387, "Output",ExpressionUUID->"b33a86fe-eaa9-4c3a-9a92-26f265d4d085"]
 }, Open  ]]
 }
 ]
