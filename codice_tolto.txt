@@ -12,3 +12,26 @@ RepeatPlaySong[notes_] :=
 (* Genera nuovo esercizio PlaySong *)
 GenerateNewPlaySong[n_] :=
 Button["Genera nuovo esercizio", GetNotesFromMidiN[n], Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, Orange}, Background -> LightOrange]
+
+EmitSound[Sound[SoundNote[1, 1, "Trumpet"]]]
+
+SetOptions[EvaluationNotebook[], NotebookEventActions -> none]
+
+SetOptions[EvaluationNotebook[], 
+ NotebookEventActions -> {{"KeyDown", "b"} :> 
+    EmitSound[Sound[SoundNote[2, 1, "Trumpet"]]]}]
+
+
+EventHandler
+
+Needs["JLink`"];
+ReinstallJava[];
+LoadJavaClass["javax.sound.midi.MidiSystem"];
+synth = MidiSystem`getSynthesizer[];
+synth@open[];
+$Channel = First[synth@getChannels[]];
+
+callback[val_] := ($Channel@noteOn[64, 100]);
+$Channel@allNotesOff[];
+
+listener = SocketListen[5050, callback]
