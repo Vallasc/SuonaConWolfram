@@ -3,25 +3,21 @@
 (* :Title : SuonaConNoi *)
 (* :Context : SuonaConNoi` *)
 (* :Author : Gruppo 5 *)
-(* :Summary : Package che permette di creare un piano virtuale e di effettuare delle operazioni su di esso *)
+(* :Summary : Package che permette di creare un pianoforte virtuale e di effettuare delle operazioni su di esso *)
 (* :Copyright : Gruppo 5 2021 *)
 (* :Package Version : 1 *)
 (* :Mathematica Version : 12.2 *)
 (* :History : *)
 (* :Discussion : *)
 
-BeginPackage["SuonaConNoi`", "JLink`"]
+BeginPackage["SuonaConNoi`", {"JLink`", "Experimental`"}]
 
-Piano::usage = "Piano[ottava, onDwn, onUp] ritorna un nuovo pianoforte che parte da octave";
+Piano::usage = "Piano[pstate] crea un pianoforte virtuale all modalit\[AGrave] pstate";
 KeyDown::usage = "KeyDown[nota, ottava] preme il tasto del piano corrsiposndente alla nota e all'ottava specificata";
-KeysUp::usage = "KeyUp[] Rilascia tutti i tasti del piano";
-PlaySong::usage = "PlaySong[] genera l'interfaccia piano per suonare una traccia MIDI";
+KeysUp::usage = "KeyUp[] rilascia tutti i tasti del piano";
+PlaySong::usage = "PlaySong[] genera l'interfaccia del pianoforte per suonare una traccia MIDI";
 LearnNotes::usage = "LearnNotes[notesList] data una lista di note controlla che il pitch inserito dall'utente sia corretto";
-PickMidi::usage = "PickMidi[] permette di selezionare un file MIDI dal proprio dispositivo";
 GetNotesFromMidi::usage = "GetNotesFromMidi[midiPath] dato un file MIDI, ritorna una lista di tutte le note che lo compongono";
-RepeatPlaySong::usage = "RepeatPlaySong[notes] fa ripetere l'esercizio PlaySong all'utente";
-GenerateNewPlaySong::usage = "GenerateNewPlaySong[notes] genera un nuovo esercio PlaySong con una melodia differente dalla precedente";
-GenerateMidi::usage = "GenerateMidi[] genera casualmente un file MIDI";
 
 Begin["`Private`"]
 
@@ -72,15 +68,21 @@ KeysUp[] := (
 Piano[pstate_] :=
     With[{pianostate = pstate},
         DynamicModule[{scale = 2.8, shownotes = False},
+        
+            (* Chiamata quando viene premuto un tasto del piano *)
             onKeyDown[note_, oct_, pianostate_] := (
                 playedNote = joinNote[note, oct];
                 $Channel @ noteOn[toPitch[note, oct], 80];
             );
+            
+            (* Chiamata quando viene rilasciato un tasto del piano *)
             onKeyUp[note_, oct_, pianostate_] := (
                 playedNote = -1;
                 $Channel @ allNotesOff[];
             );
+            
             Manipulate[
+                (* Disegna a schermo un tasto bianco *)
                 whitekey[note_, oct_] :=
                     Mouseover[(* Normal not pressed *)
                         Graphics[{{EdgeForm[],
@@ -175,10 +177,13 @@ Piano[pstate_] :=
                             "MouseUp" :> (dwn = False; onKeyUp[note, oct, pianostate])
                         }]
                     ];
+                (* Disegna a schermo uno spazio bianco *)
                 space[wd_] :=
                     Graphics[{White, Rectangle[{0, 0}, {wd, 1}]}, ImageSize -> {wd * scale, 10}, PlotRange -> {{0, 0}, {2.5, 5}}, ImageMargins -> 0];
+                (* Disegna a schermo la barra verticale che divide i tasti *)
                 vert :=
                     Graphics[Line[{{0, 0}, {0, 1}}], PlotRange -> {{-0.001, 0.001}, {0, 1}}, ImageSize -> {2 * scale, 60 * scale}, ImageMargins -> 0];
+                (* Disegna a schermo un tasto bianco *)
                 blackkey[note_, oct_] :=
                     Mouseover[(* Normal not pressed *)
                         Graphics[{{EdgeForm[Black],
@@ -255,16 +260,27 @@ Piano[pstate_] :=
                             "MouseUp" :> (dwn = False; onKeyUp[note, oct, pianostate])
                         }]
                     ];
+                    
+                (* Disegna a schermo tutti i tasti bianchi del piano *)
                 whiteset[oct_] :=
                     Grid[{Flatten[Map[(whitekey[#, oct])&, {"C", "D", "E", "F", "G", "A", "B"}]]}, Spacings -> 0];
-                blackset[oct_] :=
+                    
+               (* Disegna a schermo tutti i tasti neri del piano *)
+                 blackset[oct_] :=
                     Grid[{{
                         vert, space[15], blackkey["C#", oct],
                         space[10], blackkey["D#", oct],
                         space[13], vert, vert, space[14], blackkey["F#", oct], space[10], blackkey["G#", oct], space[10], blackkey["A#", oct], space[14], vert
                     }}, Spacings -> 0, Alignment -> Left];
+                    
+                (* Disegna l'intero pianoforte *)
                 keyboardsplit[octinit_] :=
-                    Grid[{Flatten[Table[blackset[i], {i, octinit, octinit + pianoNumOfOct - 1}]], Flatten[Table[whiteset[i], {i, octinit, octinit + pianoNumOfOct - 1}]]}, Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}];
+                    Grid[{Flatten[Table[blackset[i], {i, octinit, octinit + pianoNumOfOct - 1}]], 
+                          Flatten[Table[whiteset[i], {i, octinit, octinit + pianoNumOfOct - 1}]]}, 
+                          Spacings -> {"Columns" -> {{0}}, "Rows" -> {{-0.1}}}, 
+                          Alignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}
+                    ];
+                (* Deploy manipulate *)    
                 Deploy[keyboardsplit[Switch[pianostate,
                     0,
                         octaveLearn
@@ -275,7 +291,9 @@ Piano[pstate_] :=
                     2,
                         octaveFree
                 ]]],
+                
                 {{shownotes, False, "Mostra note"}, {True, False}},
+                (* Simboli che vengono tracciati dalla manipulate *)
                 TrackedSymbols :> {shownotes, selectedNoteLearn, selectedNoteTutorial, octaveFree},
                 Initialization :> {dwn = False},
                 LocalizeVariables -> False,
@@ -284,20 +302,24 @@ Piano[pstate_] :=
         ]
     ]
 
-(*************************************************************** Learn *****************************************************************************************)
-midiNotesLearn = {};
-currentList = {};
-noteLearnStarted = False;
-Dynamic[titleLearn];
+(* *********************************************** Learn *********************************************** *)
 
+(* Lista delle liste di note con i relativi titoli da visualizzare *)
+midiNotesLearn = {};
+(* Lista delle note correnti che vengono visualizzate *)
+currentList = {};
+
+(* Data una lista di note controlla che il pitch inserito dall'utente sia corretto *)
 LearnNotes[notesList_] := (
     titleLearn = "Come si suona un pianoforte";
     errorsLearn = 0;
     midiNotesLearn = notesList;
     selectedNoteLearn = "";
     textField = "";
+    noteLearnStarted = False;
     Panel[
         Column[{
+            (* Titolo *)
             Dynamic[Text[Style[titleLearn, Black, Bold, 24]]],
             Dynamic[If[noteLearnStarted,
                 Button["Ricomincia",
@@ -315,6 +337,7 @@ LearnNotes[notesList_] := (
                 ]
             ]],
             Piano[0],
+            (* Input Field *)
             Dynamic[If[selectedNoteLearn != "END" && noteLearnStarted,
                 Column[{
                     Text[Style["Inserisci la nota e clicca il bottone controlla", Black, Bold, 18]],
@@ -339,38 +362,42 @@ LearnNotes[notesList_] := (
                     Text[""]
                 ]
             ]],
+            (* Bottone che controlla la correttezza dell'input *)
             Dynamic[If[selectedNoteLearn != "END" && noteLearnStarted,
                 Button["Avanti", (Pause[0.6];
                         If[ToUpperCase[textField] == baseNote[selectedNoteLearn] && selectedNoteLearn != "",
-                            nextNoteLearn[]
-                            ,
+                            nextNoteLearn[],
                             errorsLearn += 1;
                         ];
                         textField = "";
                     ), ImageSize -> {200, 50},
                     Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, Darker[Orange]}, Background -> LightOrange
-                ]
-                ,
+                ],
                 Text[""]
             ]]
         }, ItemSize -> {Automatic, Automatic}, Alignment -> Center]
     ]
 )
 
+(* Passa alla prossima nota della lista learn*)
 nextNoteLearn[] := (
+	(* Ferma tutte le note gi\[AGrave] in esecuzione *)
     $Channel @ allNotesOff[];
+    (* Controlla se ci sono liste di note *)
     If[Length[currentList] == 0 && Length[midiNotesLearn] > 0,
         stepEnd = True;
+        (* Seleziona la prima lista *)
         currentList = First[First[midiNotesLearn]];
         titleLearn = Last[First[midiNotesLearn]];
         midiNotesLearn = Delete[midiNotesLearn, 1];
     ];
+    (* Controlla se ci sono note nella lista selezionata *)
     If[Length[currentList] > 0,
         (selectedNoteLearn = First[currentList];
             currentList = Delete[currentList, 1];
+            (* Riproduce il suono della nota *)
             $Channel @ noteOn[toPitch[baseNote[selectedNoteLearn], 3], 80]
-        )
-        ,
+        ),
         selectedNoteLearn = "END";
     ]
 )
@@ -380,13 +407,12 @@ baseNote[note_] :=
 octaveNote[note_] :=
     ToExpression[Last[StringCases[note, {RegularExpression["[A-G]#?"], RegularExpression["\\d+"]}]]];
 
+(* *********************************************** Tutorial *********************************************** *)
 
-
-(*************************************************************** Tutorial *****************************************************************************************)
+(* Lista delle note importate dal file MIDI *)
 midiNotesTutorial = {};
-Dynamic[playSongEnded];
-Dynamic[titleTutorial];
 
+(* Genera l'interfaccia del pianoforte per suonare una traccia MIDI *)
 PlaySong[] := (
     titleTutorial = "Suona la traccia MIDI";
     errorsTutorial = 0;
@@ -407,37 +433,44 @@ PlaySong[] := (
     ]
 )
 
+(* Passa alla prossima nota della lista tutorial *)
 nextNoteTutorial[] := (
+   (* Controlla se ci sono note disponibili *)
     If[Length[midiNotesTutorial] > 0,
+        (* Seleziona la prima nota e la elimina dalla lista *)
         (selectedNoteTutorial = First[midiNotesTutorial];
             midiNotesTutorial = Delete[midiNotesTutorial, 1];
             noteOct = octaveNote[selectedNoteTutorial];
+            (* Aggiornamento dinamico dell'ottava durante il tutorial *)
             If[noteOct < octaveTutorial || noteOct > (octaveTutorial + pianoNumOfOct - 1),
                 octaveTutorial = octaveNote[selectedNoteTutorial] - 1;
             ]
-        )
-        ,
+        ),
+        (* Azzera lo stato *)
         midiNotesTutorial = {};
         selectedNoteTutorial = "END";
         playSongEnded = True;
     ]
 )
 
+(* Controlla che la nota suonata sia corretta, se si passa alla prossima *)
 checkNote[] := (
     If[selectedNoteTutorial == playedNote,
         nextNoteTutorial[]
     ]
 )
 
-Experimental`ValueFunction[playedNote] := (
+(* Resta in ascolto del cambiamento di playedNote *)
+ValueFunction[playedNote] := (
     If[playedNote != "",
         checkNote[]
     ]
 )
 
-(*************************************************************** Midi *****************************************************************************************)
+(* *********************************************** MIDI *********************************************** *)
 SetDirectory[NotebookDirectory[]];
 
+(* Lista dei midi presenti nella directory MIDI *)
 paths = List[
     "./MIDI/50_special.mid",
     "./MIDI/Africa_Toto.mid",
@@ -456,12 +489,16 @@ paths = List[
     "./MIDI/Africa_Toto.mid"
 ];
 
+(* Permette di selezionare un file MIDI dal proprio dispositivo *)
 pickMidi[] := (
     Button["Seleziona file MIDI",
         filePath = ToString[SystemDialogInput["FileOpen", ".mid"]];
+        (* Se il file \[EGrave] stato scelto correttamente *)
         If[filePath !="$Canceled",
+           (* Estrae le note dal MIDI *)
            midiNotesTutorial = GetNotesFromMidi[filePath];
            titleTutorial = FileNameTake[filePath];
+           (* Ricomincia selezionando la prima nota *)
            nextNoteTutorial[];
            playSongEnded = False
         ],
@@ -470,11 +507,14 @@ pickMidi[] := (
     ]
 )
 
+(* Seleziona random un file MIDI dalla directory MIDI *)
 generateMidi[] := (
     Button["Genera casualmente",
         filePath = paths[[RandomInteger[{1, Length[paths]}]]];
         titleTutorial = FileNameTake[filePath];
+        (* Estrae le note dal MIDI *)
         midiNotesTutorial = GetNotesFromMidi[filePath];
+        (* Ricomincia selezionando la prima nota *)
         nextNoteTutorial[];
         playSongEnded = False,
         ImageSize -> {200, Automatic},
@@ -482,12 +522,12 @@ generateMidi[] := (
     ]
 )
 
+(* Dato il path del file MIDI, ritorna una lista di tutte le note che lo compongono *)
 GetNotesFromMidi[midiPath_] := (
     sn = Import[midiPath, "SoundNotes"];
     sn = Part[sn, 2];
     Table[sn[[i]][[1]], {i, Length[sn]}]
 )
-
 
 End[];
 EndPackage[];

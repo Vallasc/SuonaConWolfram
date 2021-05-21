@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     56399,       1130]
-NotebookOptionsPosition[     55335,       1102]
-NotebookOutlinePosition[     55862,       1121]
-CellTagsIndexPosition[     55819,       1118]
+NotebookDataLength[     56790,       1134]
+NotebookOptionsPosition[     55726,       1106]
+NotebookOutlinePosition[     56253,       1125]
+CellTagsIndexPosition[     56210,       1122]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -50,7 +50,7 @@ Cell[BoxData[{
    3.830410071250181*^9}, {3.8304126283749833`*^9, 3.830412647022537*^9}, {
    3.8304126787588844`*^9, 3.830412690966668*^9}, {3.8304127924549665`*^9, 
    3.8304127950617776`*^9}, 3.8304233300420723`*^9},
- CellLabel->"In[9]:=",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
+ CellLabel->"In[1]:=",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
 
 Cell[BoxData[
  PanelBox[
@@ -68,6 +68,7 @@ Cell[BoxData[
          "Ricomincia", SuonaConNoi`Private`errorsLearn = 0; 
           SuonaConNoi`Private`midiNotesLearn = {{{"C3", "D3", "F3"}, 
               "Tasti bianchi"}, {{"C#3", "D#3", "F#3"}, "Tasti neri"}}; 
+          SuonaConNoi`Private`currentList = {}; 
           SuonaConNoi`Private`nextNoteLearn[], ImageSize -> {200, Automatic}, 
           Method -> "Queued", BaseStyle -> {"GenericButton", 16, Bold, 
             Darker[Orange]}, Background -> LightOrange], 
@@ -451,8 +452,9 @@ Cell[BoxData[
    3.830421895047429*^9, 3.8304220826886415`*^9, {3.830422171779488*^9, 
    3.830422229240011*^9}, 3.8304223116561284`*^9, 3.830422418482127*^9, 
    3.8304231311413207`*^9, 3.8304232408052483`*^9, 3.8304233343281393`*^9, 
-   3.8304233854715056`*^9},
- CellLabel->"Out[10]=",ExpressionUUID->"bab18209-f94b-4e5b-bb67-deca5dbb7131"]
+   3.8304233854715056`*^9, 3.8305740742360525`*^9, 3.8305743563656435`*^9, 
+   3.8305745026177244`*^9, 3.830575386980491*^9, 3.8305760469794683`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"f8af27c4-8d86-4504-8f7c-e6e687678c77"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -464,7 +466,7 @@ Cell[BoxData[
    3.8304052649167356`*^9}, 3.8304063949346566`*^9, {3.830409600858551*^9, 
    3.83040961069767*^9}, {3.8304096777067175`*^9, 3.830409680931452*^9}, 
    3.830410164180611*^9, 3.8304232623542*^9},
- CellLabel->"In[11]:=",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
+ CellLabel->"In[3]:=",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
 
 Cell[BoxData[
  PanelBox[
@@ -474,7 +476,7 @@ Cell[BoxData[
         Text[
          Style[SuonaConNoi`Private`titleTutorial, Black, Bold, 24]], 
         StandardForm],
-       ImageSizeCache->{128., {6., 23.}}]},
+       ImageSizeCache->{265., {6., 23.}}]},
      {
       TemplateBox[{
         ButtonBox[
@@ -771,7 +773,7 @@ Cell[BoxData[
          Text[
           Style["Bravo!", Green, Bold, 20]], 
          Text[""]], StandardForm],
-       ImageSizeCache->{63., {5., 19.}}]}
+       ImageSizeCache->{0., {3., 12.}}]}
     },
     DefaultBaseStyle->"Column",
     GridBoxAlignment->{"Columns" -> {{Center}}},
@@ -824,8 +826,9 @@ Cell[BoxData[
    3.8304221721944866`*^9, {3.8304222022846184`*^9, 3.83042222967901*^9}, 
    3.830422312050129*^9, 3.830422419110159*^9, 3.8304231318093204`*^9, {
    3.830423241566247*^9, 3.8304232655756598`*^9}, 3.8304233368291693`*^9, 
-   3.830423389499343*^9},
- CellLabel->"Out[11]=",ExpressionUUID->"1b102c11-af8d-4d77-a427-8e7e3a624302"]
+   3.830423389499343*^9, 3.8305740748990526`*^9, 3.8305743570666437`*^9, 
+   3.8305745065431123`*^9, 3.8305753877114906`*^9, 3.8305760476554685`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"3c6984b9-8f7c-4bca-9a31-c90664380e60"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1096,8 +1099,9 @@ Cell[BoxData[
    3.8304216466468353`*^9, 3.830421895871402*^9, 3.830422083650674*^9, 
    3.830422172544487*^9, {3.830422202669619*^9, 3.83042223001401*^9}, {
    3.830422312390129*^9, 3.830422334843441*^9}, 3.830422419442131*^9, 
-   3.8304231321913214`*^9, 3.8304232419714165`*^9},
- CellLabel->"Out[4]=",ExpressionUUID->"0ffb9b48-573d-432c-8d41-c36c2b770447"]
+   3.8304231321913214`*^9, 3.8304232419714165`*^9, 3.8305740752540517`*^9, 
+   3.8305743574046755`*^9, 3.8305753880457926`*^9, 3.8305760480004683`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"e3bdb99c-bb21-4b71-b0e2-0b33d2d0e5a1"]
 }, Open  ]]
 },
 WindowSize->{1224, 991},
@@ -1122,15 +1126,15 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 1552, 30, 48, "Input",ExpressionUUID->"9a9f7170-c734-4902-8ab4-66271908c5ea"],
-Cell[2135, 54, 20781, 400, 623, "Output",ExpressionUUID->"bab18209-f94b-4e5b-bb67-deca5dbb7131"]
+Cell[2135, 54, 20951, 402, 623, "Output",ExpressionUUID->"f8af27c4-8d86-4504-8f7c-e6e687678c77"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22953, 459, 474, 7, 28, "Input",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
-Cell[23430, 468, 18714, 359, 517, "Output",ExpressionUUID->"1b102c11-af8d-4d77-a427-8e7e3a624302"]
+Cell[23123, 461, 473, 7, 28, "Input",ExpressionUUID->"e332816b-b505-42fd-ad9e-1a33f929504f"],
+Cell[23599, 470, 18836, 360, 528, "Output",ExpressionUUID->"3c6984b9-8f7c-4bca-9a31-c90664380e60"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42181, 832, 249, 4, 28, "Input",ExpressionUUID->"935eea3e-d62c-4977-a0ab-20040a23bb46"],
-Cell[42433, 838, 12886, 261, 387, "Output",ExpressionUUID->"0ffb9b48-573d-432c-8d41-c36c2b770447"]
+Cell[42472, 835, 249, 4, 28, "Input",ExpressionUUID->"935eea3e-d62c-4977-a0ab-20040a23bb46"],
+Cell[42724, 841, 12986, 262, 387, "Output",ExpressionUUID->"e3bdb99c-bb21-4b71-b0e2-0b33d2d0e5a1"]
 }, Open  ]]
 }
 ]
